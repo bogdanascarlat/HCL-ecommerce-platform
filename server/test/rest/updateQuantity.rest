@@ -1,0 +1,15 @@
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSm9obiIsImxhc3ROYW1lIjoiRG9lIiwiZW1haWwiOiJqb2huRG9lQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGphZE9ST2k1T1RSbGFyeGR5Nm8vc2VpV1NBM0gxc3FpcHZnWXVlU0Y1cWFmY0Z5TjBva29XIiwiaW1hZ2UiOiJsaW5rVG9JbWFnZSIsImFkZHJlc3MiOiJTb21lIGFkZHJlc3MgaW4gdGhlIHdybGQgbm8gMyIsInBob25lIjoiMDc3NyA3NzcgNzc3IiwiYmlydGhEYXRlIjoiMDMtMDUtMTk5OSIsIndpc2hsaXN0IjpbMSwyMiw0M10sImNhcnQiOlt7InByb2R1Y3RJZCI6MSwicXVhbnRpdHkiOjN9XSwicmF0aW5ncyI6W10sImlzQWN0aXZlIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjY4MDc5MDc2LCJleHAiOjE2NjgwODAyNzZ9.XmAO92VKZPyqWU-p4J5mQfT9Cd0NmHtrodG3MKvT7Hc
+
+mutation Mutation($cartInput: CartInput) {
+  updateQuantity(cartInput: $cartInput)
+}
+
+{
+    "cartInput": {
+        "productId": "-1",
+        "quantity": 0
+    }
+}

@@ -1,0 +1,182 @@
+<html>
+    <title></title>
+    <body>
+        <center id="page"></center>
+    </body>
+    <style>
+* {
+    font-family: Sans;
+    font-size: 18px;
+}
+a {
+    display: inline-block;
+    padding: 8px;
+    text-decoration: none;
+    color: #842;
+}
+a:hover { color: #C00; }
+    </style>
+    <script>
+
+const get = (id) => {
+    return document.getElementById(id)
+}
+
+document.body.onload = () => {
+    const html = []
+    html.push("<span>Select user:</span><div id='users'></div>")
+    html.push("<span>or:</span><div>")
+    html.push("<input type='text' id='user' value='' placeholder='user ID'></input>")
+    html.push("<a href='javascript:choose_user()'>Show user data</a>")
+    html.push("</div>")
+    html.push("<span>Profile:</span><div id='profile'></div>")
+    html.push("<span>Cart:</span><div id='cart'></div>")
+    html.push("<span>Products:</span><div id='products'></div>")
+    get("page").innerHTML = html.join("")
+    load_products()
+    load_users()
+}
+
+const choose_user = (id) => {
+    if(!id) {
+        id = parseInt(get("user").value)
+    }
+    else {
+        get("user").value = id
+    }
+    load_user(id)
+    load_cart(id)
+}
+
+const load_users = () => {
+    qlquery("query { getAllUsers { id firstName lastName } }", {}, (data) => {
+        const html = []
+        data.data.getAllUsers.forEach((user) => {
+            html.push(
+                "<a href='javascript:choose_user(" + user.id + ")'>"
+                + user.firstName + " " + user.lastName
+                + " (" + user.id + ")"
+                + "</a>"
+            )
+            console.log(user)
+        })
+        get("users").innerHTML = html.join("")
+    })
+}
+
+let PRODUCTS = null
+
+const load_products = () => {
+    qlquery("query { getAllProducts { id title price } }", {}, (data) => {
+        const html = []
+        PRODUCTS = {
+            list: data.data.getAllProducts,
+            map: {},
+        }
+        PRODUCTS.list.forEach((product) => {
+            PRODUCTS.map[product.id] = product
+            const productLine = []
+            productLine.push("<a href='javascript:add_product(" + product.id + ")'>")
+            const entry = []
+            for(key in product) {
+                entry.push(key + "=[" + product[key] + "]")
+            }
+            productLine.push(entry.join(" "))
+            productLine.push("</a>")
+            html.push(productLine.join(""))
+        })
+        get("products").innerHTML = html.join("<br/>")
+    })
+}
+
+const load_cart = (id) => {
+    qlquery("query { getProfile(id: " + id + ") { cart { quantity product } } }", {}, (data) => {
+        get("cart").innerHTML = data.data.getProfile.cart.map((entry) => {
+                return (
+                    "<a href='javascript:clr_product(" + entry.product + ")'>REMOVE</a>"
+                    + " [" + entry.quantity + "]"
+                    + " " + PRODUCTS.map[entry.product].title
+                )
+        })
+    })
+}
+
+const load_user = (id) => {
+    qlquery("query { getProfile(id: " + id + ") { id email phone } }", {}, (data) => {
+        get("profile").innerHTML = JSON.stringify(data)
+    })
+}
+
+
+const add_product = (product) => {
+    const user = get("user").value
+    qlquery("mutation { addToCart(user: " + user + ", product:" + product + ", operation: \"increase\", amount: 1) }", {}, (data) => {
+        choose_user()
+    })
+}
+
+const clr_product = (product) => {
+    const user = get("user").value
+    qlquery("mutation { addToCart(user: " + user + ", product:" + product + ", operation: \"decrease\", amount: 1000) }", {}, (data) => {
+        choose_user()
+    })
+}
+
+
+const qlquery = (query, vars, handler) => {
+    rest_get(
+        "http://localhost:4000/graphql",
+        "POST",
+        {
+            "query": query,
+            "vars": vars || {}
+        },
+        handler
+    )
+}
+
+const mqlquery = (query, vars, handler) => {
+    rest_get(
+        "http://localhost:4000/graphql",
+        "POST",
+        {
+            "query": query,
+            "vars": vars || {}
+        },
+        handler
+    )
+}
+
+const rest_get = (url, method, body, handler) => {
+    http_get(
+        url,
+        method,
+        "application/json",
+        JSON.stringify(body),
+        (data) => {
+            handler(JSON.parse(data))
+        }
+    )
+}
+
+const http_get = (url, method, mime, body, handler) => {
+    const xhr = new XMLHttpRequest()
+    xhr.open(method, url, true)
+    xhr.setRequestHeader("Content-Type", mime)
+    xhr.setRequestHeader("Authorization", "Bearer of torch")
+    xhr.onreadystatechange = () => {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            handler(xhr.responseText)
+        }
+    }
+    console.log("Requesting", method, url, mime)
+    console.log(body)
+    xhr.send(body)
+}
+
+
+
+
+    </script>
+</html>
+

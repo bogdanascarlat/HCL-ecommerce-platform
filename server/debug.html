@@ -1,0 +1,115 @@
+<html>
+    <title></title>
+    <body>
+        <center id="page"></center>
+    </body>
+    <style>
+* {
+    font-family: Sans;
+    font-size: 18px;
+}
+a {
+    display: inline-block;
+    padding: 8px;
+    text-decoration: none;
+    color: #842;
+}
+a:hover { color: #C00; }
+    </style>
+    <script>
+
+const get = (id) => {
+    return document.getElementById(id)
+}
+
+document.body.onload = () => {
+    const html = []
+    html.push("<div id='users'></div>")
+    html.push("<div>")
+    html.push("<input type='text' id='user' value='' placeholder='user ID'></input>")
+    html.push("<a href='javascript:choose_user()'>Show user data</a>")
+    html.push("</div>")
+    html.push("<span>Profile:</span><div id='profile'></div>")
+    html.push("<span>Cart:</span><div id='cart'></div>")
+    html.push("<span>Products:</span><div id='products'></div>")
+    get("page").innerHTML = html.join("")
+    load_products()
+    load_users()
+}
+
+const choose_user = () => {
+    const id = parseInt(get("user").value)
+    load_user(id)
+    load_cart(id)
+}
+
+const load_users = () => {
+    qlquery("getAllUsers { id firstName lastName email }", (data) => {
+        console.log(data)
+    })
+}
+
+const load_products = () => {
+}
+
+const load_cart = (id) => {
+}
+
+const load_user = (id) => {
+}
+
+const qlquery = (query, vars, handler) => {
+    rest_get(
+        "http://localhost:4000/graphql",
+        "GET",
+        {
+            "query": query,
+            "vars": vars || {}
+        },
+        handler
+    )
+}
+
+const mqlquery = (query, vars, handler) => {
+    rest_get(
+        "http://localhost:4000/graphql",
+        "POST",
+        {
+            "mutation": query,
+            "vars": vars || {}
+        },
+        handler
+    )
+}
+
+const rest_get = (url, method, body, handler) => {
+    http_get(
+        url,
+        method,
+        "application/json",
+        JSON.stringify(body),
+        (data) => {
+            handler(JSON.parse(data))
+        }
+    )
+}
+
+const http_get = (url, method, mime, body, handler) => {
+    const xhr = new XMLHttpRequest()
+    xhr.open(method, url, true)
+    xhr.setRequestHeader("Content-Type", mime)
+    xhr.onreadystatechange = () => {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            handler(xhr.responseText)
+        }
+    }
+    console.log("Requesting", method, url, mime, body)
+    xhr.send(body)
+}
+
+
+
+
+    </script>
+</html>
+

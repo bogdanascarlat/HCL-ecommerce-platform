@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johnDoe@email.com",
+    "password": "$2b$10$jadOROi5OTRlarxdy6o/seiWSA3H1sqipvgYueSF5qafcFyN0okoW",
+    "image": "linkToImage",
+    "address": "Some address in the wrld no 3",
+    "phone": "0777 777 777",
+    "birthDate": "03-05-1999",
+    "wishList": [
+      1,
+      22,
+      43
+    ],
+    "cart": [
+      {
+        "productId": "1",
+        "quantity": 3
+      }
+    ],
+    "ratings": [],
+    "isActive": true,
+    "isAdmin": false
+  }
+]

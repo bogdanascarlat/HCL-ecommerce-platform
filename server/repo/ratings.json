@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "productId": 1,
+        "userId": 1,
+        "score": 5
+    },
+    {
+        "id": 2,
+        "productId": 1,
+        "userId": 2,
+        "score": 1
+    },
+    {
+        "id": 3,
+        "productId": 1,
+        "userId": 3,
+        "score": 5
+    },
+    {
+        "id": 4,
+        "productId": 2,
+        "userId": 1,
+        "score": 5
+    },
+    {
+        "id": 5,
+        "productId": 2,
+        "userId": 2,
+        "score": 4
+    },
+    {
+        "id": 6,
+        "productId": 3,
+        "userId": 3,
+        "score": 2
+    }
+]
+

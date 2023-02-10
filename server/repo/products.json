@@ -1,0 +1,1027 @@
+[
+  {
+    "id": 1,
+    "title": "Alienware - Aurora R13 Gaming Desktop",
+    "description": "Introducing Alienware Aurora R13 - our new gaming desktop with an evolved chassis, enhanced airflow and quieter acoustics. Enjoy the freedom of gaming, streaming and creating on a multi-threaded capacity desktop with the latest 12th Gen Intel® Core™ processors and NVIDIA GeForce 30-series graphics.",
+    "price": 3199.99,
+    "stock": 0,
+    "brand": "Alienware",
+    "category": "Computers",
+    "discountPercentage": 18.61,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506915_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506915_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506915_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506915ld.jpg;maxHeight=640;maxWidth=550;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506915cv4d.jpg",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506915_bd.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Apple - 27 iMac Pro",
+    "description": "iMac Pro features powerful processors and graphics, along with advanced memory and storage in an all-in-one design—so the most demanding professionals can turn their biggest ideas into their greatest work.",
+    "price": 4999.99,
+    "stock": 48,
+    "brand": "Apple",
+    "category": "Computers",
+    "discountPercentage": 9.79,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6200/6200724_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6200/6200724_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6200/6200724cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6200/6200724cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6200/6200724cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Acer - Predator Orion 5000",
+    "description": "Show off that new powerful gaming PC and illuminate your room in the multi-hued ambience of ARGB as fiery FrostBlade fans hum in an endless high-speed harmony-giving constant cool to the Herculean hardware hidden away within. Powered by a 12th Gen Intel® Core™ processor and high-performance NVIDIA® GeForce RTX 3080 graphics, the Predator Orion 5000 delivers an awe-inspiring gaming experience that's second to none! Get ready for an unforgettable gaming experience that ignites the senses and takes your passion to new heights!",
+    "price": 1849.99,
+    "stock": 32,
+    "brand": "Acer",
+    "category": "Computers",
+    "discountPercentage": 9.06,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500695_rd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500695_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500695ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500695_bd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500695cv2d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "HP - Pavilion Desktop",
+    "description": "Real-life action demands serious performance and tested durability. The HP Pavilion Desktop PC brings the latest technology and reliability from a trusted brand that protects what matters to you most. Life is busy. Power through. Everything you do feels easier and faster than ever before with a high performance processor and integrated Bluetooth® technology. Brand you trust. Built to last. For 80 years, we've had your back. That’s why our PCs go through over 230 individual tests to ensure you’re getting a powerful, reliable PC that's going to last. Made for the modern family: Ditch the dull black box with a polished silver brushed finish that perfectly fits in any space. Designed with multiple ports located, including a USB-C®, on the front so you can quickly and easily connect your devices.",
+    "price": 721.99,
+    "stock": 71,
+    "brand": "HP",
+    "category": "Computers",
+    "discountPercentage": 6.56,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6477/6477687_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6477/6477687_sd.jpg;maxHeight=200;maxWidth=300",
+      " https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6477/6477687_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6477/6477687ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6477/6477687cv14d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Dell - Inspiron Desktop",
+    "description": "The new Dell Inspiron Desktop comes packed with responsive features in a modern design to empower you to stay connected. It is equipped with the latest 12th Generation Intel® Core™ i3-12100 processor delivering exceptional performance and designed for multi-tasking with 8GB of memory and 256GB solid state hard drive for storage. This desktop also includes Wi-Fi 6 and an ethernet port, so you can connect to the internet wirelessly or with a cable. The new Dell i3 desktop comes with a sleek, blue finish and multiple ports located on the front to quickly and easily connect your devices, including USB type-C.",
+    "price": 331.99,
+    "stock": 59,
+    "brand": "Dell",
+    "category": "Computers",
+    "discountPercentage": 17.78,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501280_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501280_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501280_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501280ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501280_bd.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "MacBook Pro 16 Laptop",
+    "description": "The new MacBook Pro delivers game-changing performance for pro users. Choose the powerful M1 Pro or the even more powerful M1 Max to supercharge pro-level workflows while getting amazing battery life.¹ And with an immersive 16-inch Liquid Retina XDR display and an array of pro ports, you can do more than ever with MacBook Pro.²",
+    "price": 2099,
+    "stock": 95,
+    "brand": "Apple",
+    "category": "Laptops",
+    "discountPercentage": 24.49,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6450/6450858_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6450/6450858_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6450/6450858cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6450/6450858cv3d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6450/6450858cv7d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Razer - Blade 14",
+    "description": "For those who want all or nothing, go all out with the Razer Blade 14—the ultimate AMD gaming laptop in every way imaginable. From its ultra-powerful CPU to its graphics, its fast display to its portability, we’ve maxed out all aspects of the Razer Blade 14 to bring you an uncompromising experience that can’t be beat.",
+    "price": 2799.99,
+    "stock": 90,
+    "brand": "Razer",
+    "category": "Laptops",
+    "discountPercentage": 21.52,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6499/6499098_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6499/6499098_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6499/6499098_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6499/6499098ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6499/6499098cv1d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Lenovo - Flex 3",
+    "description": "Packs what makes Chromebook so amazing into one svelte 360-degree convertible. Versatile and portable, the IdeaPad™ Flex 3 Chromebook measures just 19.6 mm thick and weighs 1.2 kg with a full keyboard and spacious trackpad, and can be viewed in tent, tablet, laptop or stand modes. Watch crisp visuals in high definition with its 10-point touchscreen on the 11.6 IPS display while being more productive with help from Google. Just say “Hey Google,” to manage tasks, enjoy your entertainment, get answers, or control smart home devices.",
+    "price": 91.99,
+    "stock": 28,
+    "brand": "Lenovo",
+    "category": "Laptops",
+    "discountPercentage": 3.43,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500337_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500337_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500337_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500337ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500337cv1d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "ASUS - ROG Zephyrus 16",
+    "description": "Dive headfirst into one of the best gaming laptop experiences on Windows 11. The ROG Zephyrus M16 packs a 14-core Intel® Core™ i9-12900H CPU and NVIDIA® GeForce RTX™ 3070 Ti GPU into a super thin gaming laptop. Enjoy a fast 165Hz refresh rate, 16GB of RAM, and 1TB of PCIe 4.0 SSD storage all wrapped in a light 4.41 lbs chassis. The future is thin and light.",
+    "price": 1600.99,
+    "stock": 29,
+    "brand": "Asus",
+    "category": "Laptops",
+    "discountPercentage": 2.37,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494637_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494637_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494637_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494637ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494637cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494637cv3d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Alienware - m17 R5",
+    "description": "Introducing the new Alienware m17 R5 - Alienware’s powerful 17-inch AMD-based laptop. Game, create, and stream content with powerful AMD Ryzen 6000 series processors and up to 64GB Dual Channel DDR5 4800MHz memory. Play with a cutting edge with exceptional power enabled by updated Alienware Cryo-tech cooling that dissipates heat to maintain system stability during the highest performance states.",
+    "price": 2005.99,
+    "stock": 8,
+    "brand": "Alienware",
+    "category": "Laptops",
+    "discountPercentage": 1,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510325_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510325_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510325_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510325ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510325cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510325cv3d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Samsung - Galaxy S22",
+    "description": "Galaxy S22 is redefining the epic standard – both for what a smartphone can do with video and for what you can communicate, create, and experience with it. In other words, if you’ve got something to say, Galaxy S22 makes it possible to say anything you want with video, at any time-even in the darkness of night.",
+    "price": 749.99,
+    "stock": 94,
+    "brand": "Samsung",
+    "category": "Smartphones",
+    "discountPercentage": 22.25,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494464_sd.jpg;maxHeight=240;maxWidth=350",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494464_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494464_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494464ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494464cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494464cv12d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Apple - iPhone 14 Pro Max",
+    "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with groundbreaking safety features.",
+    "price": 1099.99,
+    "stock": 59,
+    "brand": "Apple",
+    "category": "Smartphones",
+    "discountPercentage": 22.71,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487260_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487260_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487260ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487260cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487260cv2d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487260_bd.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Sony - Xperia 1 III",
+    "description": "Experience breathtaking speed in in your creative, entertainment or gaming from the World’s first 120Hz immersive 6.5” 4K HDR OLED display to the triple camera and four focal lengths which features Real-time autofocus even when shooting extended telephoto or up to 20fps continuous image capture.",
+    "price": 899.99,
+    "stock": 83,
+    "brand": "Sony",
+    "category": "Smartphones",
+    "discountPercentage": 17.21,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6470/6470455cv13d.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6470/6470455cv13d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6470/6470455_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6470/6470455ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6470/6470455_bd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6470/6470455cv1d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "OnePlus - Nord",
+    "description": "It’s 5G for all with the OnePlus Nord N200 5G, enabling blazing fast upload and download speeds. The large, clear 90Hz Full HD display puts all day immersive entertainment in the palm of your hands. Powered by a massive 5000mAh battery, you can rest assured that the Nord N200 5G can handle all your movies, TV shows, and games without breaking a sweat. Combined with a healthy pool of RAM and expandable storage, you’ll have all the resources necessary to run all your games and apps smoothly.",
+    "price": 149.99,
+    "stock": 27,
+    "brand": "OnePlus",
+    "category": "Smartphones",
+    "discountPercentage": 1.98,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468089_rd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468089_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468089ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468089cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468089cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468089cv13d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468089cv14d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Google - Pixel 7",
+    "description": "Meet Pixel 7. Powered by Google Tensor G2, it’s fast and secure, with amazing battery life and the advanced Pixel Camera. Take beautifully authentic, accurate photos with Real Tone and stunning video with Cinematic Blur. And with the certified Titan M2 security chip and a built-in VPN, Pixel helps protect your personal data",
+    "price": 599,
+    "stock": 36,
+    "brand": "Google",
+    "category": "Smartphones",
+    "discountPercentage": 10.71,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6519/6519950_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6519/6519950_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6519/6519950_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6519/6519950ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6519/6519950_bd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6519/6519950cv1d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Samsung - Galaxy Tab S6",
+    "description": "With the Samsung Galaxy Tab S6 Lite, you can leave your mark on whatever comes your way. The included S Pen lets you effortlessly create, edit, and navigate through your work. And its expansive display and sleek, lightweight build makes it perfect for entertainment on-the-go.",
+    "price": 269.99,
+    "stock": 4,
+    "brand": "Samsung",
+    "category": "Tablets",
+    "discountPercentage": 4.57,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506325_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506325_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506325cv11d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Samsung - Galaxy Tab S8 Ultra",
+    "description": "Live that ultra lifestyle on the ultimate tablet, featuring our largest screen to help you do more.",
+    "price": 1099.99,
+    "stock": 66,
+    "brand": "Samsung",
+    "category": "Tablets",
+    "discountPercentage": 20.19,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494234_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494234_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494234cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494234cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494234cv13d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494234cv14d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Apple - 12.9-Inch iPad Pro",
+    "description": "iPad Pro features the powerful Apple M1 chip for next-level performance and all-day battery life. An immersive 12.9-inch Liquid Retina XDR display for viewing and editing HDR photos and videos. And a front camera with Center Stage keeps you in frame automatically during video calls. iPad Pro has pro cameras and a LiDAR Scanner for stunning photos, videos, and immersive AR.",
+    "price": 1099.99,
+    "stock": 59,
+    "brand": "Apple",
+    "category": "Tablets",
+    "discountPercentage": 22.7,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264603_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264603_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264603cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264603cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264603cv14d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Apple - iPad mini",
+    "description": "The new iPad mini. Featuring an all-screen design with an 8.3-inch Liquid Retina display.¹ Powerful A15 Bionic chip with Neural Engine. A 12MP Ultra Wide front camera with Center Stage.",
+    "price": 399.99,
+    "stock": 43,
+    "brand": "Apple",
+    "category": "Tablets",
+    "discountPercentage": 19.61,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901902_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901902_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901902cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901902cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901902cv14d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Lenovo - Tab M10",
+    "description": "Lenovo™ Tab M10 Plus is one impressive media tablet from the 2nd generation tab family. Its standout metal design gives you a premium look and feel with modern simplicity. Inside lies a 10.3 FHD screen and dual speakers for truly immersive entertainment. This is one tablet you will want to use and pass around the house.",
+    "price": 161.99,
+    "stock": 4,
+    "brand": "Lenovo",
+    "category": "Tablets",
+    "discountPercentage": 15.14,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6465/6465352_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6465/6465352_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6465/6465352ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6465/6465352_bd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6465/6465352cv1d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Samsung - AG900 Series Odyssey Neo G9",
+    "description": "An industry defining 49” 1000R curved screen, equipped with a cutting edge Quantum Matrix HDR2000 panel, 240hz refresh rate, G-Sync and FreeSync Premium Pro support, 1ms response rates, and fully customizable Odyssey Infinity Core lighting.",
+    "price": 2299.9,
+    "stock": 28,
+    "brand": "Samsung",
+    "category": "Monitors",
+    "discountPercentage": 14.75,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468857_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468857_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468857cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468857cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468857cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "GIGABYTE - G27FC",
+    "description": "GIGABYTE gaming monitors pack upscale performance into a streamlined package. The G27FC A provides an immersive experience through fluid gameplay with 1ms response time, 165Hz refresh rate, and AORUS utility software.",
+    "price": 249.99,
+    "stock": 79,
+    "brand": "Gigabyte",
+    "category": "Monitors",
+    "discountPercentage": 15.73,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6462/6462629_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6462/6462629_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6462/6462629cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6462/6462629cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6462/6462629cv12d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Alienware - AW2521HFL 25",
+    "description": "Enjoy a smooth gaming experience with this Dell Alienware gaming monitor. The 24.5-inch Full HD display delivers high-resolution images, while the 240Hz refresh rate and 1ms response time (GtG) ensures real-time display for eliminating image shatters and tearing. This Dell Alienware gaming monitor features DisplayPort, HDMI and USB ports for flexible connectivity, and the ergonomic design allows for tilting, swiveling and pivoting for more vibrant gaming.",
+    "price": 349.99,
+    "stock": 38,
+    "brand": "Alienware",
+    "category": "Monitors",
+    "discountPercentage": 6.3,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406940_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406940_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406940_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406940_bd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406940cv1d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "HP - 31.5 LED Monitor",
+    "description": "The New Definition of High Definition: This FHD display feels as good as it looks, packing 99% sRGB color gamut for color accuracy and AMD Freesync to keep your eyes up to speed with your imagination. Looks Good, Feels Good, Does Good: Increase viewing comfort with HP Eye Ease with Eyesafe certified technology that doesn't sacrifice color quality. Monitor designed with sustainability in mind with 85% postconsumer recycled plastics and packaged in recycled materials.",
+    "price": 309.99,
+    "stock": 23,
+    "brand": "HP",
+    "category": "Monitors",
+    "discountPercentage": 15.82,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6454/6454578_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6454/6454578_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6454/6454578_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6454/6454578ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6454/6454578_bd.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "ASUS - ProArt 32",
+    "description": "4 times the resolution of full HD 1080p with HDR for stunning details and image quality. IPS technology is optimized for the finest image quality with 178° wide-viewing-angle.",
+    "price": 699.99,
+    "stock": 24,
+    "brand": "Asus",
+    "category": "Monitors",
+    "discountPercentage": 12.09,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501312_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501312_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501312_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501312ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501312_bd.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Sony - 55 class X75K 4K HDR LED Google TV",
+    "description": "Step into the 4K HDR TV experience with a TV that has four times the resolution of Full HD. Sony’s 4K Processor X1 works behind the scenes to enhance color, contrast, and details in everything you watch.",
+    "price": 479.99,
+    "stock": 60,
+    "brand": "Sony",
+    "category": "TVs",
+    "discountPercentage": 17.02,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505137_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505137_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505137_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505137ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505137cv1d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Samsung - 75” Smart TV",
+    "description": "Dive into our most brilliantly intense 4K experience, powered by Quantum Matrix Technology. By using precision Mini LEDs to create a wide range of color and contrast, rich details are revealed. Marvel at all that emerges from your darkest and brightest scenes thanks to 14 bit processing for deep blacks and over a billion shades of color.",
+    "price": 2399.9,
+    "stock": 66,
+    "brand": "Samsung",
+    "category": "TVs",
+    "discountPercentage": 12.26,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500633_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500633_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500633cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500633cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500633cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Samsung - 85” Smart TV 8K",
+    "description": "Experience our best picture yet with ultra-premium Samsung Neo QLED 8K. Discover a world of vivid colors and details in the deep dark blacks and light bright whites, all from a vast grid of precision Mini LEDs.",
+    "price": 5999.99,
+    "stock": 41,
+    "brand": "Samsung",
+    "category": "TVs",
+    "discountPercentage": 24.61,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6503/6503037_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6503/6503037_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6503/6503037cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6503/6503037cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6503/6503037cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "LG - 65 Smart TV",
+    "description": "The lightning-fast refresh rate, gaming features and 4K resolution you want with the LG OLED picture quality you love. Self-lit OLED pixels bring to life infinite contrast, perfect black and over a billion colors that add depth and bring out the bold, brazen and beautiful. Experience a lifelike picture with more depth and rich colors thanks to our advanced α7 Gen5 AI Processor 4K that adjusts picture and sound qualities to give you a fabulous experience no matter what you’re watching.",
+    "price": 1499.9,
+    "stock": 73,
+    "brand": "LG",
+    "category": "TVs",
+    "discountPercentage": 8.26,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501896_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501896_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501896_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501896ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501896_bd.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "LG - 75 Smart TV",
+    "description": "LG’s latest in TV color technology and MiniLED backlighting for a fully loaded, versatile LG LED TV. Experience lifelike picture with more depth and rich colors thanks to the advanced α7 Gen5 AI Processor 4K that adjusts picture and sound qualities to give you a fabulous experience no matter what you’re watching.",
+    "price": 1699.99,
+    "stock": 97,
+    "brand": "LG",
+    "category": "TVs",
+    "discountPercentage": 17.14,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501904_sd.jpg;maxHeight=200;maxWidth=300",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501904_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501904_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501904ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501904_bd.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Soundbar with Dolby 5.1 HW-B650/ZA 3.1ch",
+    "description": "Dolby Atmos creates realistic 3D sound by projecting it from all around you, including from above, while DTS Virtual: X expands your listening experience without having to add extra speakers. Boost the bass with a touch of a button. The built-in center speaker delivers enhanced dialogue so you won't miss a word. Experience the intensity of action movies with the powerful bass coming from the included subwoofer. Enjoy optimized audio with enhanced voice clarity on all your favorite video content.",
+    "price": 209.9,
+    "stock": 28,
+    "brand": "Samsung",
+    "category": "Speakers",
+    "discountPercentage": 20.35,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505155_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505155_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5926/5926456cv13d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505155cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505155cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505155cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Core Series Dual 5 3-Way Floorstanding Speaker (Each) - Black",
+    "description": "Enjoy room-filling sound with this Sony Core Series SSCS3 floorstanding speaker, which features dual 5 woofers, a 3/4 super tweeter and a 1 tweeter to precisely reproduce instruments and vocals in robust detail.",
+    "price": 199.9,
+    "stock": 6,
+    "brand": "Sony",
+    "category": "Speakers",
+    "discountPercentage": 6.63,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5926/5926456_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5926/5926456_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5926/5926456_bd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5926/5926456cv12d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "XTREME3 Portable Bluetooth Speaker - Blue",
+    "description": "Unleash powerful sound everywhere. Poolside. Picnics. Just hanging out. Music makes the party. The JBL Xtreme 3 portable Bluetooth speaker effortlessly delivers massive JBL Original Pro Sound. With four drivers and two pumping JBL Bass Radiators, the powerful sound draws everybody in, and with PartyBoost, you can connect multiple JBL PartyBoost-enabled speakers to take things to the next level. A little rain might spoil your fun, but the waterproof and dustproof Xtreme 3 won’t mind at all, and the convenient carrying strap with built-in bottle opener makes it a breeze to move the party indoors. The JBL Xtreme 3 makes a big splash wherever you go.",
+    "price": 299.9,
+    "stock": 49,
+    "brand": "JBL",
+    "category": "Speakers",
+    "discountPercentage": 23.69,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6445/6445543_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6445/6445543_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6445/6445543_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6445/6445543cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6445/6445543cv12d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "SoundLink Micro Portable Bluetooth Speaker with Waterproof Design - White Smoke",
+    "description": "Whether you’re biking with your family, lounging by the beach, or hanging with friends — music makes the moment even better. That’s why the SoundLink Micro portable Bluetooth speaker was engineered to keep pace with your life and deliver unmatched sound for its size. This outdoor speaker is small but powerful. Thanks to proprietary Bose technology, the SoundLink Micro wireless speaker delivers huge sound and bass, even outdoors. Plus, it has a rugged exterior that resists drops, dents, and scratches, while the soft-touch finish makes it easy to hold in your hand. Attach this portable speaker to your backpack or cooler for on-the-go-tunes thanks to the included tear-resistant silicone straps. And it’s waterproof and dustproof, so you don’t have to worry about it getting accidentally wet or dirty. The rechargeable lithium-ion battery in the Bose SoundLink Micro portable waterproof speaker lets you enjoy up to 6 hours of music that’s deep, rich, and full of life so you can keep the dance party going. Got your hands full? The built-in microphone allows you to take phone calls through the speakerphone and access your phone’s Siri or Google Assistant. Get the most out of your wireless outdoor speaker with the Bose Connect app. Use the app to pair your smartphone or tablet and personalize your settings, unlock product features, keep your software up to date, and more.",
+    "price": 99.9,
+    "stock": 60,
+    "brand": "Bose",
+    "category": "Speakers",
+    "discountPercentage": 3.84,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6493/6493590_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6493/6493590_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6493/6493590cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6493/6493590_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6493/6493590ld.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "2.1-Channel Soundbar with Wireless Subwoofer and DTS Virtual:X - Black",
+    "description": "Add more sound where you need it. Give movie night a boost with sound that envelopes you. This sound bar plus subwoofer with 2.1 channels delivers great audio quality in a minimalist design. An ideal sound bar to match TVs 40” and up.",
+    "price": 149.9,
+    "stock": 31,
+    "brand": "LG",
+    "category": "Speakers",
+    "discountPercentage": 21.14,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479130_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479130_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479130_bd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479130_bd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479130_rd.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "QuietComfort 45 Wireless Noise Cancelling Over-the-Ear Headphones - Triple Black",
+    "description": "The minute you put on Bose QuietComfort 45 Wireless Noise Cancelling Headphones, you feel it — the iconic quiet that allows you to concentrate on your music or work on your passion projects. Plus, with these wireless headphones, you can experience the comfort and crystal-clear sound that can only come from Bose headphones. The soft, plush cushions of these Bose over ear wireless headphones seal you in. Then you flip the switch and whoosh — the world fades. The music starts. It’s love at first listen. The original Bluetooth headphones are back, now with a world-class combination of noise cancelling performance and premium comfort. Plus proprietary technology for deep, clear sound, and adjustable EQ so you can tune your music to your liking. Bose QuietComfort 45 over-ear headphones. An icon reborn.",
+    "price": 249.9,
+    "stock": 14,
+    "brand": "Bose",
+    "category": "Headphones",
+    "discountPercentage": 18.22,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471291_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471291_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471291_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471291ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471291cv11d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "WH-XB910N Wireless Noise Cancelling Over-The-Ear Headphones - Black",
+    "description": "Get even closer to your favorite music with the exceptional bass performance and noise cancellation of the WH-XB910N wireless headphones with EXTRA BASS™ and Dual Noise Canceling technologies.",
+    "price": 123,
+    "stock": 92,
+    "brand": "Sony",
+    "category": "Headphones",
+    "discountPercentage": 3.83,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479546_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479546_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479546_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479546ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479546cv11d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Galaxy Buds2 True Wireless Earbud Headphones - Lavender",
+    "description": "Galaxy Buds2 is here, bringing a way for everyone to enjoy epic sound. With audio quality this good, you'll feel the thump of every bassline and strum of every guitar right in your core —it's like dropping you into your favorite band’s concert. Need to focus? Active Noise Cancellation and Ambient Sound control let you hear only what you want to hear. Enjoy some peace and quiet while you work from home or take calls without missing what’s happening around you. Featuring our slimmest and lightest design yet, Galaxy Buds2 fit so well, you may forget you're wearing them —at least until the music starts.",
+    "price": 89.9,
+    "stock": 58,
+    "brand": "Samsung",
+    "category": "Headphones",
+    "discountPercentage": 19.97,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464284_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464284_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464284cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464284cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464284cv14d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Tune 230NC True Wireless Noise Cancelling In-Ear Earbuds - Black",
+    "description": "Tackle your day one song at a time with the JBL Tune 230NC TWS. True wireless earbuds give you 40 hours of exceptional JBL Pure Bass Sound, while the ergonomic and water-resistant design gives you all-day comfort in any weather. Connect calls simply and seamlessly with 4 mics that cancel out ambient noises offering perfect calls anywhere. And with Active Noise Cancelling and Smart Ambient technology, you choose whether you want to tune out the world or engage with your surroundings. The light stick-closed design ensures comfort all-day long. Best of all, the JBL Headphones App lets you personalize your entire listening experience. Stay connected to your world, your way.",
+    "price": 69.9,
+    "stock": 44,
+    "brand": "JBL",
+    "category": "Headphones",
+    "discountPercentage": 2.31,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6495/6495841cv12d.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6495/6495841cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6495/6495841_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6495/6495841_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6495/6495841cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "AirPods with Charging Case (2nd generation) - White",
+    "description": "The new AirPods combine intelligent design with breakthrough technology and crystal-clear sound. Powered by the new Apple H1 headphone chip, AirPods now feature hands-free access to Siri using just your voice. And up to 3 hours of talk time on a single charge.¹",
+    "price": 99.9,
+    "stock": 99,
+    "brand": "Apple",
+    "category": "Headphones",
+    "discountPercentage": 20.18,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6084/6084400_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6084/6084400_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6084/6084400cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6084/6084400cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6084/6084400cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Sense 2 Advanced Health Smartwatch - Graphite",
+    "description": "Meet Sense 2—the smartwatch designed to help you stress less, sleep better & live healthier. Get help identifying stress and get the tools to better manage it. Learn more about your sleep and how to improve your rest with detailed nighttime tracking and a unique Sleep Profile. Track key heart-health indicators so you can make more informed wellness decisions. Plus Sense 2 is packed with advanced activity tracking and smartwatch features and includes 6 months of Fitbit Premium Membership1. Fitbit is part of the Google family.",
+    "price": 199.9,
+    "stock": 65,
+    "brand": "Fitbit",
+    "category": "Smart watches",
+    "discountPercentage": 0.76,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514034_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514034_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514034_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514034cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514034cv2d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Forerunner 45 GPS Smartwatch 42mm Fiber-Reinforced Polymer - Black",
+    "description": "Find your way while training with this Garmin Forerunner 45 GPS black running watch. The battery lasts up to 13 hours when the GPS is active to accommodate long training sessions. This Garmin Forerunner 45 GPS black running watch has a large digital display that makes information easy to read at a glance.",
+    "price": 125.9,
+    "stock": 9,
+    "brand": "Garmin",
+    "category": "Smart watches",
+    "discountPercentage": 1.71,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6348/6348818_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6348/6348818_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6348/6348818_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6348/6348818ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6348/6348818_bd.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "Galaxy Watch4 Aluminum Smartwatch 44mm BT - Black",
+    "description": "Crush workouts and all your health goals with Samsung Galaxy Watch4. Be your best with the watch that knows you best.",
+    "price": 199.9,
+    "stock": 16,
+    "brand": "Samsung",
+    "category": "Smart watches",
+    "discountPercentage": 11.9,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464594_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464594_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464594cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464594cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464594cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Luxe Fitness & Wellness Tracker - Soft Gold",
+    "description": "Meet Fitbit Luxe--a fashion-forward fitness & wellness tracker with the motivation to give your body and mind the healthy boost it deserves. A chic bracelet design, on-wrist tracking adn in-app insights make Luxe the must-have wardrobe essential. The experience gets even better with a Fitbit Premium membership through personalized guidance and insights and exclusive in-app workouts, meditations and more. Show yourself some love and shine a light on your beauty, outside and in.1 Fitbit is part of the Google family.",
+    "price": 79.9,
+    "stock": 25,
+    "brand": "Fitbit",
+    "category": "Smart watches",
+    "discountPercentage": 1.11,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6460/6460611_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6460/6460611_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6460/6460611_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6460/6460611cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6460/6460611cv2d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Watch SE (1st Generation GPS) 44mm Silver Aluminum Case with Sport Band - Silver",
+    "description": "With powerful features to help keep you connected, active, healthy, and safe, Apple Watch SE is a lot of watch. For a lot less than you expected.",
+    "price": 209.9,
+    "stock": 7,
+    "brand": "Apple",
+    "category": "Smart watches",
+    "discountPercentage": 14.23,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5706/5706651_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5706/5706651_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5706/5706651cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5706/5706651cv13d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5706/5706651cv14d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "SPEEDSTER SWFT210 AMD Radeon RX 6650XT Core 8GB GDDR6 PCI Express 4.0 Gaming Graphics Card - Black",
+    "description": "Introducing AMD Radeon RX 6650XT graphics cards, featuring the breakthrough AMD RDNA 2 architecture. Engineered to deliver an incredible 1080p gaming experience, the AMD Radeon RX 6650 powers the next generation of gaming with vivid visuals and elevated experiences.",
+    "price": 334.9,
+    "stock": 73,
+    "brand": "XFX",
+    "category": "Computer components",
+    "discountPercentage": 24.72,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6513/6513906_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6513/6513906_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6513/6513906cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6513/6513906cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6513/6513906cv12d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "CX-M Series CX750M Semi-Modular Low-Noise ATX Power Supply - Black",
+    "description": "CORSAIR CX-M Series Low-Noise Power Supplies offer 80 PLUS Bronze efficiency and semi-modular cabling for reliable, low-noise operation. With Dual EPS12V cables and two/four PCIe 8-pin power connectors, CX-M PSUs have all the connections needed to power today’s most demanding PC upgrades. Japanese 105°C-rated capacitors deliver superb electrical performance and reliability for your system, backed by a five-year warranty. Robust DC-DC conversion ensures clean, consistent power for all your components and peripherals. With a compact 140mm size allowing for great flexibility in build configurations, CX-M Series power supplies deliver reliable power for nearly any build.",
+    "price": 64.9,
+    "stock": 36,
+    "brand": "Corsair",
+    "category": "Computer components",
+    "discountPercentage": 9.36,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6459/6459241_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6459/6459241_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6459/6459241cv14d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6459/6459241cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6459/6459241cv12d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Core i7-10700K 10th Generation 8-Core - 16-Thread - 3.8 GHz (5.1 GHz Turbo) Socket LGA1200 Unlocked Desktop Processor",
+    "description": "Build a powerful PC with this 10th Gen Intel Core i7 desktop processor. The eight cores and Hyper-Threading technology support advanced multitasking, while the base clock speeds of up to 3.1GHz deliver speedy responses. This unlocked Intel Core i7 desktop processor features Intel Turbo Boost Max to handle complex content creation tools.",
+    "price": 230,
+    "stock": 81,
+    "brand": "Intel",
+    "category": "Computer components",
+    "discountPercentage": 10.19,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6411/6411488_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6411/6411488_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6411/6411488cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6411/6411488cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6411/6411488cv12d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Performance 8GB DDR4 DRAM 3200MHz CL22 SODIMM Notebook/Laptop Memory - Black",
+    "description": "Want to work with the latest memory-intensive applications like graphic design and video-editing tools? Like to keep lots of browser windows open for work, school, or play? PC having trouble keeping up? A DDR4 3200MHz memory upgrade from PNY gives the speed needed to get the most out of a current Windows notebook PC. PNY’s Performance line of DDR4 RAM modules is purpose-built for users who want rock-solid reliability and great value. For more than 30 years, PNY has been rigorously sourcing, testing, and manufacturing memory upgrades for thousands of the most popular PC platforms. Do it better and faster with a DDR4 3200MHz upgrade from PNY.",
+    "price": 27.9,
+    "stock": 95,
+    "brand": "Pny",
+    "category": "Computer components",
+    "discountPercentage": 7.53,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6511/6511519_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6511/6511519_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6511/6511519cv1d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "Core i9-11900K 11th Generation - 8 Core - 16 Thread - 3.5 to 5.3 GHz - LGA1200 - Unlocked Desktop Processor",
+    "description": "11th Gen Intel® Core™ i9-11900K unlocked desktop processor. Featuring Intel® Turbo Boost Max Technology 3.0 and PCIe Gen 4.0 support, unlocked 11th Gen Intel® Core™ desktop processors are optimized for enthusiast gamers and serious creators and help deliver high performance overclocking for an added boost. Thermal solution NOT included in the box. Compatible with 500 series & select 400 series chipset based motherboards. Refer to motherboard vendor for compatiblity details. 125W.",
+    "price": 539.9,
+    "stock": 14,
+    "brand": "Intel",
+    "category": "Computer components",
+    "discountPercentage": 6.2,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6452/6452222_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6452/6452222_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6452/6452222cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6452/6452222cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6452/6452222cv12d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "PRO X SUPERLIGHT Lightweight Wireless Optical Gaming Mouse with HERO 25K Sensor - Red",
+    "description": "Introducing PRO X SUPERLIGHT—one of our lightest, fastest PRO mouse ever. Powered by LIGHTSPEED, it’s here to help you remove all obstacles, so you can focus on nothing but winning. Get insanely precise, fast, and consistent control with HERO Sensor. Take first faster with zero-additive PTFE feet that deliver a dramatically smoother glide. Developed in collaboration with a large group of the world’s best esports pros, PRO X SUPERLIGHT features hyper-minimal design, but is packed with our latest technologies and advancements. PRO X SUPERLIGHT is available in black and white.",
+    "price": 109.9,
+    "stock": 76,
+    "brand": "Logitech",
+    "category": "Computer peripherals",
+    "discountPercentage": 22.17,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6515/6515585_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6515/6515585_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6515/6515585cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6515/6515585cv13d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6515/6515585cv14d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "G502 HERO Wired Optical Gaming Mouse with RGB Lighting - Black",
+    "description": "Step up your game with this Logitech HERO Core wired gaming mouse.Customize RGB lighting to match your style and environment or sync to other Logitech G products. G502 High Performance Gaming Mouse features Logitech HERO 25K optical sensor for maximum tracking accuracy and precision. No matter your gaming style, it’s easyto tweak G502 to match your requirements, with custom profiles for your games, adjustable sensitivity from 200 up to 25,600 DPI, and tunable weight system that allows for tuning and balancing of up to five additional weights for just the right balance andfeel.",
+    "price": 34.9,
+    "stock": 70,
+    "brand": "Logitech",
+    "category": "Computer peripherals",
+    "discountPercentage": 23.31,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6265/6265133_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6265/6265133_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6265/6265133cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6265/6265133cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6265/6265133cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "G502 Lightspeed Wireless Optical Gaming Mouse with RGB Lighting - Black",
+    "description": "Now you can game faster and more accurately, with G502 LIGHTSPEED featuring superfast 1 ms wireless connectivity. A next-gen HERO sensor delivers 25k DPI class-leading performance and energy efficiency—get up to 60 hours of uninterrupted gaming. 11 programmable buttons help you optimize gameplay with custom keybinds and macros. Primary buttons feature metal spring tensioning for fast and crisp actuation. Six adjustable weights let you find the right mouse feel. LIGHTSYNC RGB gives you ~16.8 million colors to create an exciting and immersive gaming environment. The hyper-fast scroll wheel lets you speed through long menus and documents.",
+    "price": 89.9,
+    "stock": 69,
+    "brand": "Logitech",
+    "category": "Computer peripherals",
+    "discountPercentage": 4.4,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6333/6333841_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6333/6333841_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6333/6333841cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6333/6333841cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6333/6333841cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "Huntsman Elite Full Size Wired Opto-Mechanical Clicky Switch Gaming Keyboard with RGB Chroma Backlighting - Black",
+    "description": "Master your favorite PC games with this Razer Huntsman Elite opto-mechanical keyboard. Multimedia controls let you adjust or mute the volume while you play, and the Razer Purple mechanical switches deliver fast, responsive operation as you enter in-game commands. The USB interface allows for effortless connection to your gaming PC. Featuring an integrated numeric keypad, this Razer Huntsman Elite opto-mechanical keyboard provides convenient functionality for everyday typing and data entry.",
+    "price": 94.9,
+    "stock": 43,
+    "brand": "Razer",
+    "category": "Computer peripherals",
+    "discountPercentage": 16.57,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6262/6262402_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6262/6262402_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6262/6262402_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6262/6262402ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6262/6262402cv11d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "G915 LIGHTSPEED TKL Wireless Mechanical GL Tactile Switch Gaming Keyboard with RGB Backlighting - Black",
+    "description": "G915 TKL is a new class of wireless mechanical gaming keyboard with three selections of low-profile GL switches and pro-grade 1 ms LIGHTSPEED wireless. Capable of delivering up to 40 hours of non-stop gaming on a full charge. Fully customizable per-key and advanced LIGHTSYNC RGB technology to synchronize lighting with any content.",
+    "price": 159.9,
+    "stock": 74,
+    "brand": "Razer",
+    "category": "Computer peripherals",
+    "discountPercentage": 2.54,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6414/6414194_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6414/6414194_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6414/6414194cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6414/6414194cv12d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6414/6414194cv13d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "Thin Fit Hard Shell Case for Apple iPhone 13 Pro - Black",
+    "description": "A timeless classic that leaves the new iPhone flawlessly fitted and guarded from everyday bumps. Made to stay lightweight and slim, the Thin Fit has been a long-time favorite for its got-nothing-on type of look. Spigen model 55777BBR",
+    "price": 17.9,
+    "stock": 24,
+    "brand": "Spigen",
+    "category": "Accessories",
+    "discountPercentage": 17.51,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471806cv3d.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471806cv3d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471806cv11d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471806cv15d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471806cv14d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Thin Fit Case for Apple iPhone 14 Pro - Black",
+    "description": "A timeless classic that leaves the iPhone 14 Pro flawlessly fitted and guarded from everyday bumps. Made to stay lightweight and slim, the Spigen Thin Fit has been a long-time favorite for its got-nothing-on type of look.",
+    "price": 19.9,
+    "stock": 29,
+    "brand": "Spigen",
+    "category": "Accessories",
+    "discountPercentage": 20.01,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514014_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514014_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514014_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514014ld.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Core Armor MagFit Case for Apple iPhone 14 Pro Max - Black",
+    "description": "Be one of the first to suit up your new iPhone 14 Pro Max with MagFit; Spigen’s first case designed for MagSafe. With a conductive magnetic ring inside, this sleek one piece case has got all your charging and protective needs covered, literally. Armor up and flaunt the hatch.",
+    "price": 34.9,
+    "stock": 23,
+    "brand": "Spigen",
+    "category": "Accessories",
+    "discountPercentage": 13.46,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514025_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514025_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514025_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514025ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514025cv1d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "Easystore 1TB External USB 3.0 Portable Hard Drive - Black",
+    "description": "Carry and preserve important files wherever you go with this Western Digital easystore portable hard drive. The 1TB capacity offers ample storage space for your files, while the USB interface ensures compatibility with a wide range of devices. This Western Digital easystore external hard drive has a compact profile for increased portability, and the included WD Discovery software makes backing up data easy.",
+    "price": 49.9,
+    "stock": 74,
+    "brand": "Western Digital",
+    "category": "Accessories",
+    "discountPercentage": 7.71,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406515_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406515_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406515ld.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406515_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406515cv11d.jpg;maxHeight=640;maxWidth=550"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "easystore 1TB External USB 3.0 Portable SSD",
+    "description": "Back up your music files or photos with this WD easystore portable SSD. The 1TB capacity offers ample storage room, while read speeds of up to 400 MB/sec. and a USB 3.0 cable let you quickly move large folders. This WD easystore portable SSD features plug-and-play functionality for fast, effortless setup.",
+    "price": 74.9,
+    "stock": 89,
+    "brand": "Western Digital",
+    "category": "Accessories",
+    "discountPercentage": 24.73,
+    "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6463/6463872_sd.jpg;maxHeight=400;maxWidth=600",
+    "images": [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6463/6463872_sd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6463/6463872cv1d.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6463/6463872_rd.jpg;maxHeight=640;maxWidth=550",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6463/6463872ld.jpg;maxHeight=640;maxWidth=550"
+    ]
+  }
+]

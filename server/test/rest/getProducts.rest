@@ -1,0 +1,38 @@
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSm9obiIsImxhc3ROYW1lIjoiRG9lIiwiZW1haWwiOiJqb2huRG9lQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGphZE9ST2k1T1RSbGFyeGR5Nm8vc2VpV1NBM0gxc3FpcHZnWXVlU0Y1cWFmY0Z5TjBva29XIiwiaW1hZ2UiOiJsaW5rVG9JbWFnZSIsImFkZHJlc3MiOiJTb21lIGFkZHJlc3MgaW4gdGhlIHdybGQgbm8gMyIsInBob25lIjoiMDc3NyA3NzcgNzc3IiwiYmlydGhEYXRlIjoiMDMtMDUtMTk5OSIsIndpc2hsaXN0IjpbMSwyMiw0M10sImNhcnQiOlt7InByb2R1Y3RJZCI6IjEiLCJxdWFudGl0eSI6M31dLCJyYXRpbmdzIjpbXSwiaXNBY3RpdmUiOnRydWUsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NjgwODE2OTAsImV4cCI6MTY2ODA4Mjg5MH0.zHnB5XWQZMLxfri4qA8exorG-V2K3HbZnir-9_D_7xQ
+
+query GetAllProducts($filter: Filter) {
+  getAllProducts(filter: $filter) {
+    id
+    title
+    description
+    price
+    stock
+    brand
+    category
+    discountPercentage
+    rating
+    thumbnail
+    images
+  }
+}
+
+{
+  "filter": {
+    "byCategory": "Tablets"
+  }
+}
+
+###
+
+# {
+#   "filter": {
+#      "inStock": true,
+#      "byBrand": "Apple",
+#     "byCategory": "Tablets",
+#      "priceRange": [200, 700]
+#   }
+# }
+###

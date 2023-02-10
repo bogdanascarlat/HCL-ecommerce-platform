@@ -1,0 +1,21 @@
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSm9obiIsImxhc3ROYW1lIjoiRG9lIiwiZW1haWwiOiJqb2huRG9lQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGphZE9ST2k1T1RSbGFyeGR5Nm8vc2VpV1NBM0gxc3FpcHZnWXVlU0Y1cWFmY0Z5TjBva29XIiwiaW1hZ2UiOiJsaW5rVG9JbWFnZSIsImFkZHJlc3MiOiJTb21lIGFkZHJlc3MgaW4gdGhlIHdybGQgbm8gMyIsInBob25lIjoiMDc3NyA3NzcgNzc3IiwiYmlydGhEYXRlIjoiMDMtMDUtMTk5OSIsIndpc2hsaXN0IjpbMSwyMiw0M10sImNhcnQiOltdLCJyYXRpbmdzIjpbXSwiaXNBY3RpdmUiOnRydWUsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2Njc4MjY1NDIsImV4cCI6MTY2NzgyNjY2Mn0.hCBKzfsBuaBJRFVoFeshI7NNhrNjzPJuzeXWrkdcLrY
+Content-Type: application/json
+
+query ExampleQuery {
+  profile {
+    id
+    firstName
+    lastName
+    email
+    image
+    address
+    phone
+    birthDate
+    wishList
+    cart
+    isActive
+    isAdmin
+  }
+}
