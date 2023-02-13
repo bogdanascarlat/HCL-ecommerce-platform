@@ -1,9 +1,22 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { CATEGORIES_QUERY } from "../../graphql/query";
+import { GET_ITEMS } from "../../graphql/query";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { applyFilters } from "../../features/products/productSlice";
+
+//Create debounce helper function
+let clock;
+
+const debounce = (func) => {
+  if (clock) {
+    clearTimeout(clock);
+  }
+  clock = setTimeout(() => {
+    func();
+  }, 500);
+};
 
 const MenuItems = ({ classes }) => {
   const cart = useSelector((state) => state?.auth?.logedInUser?.cart);
@@ -11,7 +24,7 @@ const MenuItems = ({ classes }) => {
   return (
     <>
       <li className={classes + " d-flex"}>
-        <Link to="/cart" className="nav-link position-relative">
+        <Link to="/cart" className="nav-link position-relative pe-2">
           <svg
             className="pe-1 "
             xmlns="http://www.w3.org/2000/svg"
@@ -21,13 +34,19 @@ const MenuItems = ({ classes }) => {
             viewBox="0 0 16 16"
           >
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-            
           </svg>
-            {(cart && cart.length > 0) && <span style={{fontSize: ".65em"}} className="position-absolute top-0 mt-1 translate-middle badge rounded-pill bg-danger">
-            {cart.length}
-          </span>}
+          {cart && cart.length > 0 && (
+            <span
+              style={{ fontSize: ".65em" }}
+              className="position-absolute top-0 mt-1 translate-middle badge rounded-pill bg-danger"
+            >
+              {cart.length}
+            </span>
+          )}
         </Link>
-        <Link to="/cart" className="nav-link ms-1">Cart</Link>
+        <Link to="/cart" className="nav-link ms-1">
+          Cart
+        </Link>
       </li>
       <li className={classes}>
         <Link to="/wishlist" className="nav-link">
@@ -129,6 +148,8 @@ const OffCanvas = () => {
 };
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light py-4 d-flex justify-content-around align-items-center sticky-top">
@@ -142,12 +163,33 @@ const Navbar = () => {
           </Link>
         </div>
 
+        {/* Search bar starts*/}
         <div className="d-flex" tabIndex="-1">
           <input
             className="form-control ms-5 me-2"
             type="search"
             placeholder="Search"
+            onChange={(event) => {
+              debounce(() => {
+                dispatch(applyFilters({ byTitle: event.target.value || null }));
+              });
+            }}
           />
+
+          <button className="btn btn-light">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21.414,18.586c-0.287-0.287-1.942-1.942-2.801-2.801c-0.719,1.142-1.686,2.109-2.828,2.828 c0.859,0.859,2.514,2.514,2.801,2.801c0.781,0.781,2.047,0.781,2.828,0C22.195,20.633,22.195,19.367,21.414,18.586z"></path>
+              <circle cx="11" cy="11" r="9" opacity=".35"></circle>
+            </svg>
+          </button>
+          {/* Search bar ends*/}
 
           <ul className="navbar-nav collapse navbar-collapse">
             <li className="nav-item dropdown">
@@ -168,20 +210,6 @@ const Navbar = () => {
               </ul>
             </li>
           </ul>
-
-          <button className="btn btn-light">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M21.414,18.586c-0.287-0.287-1.942-1.942-2.801-2.801c-0.719,1.142-1.686,2.109-2.828,2.828 c0.859,0.859,2.514,2.514,2.801,2.801c0.781,0.781,2.047,0.781,2.828,0C22.195,20.633,22.195,19.367,21.414,18.586z"></path>
-              <circle cx="11" cy="11" r="9" opacity=".35"></circle>
-            </svg>
-          </button>
         </div>
 
         <div>
