@@ -40,6 +40,9 @@ export const typeDefs = /* GraphQL */ `
     byBrand: String
     byCategory: String
     byTitle: String
+    byCategoryKeyword: String
+    byDescriptionKeyword: String
+    byKeyword: String
     priceRange: [Float]
   }
 

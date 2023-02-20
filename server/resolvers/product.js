@@ -14,8 +14,17 @@ export const getAllProducts = (filter, authHeader) => {
     return products;
   }
 
-  const { inStock, byBrand, hasDiscount, byCategory, priceRange, byTitle } =
-    filter;
+  const {
+    inStock,
+    byBrand,
+    hasDiscount,
+    byCategory,
+    priceRange,
+    byTitle,
+    byCategoryKeyword,
+    byKeyword,
+    byDescriptionKeyword,
+  } = filter;
 
   if (inStock) {
     products = products.filter((product) => product.stock > 0);
@@ -39,6 +48,26 @@ export const getAllProducts = (filter, authHeader) => {
   if (byTitle) {
     products = products.filter((product) =>
       product.title.toLowerCase().includes(byTitle.toLowerCase())
+    );
+  }
+
+  if (byCategoryKeyword) {
+    products = products.filter((product) =>
+      product.category.toLowerCase().includes(byCategoryKeyword.toLowerCase())
+    );
+  }
+
+  if (byDescriptionKeyword) {
+    products = products.filter((product) =>
+      product.description
+        .toLowerCase()
+        .includes(byDescriptionKeyword.toLowerCase())
+    );
+  }
+
+  if (byKeyword) {
+    products = products.filter((product) =>
+      product.keywords.toLowerCase().includes(byKeyword.toLowerCase())
     );
   }
 

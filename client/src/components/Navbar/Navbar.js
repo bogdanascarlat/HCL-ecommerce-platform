@@ -171,7 +171,17 @@ const Navbar = () => {
             placeholder="Search"
             onChange={(event) => {
               debounce(() => {
-                dispatch(applyFilters({ byTitle: event.target.value || null }));
+                dispatch(
+                  applyFilters(
+                    { byTitle: event.target.value || null } && {
+                        byCategoryKeyword: event.target.value || null,
+                      } && {
+                        byDescriptionKeyword: event.target.value || null,
+                      } && {
+                        byKeyword: event.target.value || null,
+                      }
+                  )
+                );
               });
             }}
           />

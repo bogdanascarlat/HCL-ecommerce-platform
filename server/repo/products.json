@@ -8,6 +8,7 @@
     "brand": "Alienware",
     "category": "Computers",
     "discountPercentage": 18.61,
+    "keywords": "computers",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506915_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506915_sd.jpg;maxHeight=640;maxWidth=550",
@@ -26,6 +27,7 @@
     "brand": "Apple",
     "category": "Computers",
     "discountPercentage": 9.79,
+    "keywords": "computers",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6200/6200724_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6200/6200724_sd.jpg;maxHeight=640;maxWidth=550",
@@ -43,6 +45,7 @@
     "brand": "Acer",
     "category": "Computers",
     "discountPercentage": 9.06,
+    "keywords": "computers",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500695_rd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500695_rd.jpg;maxHeight=640;maxWidth=550",
@@ -60,6 +63,7 @@
     "brand": "HP",
     "category": "Computers",
     "discountPercentage": 6.56,
+    "keywords": "computers",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6477/6477687_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6477/6477687_sd.jpg;maxHeight=200;maxWidth=300",
@@ -77,6 +81,7 @@
     "brand": "Dell",
     "category": "Computers",
     "discountPercentage": 17.78,
+    "keywords": "computers",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501280_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501280_sd.jpg;maxHeight=640;maxWidth=550",
@@ -93,6 +98,7 @@
     "stock": 95,
     "brand": "Apple",
     "category": "Laptops",
+    "keywords": "laptops",
     "discountPercentage": 24.49,
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6450/6450858_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
@@ -111,6 +117,7 @@
     "brand": "Razer",
     "category": "Laptops",
     "discountPercentage": 21.52,
+    "keywords": "laptops",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6499/6499098_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6499/6499098_sd.jpg;maxHeight=640;maxWidth=550",
@@ -128,6 +135,7 @@
     "brand": "Lenovo",
     "category": "Laptops",
     "discountPercentage": 3.43,
+    "keywords": "laptops",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500337_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500337_sd.jpg;maxHeight=640;maxWidth=550",
@@ -145,6 +153,7 @@
     "brand": "Asus",
     "category": "Laptops",
     "discountPercentage": 2.37,
+    "keywords": "laptops",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494637_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494637_sd.jpg;maxHeight=640;maxWidth=550",
@@ -163,6 +172,7 @@
     "brand": "Alienware",
     "category": "Laptops",
     "discountPercentage": 1,
+    "keywords": "laptops",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510325_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510325_sd.jpg;maxHeight=640;maxWidth=550",
@@ -181,6 +191,7 @@
     "brand": "Samsung",
     "category": "Smartphones",
     "discountPercentage": 22.25,
+    "keywords": "mobiles",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494464_sd.jpg;maxHeight=240;maxWidth=350",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494464_sd.jpg;maxHeight=640;maxWidth=550",
@@ -199,6 +210,7 @@
     "brand": "Apple",
     "category": "Smartphones",
     "discountPercentage": 22.71,
+    "keywords": "mobiles",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487260_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487260_sd.jpg;maxHeight=640;maxWidth=550",
@@ -217,6 +229,7 @@
     "brand": "Sony",
     "category": "Smartphones",
     "discountPercentage": 17.21,
+    "keywords": "mobiles",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6470/6470455cv13d.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6470/6470455cv13d.jpg;maxHeight=640;maxWidth=550",
@@ -235,6 +248,7 @@
     "brand": "OnePlus",
     "category": "Smartphones",
     "discountPercentage": 1.98,
+    "keywords": "mobiles",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468089_rd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468089_rd.jpg;maxHeight=640;maxWidth=550",
@@ -254,6 +268,7 @@
     "brand": "Google",
     "category": "Smartphones",
     "discountPercentage": 10.71,
+    "keywords": "mobiles",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6519/6519950_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6519/6519950_sd.jpg;maxHeight=640;maxWidth=550",
@@ -272,6 +287,7 @@
     "brand": "Samsung",
     "category": "Tablets",
     "discountPercentage": 4.57,
+    "keywords": "tablets",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506325_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506325_sd.jpg;maxHeight=640;maxWidth=550",
@@ -287,6 +303,7 @@
     "brand": "Samsung",
     "category": "Tablets",
     "discountPercentage": 20.19,
+    "keywords": "tablets",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494234_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494234_sd.jpg;maxHeight=640;maxWidth=550",
@@ -305,6 +322,7 @@
     "brand": "Apple",
     "category": "Tablets",
     "discountPercentage": 22.7,
+    "keywords": "tablets",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264603_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264603_sd.jpg;maxHeight=640;maxWidth=550",
@@ -322,6 +340,7 @@
     "brand": "Apple",
     "category": "Tablets",
     "discountPercentage": 19.61,
+    "keywords": "tablets",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901902_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901902_sd.jpg;maxHeight=640;maxWidth=550",
@@ -339,6 +358,7 @@
     "brand": "Lenovo",
     "category": "Tablets",
     "discountPercentage": 15.14,
+    "keywords": "tablets",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6465/6465352_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6465/6465352_sd.jpg;maxHeight=640;maxWidth=550",
@@ -356,6 +376,7 @@
     "brand": "Samsung",
     "category": "Monitors",
     "discountPercentage": 14.75,
+    "keywords": "monitor, monitors",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468857_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6468/6468857_sd.jpg;maxHeight=640;maxWidth=550",
@@ -373,6 +394,7 @@
     "brand": "Gigabyte",
     "category": "Monitors",
     "discountPercentage": 15.73,
+    "keywords": "monitor, monitors",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6462/6462629_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6462/6462629_sd.jpg;maxHeight=640;maxWidth=550",
@@ -390,6 +412,7 @@
     "brand": "Alienware",
     "category": "Monitors",
     "discountPercentage": 6.3,
+    "keywords": "monitor, monitors",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406940_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406940_sd.jpg;maxHeight=640;maxWidth=550",
@@ -406,6 +429,7 @@
     "stock": 23,
     "brand": "HP",
     "category": "Monitors",
+    "keywords": "monitor, monitors",
     "discountPercentage": 15.82,
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6454/6454578_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
@@ -424,6 +448,7 @@
     "brand": "Asus",
     "category": "Monitors",
     "discountPercentage": 12.09,
+    "keywords": "monitor, monitors",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501312_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501312_sd.jpg;maxHeight=640;maxWidth=550",
@@ -441,6 +466,7 @@
     "brand": "Sony",
     "category": "TVs",
     "discountPercentage": 17.02,
+    "keywords": "tv",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505137_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505137_sd.jpg;maxHeight=640;maxWidth=550",
@@ -458,6 +484,7 @@
     "brand": "Samsung",
     "category": "TVs",
     "discountPercentage": 12.26,
+    "keywords": "tv",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500633_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500633_sd.jpg;maxHeight=640;maxWidth=550",
@@ -475,6 +502,7 @@
     "brand": "Samsung",
     "category": "TVs",
     "discountPercentage": 24.61,
+    "keywords": "tv",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6503/6503037_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6503/6503037_sd.jpg;maxHeight=640;maxWidth=550",
@@ -492,6 +520,7 @@
     "brand": "LG",
     "category": "TVs",
     "discountPercentage": 8.26,
+    "keywords": "tv",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501896_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501896_sd.jpg;maxHeight=640;maxWidth=550",
@@ -509,6 +538,7 @@
     "brand": "LG",
     "category": "TVs",
     "discountPercentage": 17.14,
+    "keywords": "tv",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501904_sd.jpg;maxHeight=200;maxWidth=300",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501904_sd.jpg;maxHeight=640;maxWidth=550",
@@ -526,6 +556,7 @@
     "brand": "Samsung",
     "category": "Speakers",
     "discountPercentage": 20.35,
+    "keywords": "speaker, speakers",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505155_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6505/6505155_sd.jpg;maxHeight=640;maxWidth=550",
@@ -544,6 +575,7 @@
     "brand": "Sony",
     "category": "Speakers",
     "discountPercentage": 6.63,
+    "keywords": "speaker, speakers",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5926/5926456_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5926/5926456_sd.jpg;maxHeight=640;maxWidth=550",
@@ -560,6 +592,7 @@
     "brand": "JBL",
     "category": "Speakers",
     "discountPercentage": 23.69,
+    "keywords": "speaker, speakers",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6445/6445543_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6445/6445543_sd.jpg;maxHeight=640;maxWidth=550",
@@ -577,6 +610,7 @@
     "brand": "Bose",
     "category": "Speakers",
     "discountPercentage": 3.84,
+    "keywords": "speaker, speakers",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6493/6493590_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6493/6493590_sd.jpg;maxHeight=640;maxWidth=550",
@@ -593,6 +627,7 @@
     "stock": 31,
     "brand": "LG",
     "category": "Speakers",
+    "keywords": "speaker, speakers",
     "discountPercentage": 21.14,
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479130_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
@@ -611,6 +646,7 @@
     "brand": "Bose",
     "category": "Headphones",
     "discountPercentage": 18.22,
+    "keywords": "headphones",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471291_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471291_sd.jpg;maxHeight=640;maxWidth=550",
@@ -628,6 +664,7 @@
     "brand": "Sony",
     "category": "Headphones",
     "discountPercentage": 3.83,
+    "keywords": "headphones",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479546_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6479/6479546_sd.jpg;maxHeight=640;maxWidth=550",
@@ -645,6 +682,7 @@
     "brand": "Samsung",
     "category": "Headphones",
     "discountPercentage": 19.97,
+    "keywords": "headphones",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464284_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464284_sd.jpg;maxHeight=640;maxWidth=550",
@@ -662,6 +700,7 @@
     "brand": "JBL",
     "category": "Headphones",
     "discountPercentage": 2.31,
+    "keywords": "headphones",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6495/6495841cv12d.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6495/6495841cv12d.jpg;maxHeight=640;maxWidth=550",
@@ -679,6 +718,7 @@
     "brand": "Apple",
     "category": "Headphones",
     "discountPercentage": 20.18,
+    "keywords": "headphones",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6084/6084400_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6084/6084400_sd.jpg;maxHeight=640;maxWidth=550",
@@ -696,6 +736,7 @@
     "brand": "Fitbit",
     "category": "Smart watches",
     "discountPercentage": 0.76,
+    "keywords": "smartwatches, watches",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514034_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514034_sd.jpg;maxHeight=640;maxWidth=550",
@@ -713,6 +754,7 @@
     "brand": "Garmin",
     "category": "Smart watches",
     "discountPercentage": 1.71,
+    "keywords": "smartwatches, watches",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6348/6348818_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6348/6348818_sd.jpg;maxHeight=640;maxWidth=550",
@@ -730,6 +772,7 @@
     "brand": "Samsung",
     "category": "Smart watches",
     "discountPercentage": 11.9,
+    "keywords": "smartwatches, watches",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464594_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464594_sd.jpg;maxHeight=640;maxWidth=550",
@@ -747,6 +790,7 @@
     "brand": "Fitbit",
     "category": "Smart watches",
     "discountPercentage": 1.11,
+    "keywords": "smartwatches, watches",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6460/6460611_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6460/6460611_sd.jpg;maxHeight=640;maxWidth=550",
@@ -764,6 +808,7 @@
     "brand": "Apple",
     "category": "Smart watches",
     "discountPercentage": 14.23,
+    "keywords": "smartwatches, watches",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5706/5706651_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5706/5706651_sd.jpg;maxHeight=640;maxWidth=550",
@@ -781,6 +826,7 @@
     "brand": "XFX",
     "category": "Computer components",
     "discountPercentage": 24.72,
+    "keywords": "computer, components",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6513/6513906_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6513/6513906_sd.jpg;maxHeight=640;maxWidth=550",
@@ -798,6 +844,7 @@
     "brand": "Corsair",
     "category": "Computer components",
     "discountPercentage": 9.36,
+    "keywords": "computer, components",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6459/6459241_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6459/6459241_sd.jpg;maxHeight=640;maxWidth=550",
@@ -815,6 +862,7 @@
     "brand": "Intel",
     "category": "Computer components",
     "discountPercentage": 10.19,
+    "keywords": "computer, components",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6411/6411488_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6411/6411488_sd.jpg;maxHeight=640;maxWidth=550",
@@ -832,6 +880,7 @@
     "brand": "Pny",
     "category": "Computer components",
     "discountPercentage": 7.53,
+    "keywords": "computer, components",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6511/6511519_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6511/6511519_sd.jpg;maxHeight=640;maxWidth=550",
@@ -847,6 +896,7 @@
     "brand": "Intel",
     "category": "Computer components",
     "discountPercentage": 6.2,
+    "keywords": "computer, components",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6452/6452222_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6452/6452222_sd.jpg;maxHeight=640;maxWidth=550",
@@ -864,6 +914,7 @@
     "brand": "Logitech",
     "category": "Computer peripherals",
     "discountPercentage": 22.17,
+    "keywords": "computer, peripherals",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6515/6515585_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6515/6515585_sd.jpg;maxHeight=640;maxWidth=550",
@@ -881,6 +932,7 @@
     "brand": "Logitech",
     "category": "Computer peripherals",
     "discountPercentage": 23.31,
+    "keywords": "computer, peripherals",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6265/6265133_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6265/6265133_sd.jpg;maxHeight=640;maxWidth=550",
@@ -898,6 +950,7 @@
     "brand": "Logitech",
     "category": "Computer peripherals",
     "discountPercentage": 4.4,
+    "keywords": "computer, peripherals",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6333/6333841_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6333/6333841_sd.jpg;maxHeight=640;maxWidth=550",
@@ -915,6 +968,7 @@
     "brand": "Razer",
     "category": "Computer peripherals",
     "discountPercentage": 16.57,
+    "keywords": "computer, peripherals",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6262/6262402_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6262/6262402_sd.jpg;maxHeight=640;maxWidth=550",
@@ -932,6 +986,7 @@
     "brand": "Razer",
     "category": "Computer peripherals",
     "discountPercentage": 2.54,
+    "keywords": "computer, peripherals",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6414/6414194_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6414/6414194_sd.jpg;maxHeight=640;maxWidth=550",
@@ -949,6 +1004,7 @@
     "brand": "Spigen",
     "category": "Accessories",
     "discountPercentage": 17.51,
+    "keywords": "accessory, accessories, mobile accessories, shell",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471806cv3d.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6471/6471806cv3d.jpg;maxHeight=640;maxWidth=550",
@@ -966,6 +1022,7 @@
     "brand": "Spigen",
     "category": "Accessories",
     "discountPercentage": 20.01,
+    "keywords": "accessory, accessories, mobile accessories, case",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514014_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514014_sd.jpg;maxHeight=640;maxWidth=550",
@@ -982,6 +1039,7 @@
     "brand": "Spigen",
     "category": "Accessories",
     "discountPercentage": 13.46,
+    "keywords": "accessory, accessories, mobile accessories, case",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514025_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6514/6514025_sd.jpg;maxHeight=640;maxWidth=550",
@@ -999,6 +1057,7 @@
     "brand": "Western Digital",
     "category": "Accessories",
     "discountPercentage": 7.71,
+    "keywords": "accessory, accessories, mobile accessories, hard drive",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406515_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6406/6406515_sd.jpg;maxHeight=640;maxWidth=550",
@@ -1016,6 +1075,7 @@
     "brand": "Western Digital",
     "category": "Accessories",
     "discountPercentage": 24.73,
+    "keywords": "accessory, accessories, mobile accessories, ssd",
     "thumbnail": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6463/6463872_sd.jpg;maxHeight=400;maxWidth=600",
     "images": [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6463/6463872_sd.jpg;maxHeight=640;maxWidth=550",
