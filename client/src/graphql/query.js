@@ -28,6 +28,12 @@ export const CATEGORIES_QUERY = gql`
   }
 `;
 
+export const BRANDS_QUERY = gql`
+  query GetItemsByBrands {
+    getBrands
+  }
+`;
+
 export const GET_ITEMS = gql`
   query GetAllProducts($filter: Filter) {
     getAllProducts(filter: $filter) {

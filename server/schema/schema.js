@@ -3,6 +3,7 @@ import {
   getAllProducts,
   getProductWithId,
   getAllCategories,
+  getAllBrands,
   searchProductByKeyword,
 } from "../resolvers/product.js";
 import {
@@ -89,6 +90,8 @@ export const typeDefs = /* GraphQL */ `
     getAllUsers: [User]
     getItemsByCategory(category: String!): [Product]
     getCategories: [String!]
+    getItemsByBrands(brand: String!): [Product]
+    getBrands: [String!]
     searchByKeyword(keyword: String!): [Product]
     getProductsCart: [CartProductType]
     getProductsWishlist: [Product]
@@ -112,6 +115,9 @@ export const resolvers = {
     getItemsByCategory: (_, args, context) =>
       getAllProductsByCategory(args.category, context.authHeader),
     getCategories: (_, args, context) => getAllCategories(context.authHeader),
+    getItemsByBrands: (_, args, context) =>
+      getAllProductsByBrands(args.brand, context.authHeader),
+    getBrands: (_, args, context) => getAllBrands(context.authHeader),
     searchByKeyword: (_, args, context) =>
       searchProductByKeyword(args.keyword, context.authHeader),
     getProductsCart: (_, args, context) => getProductsCart(context.authHeader),

@@ -1,4 +1,4 @@
-import { CATEGORIES_QUERY } from "../../graphql/query";
+import { GET_ITEMS, BRANDS_QUERY } from "../../graphql/query";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -7,17 +7,16 @@ import {
 } from "../../features/products/productSlice";
 import { useQuery } from "@apollo/client";
 import useProtected from "../../hooks/useProtected";
-import Brands from "../Brands/Brands";
 
-const Categories = () => {
+const Brands = () => {
   useProtected();
 
-  const { data, loading, error } = useQuery(CATEGORIES_QUERY, {
+  const { data, loading, error } = useQuery(BRANDS_QUERY, {
     fetchPolicy: "no-cache",
   });
 
-  const selectedCategory =
-    useSelector((state) => state.products.filter.byCategory) || "";
+  const selectedBrand =
+    useSelector((state) => state.products.filter.byBrand) || "";
 
   const dispatch = useDispatch();
 
@@ -29,28 +28,35 @@ const Categories = () => {
   }, []);
 
   if (loading || error) return <p>No data</p>;
+  //   if (loading) {
+  //     return <p>No data</p>;
+  //   } else if (error) {
+  //     console.log(error);
+  //     return <p>No data error</p>;
+  //   }
 
-  const { getCategories } = data;
+  const { getBrands } = data;
+  console.log(data);
 
   return (
     <div role="group" aria-label="Vertical button group">
-      {getCategories.map((category) => {
+      {getBrands.map((brand) => {
         const btnClass =
-          selectedCategory === category
+          selectedBrand === brand
             ? " border-top border-bottom btn btn-dark btn-lg fw-bold text text-white fs-6 px-2"
             : "border-top border-bottom btn btn-light btn-lg fw-bold fs-6 px-2";
         return (
-          <div key={category} style={{ width: "100%" }}>
+          <div key={brand} style={{ width: "100%" }}>
             <button
               className={btnClass}
               style={{ width: "100%", color: "grey", borderRadius: 0 }}
               onClick={() => {
-                category === selectedCategory
-                  ? dispatch(applyFilters({ byCategory: null }))
-                  : dispatch(applyFilters({ byCategory: category }));
+                brand === selectedBrand
+                  ? dispatch(applyFilters({ byBrand: null }))
+                  : dispatch(applyFilters({ byBrand: brand }));
               }}
             >
-              <p className="text-start px-4 my-auto py-2">{category}</p>
+              <p className="text-start px-4 my-auto py-2">{brand}</p>
             </button>
           </div>
         );
@@ -59,4 +65,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Brands;

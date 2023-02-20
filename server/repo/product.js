@@ -33,6 +33,16 @@ export const getCategories = () => {
   return new Set(products.map((product) => product.category));
 };
 
+export const getItemsByBrands = (brand) => {
+  return products.filter(
+    (getItemsByBrands) => getItemsByBrands.brand === brand
+  );
+};
+
+export const getBrands = () => {
+  return new Set(products.map((product) => product.brand));
+};
+
 //Read by ID
 export const getProductById = (id) => {
   const product = products.find((product) => product.id === id);
