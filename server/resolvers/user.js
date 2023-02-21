@@ -55,13 +55,12 @@ export const addProductToCart = (cartInput, authHeader) => {
   return updateUserById(id, user);
 };
 
-
 export const getProductsWishlist = async (authHeader) => {
   const { id } = decodeJWT(authHeader);
   const user = getUserById(id);
   const { wishList } = user;
-  return wishList.map(id => getProductById(Number.parseInt(id)))
-}
+  return wishList.map((id) => getProductById(Number.parseInt(id)));
+};
 
 export const getProductsCart = async (authHeader) => {
   const { id } = decodeJWT(authHeader);
@@ -95,6 +94,5 @@ export const updateQuantity = (cartInput, authHeader) => {
     );
   }
   updateUserById(id, user);
-  console.log(user);
   return true;
 };

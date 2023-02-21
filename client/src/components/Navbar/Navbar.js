@@ -196,15 +196,12 @@ const Navbar = () => {
             onChange={(event) => {
               debounce(() => {
                 dispatch(
-                  applyFilters(
-                    { byTitle: event.target.value || null } && {
-                        byCategoryKeyword: event.target.value || null,
-                      } && {
-                        byDescriptionKeyword: event.target.value || null,
-                      } && {
-                        byKeyword: event.target.value || null,
-                      }
-                  )
+                  applyFilters({
+                    byTitle: event.target.value || null,
+                    byCategoryKeyword: event.target.value || null,
+                    byDescriptionKeyword: event.target.value || null,
+                    byKeyword: event.target.value || null,
+                  })
                 );
               });
             }}
