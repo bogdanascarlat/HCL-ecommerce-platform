@@ -28,12 +28,6 @@ const Brands = () => {
   }, []);
 
   if (loading || error) return <p>No data</p>;
-  //   if (loading) {
-  //     return <p>No data</p>;
-  //   } else if (error) {
-  //     console.log(error);
-  //     return <p>No data error</p>;
-  //   }
 
   const { getBrands } = data;
   console.log(data);

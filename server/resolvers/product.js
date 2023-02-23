@@ -47,6 +47,16 @@ export const getAllProducts = (filter, authHeader) => {
     );
   }
 
+  // if (byCategory && byBrand) {
+  //   products = products.filter(
+  //     (product) =>
+  //       byCategory &&
+  //       product.category.toLowerCase().includes(byCategory.toLowerCase()) &&
+  //       byBrand &&
+  //       product.brand.toLowerCase().includes(byBrand.toLowerCase())
+  //   );
+  // }
+
   if (byTitle || byCategoryKeyword || byDescriptionKeyword || byKeyword) {
     products = products.filter(
       (product) =>

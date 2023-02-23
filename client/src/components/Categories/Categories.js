@@ -17,8 +17,8 @@ const Categories = () => {
   });
 
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [brandsVisible, setBrandsVisible] = useState(false);
-  const [displayedCategories, setDisplayedCategories] = useState(false);
+  const [displayedCategories, setDisplayedCategories] = useState(true);
+  const [displayedBrands, setDisplayedBrands] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -31,72 +31,117 @@ const Categories = () => {
   if (loading || error) return <p>No data</p>;
 
   const { getCategories } = data;
+  console.log(data);
 
-  const toggleBrands = () => {
-    setBrandsVisible((prev) => !prev);
+  // const hideBrands = () => {
+  //   setDisplayedBrands(false);
+  // };
+
+  // const handleCategoryClick = (category) => {
+  //   if (selectedCategory === category) {
+  //     setSelectedCategory(null);
+  //     hideBrands();
+  //   } else {
+  //     setSelectedCategory(category);
+  //     setDisplayedCategories(false);
+  //     hideBrands();
+  //   }
+  // };
+
+  // const handleBrandsClick = () => {
+  //   setDisplayedBrands(!displayedBrands);
+  // };
+
+  const handleCategoryClick = (category) => {
+    if (selectedCategory && selectedCategory.category === category) {
+      // If the clicked category is already selected, deselect it
+      setSelectedCategory(null);
+    } else {
+      // Otherwise, select the clicked category and set 'brandsClicked' to false
+      setSelectedCategory({ category, brandsClicked: false });
+    }
   };
 
-  const showCategory = (category) => {
-    setSelectedCategory(category);
-    setBrandsVisible(false);
-    setDisplayedCategories([category]);
+  const handleBrandsClick = () => {
+    setSelectedCategory({ ...selectedCategory, brandsClicked: true });
   };
 
-  const hideBrands = () => {
-    setSelectedCategory(null);
-    setBrandsVisible(false);
-    setDisplayedCategories([]);
-  };
-
-  const hideCategories = () => {
-    setSelectedCategory(null);
-    setBrandsVisible(false);
-    setDisplayedCategories([]);
-  };
+  // return (
+  //   <div>
+  //     <div role="group" aria-label="Vertical button group">
+  //       {getCategories.map((category) => {
+  //         const btnClass =
+  //           selectedCategory === category
+  //             ? "border-top border-bottom btn btn-dark btn-lg fw-bold text text-white fs-6 px-2"
+  //             : "border-top border-bottom btn btn-light btn-lg fw-bold fs-6 px-2";
+  //         return (
+  //           <div key={category} style={{ width: "100%" }}>
+  //             <button
+  //               className={btnClass}
+  //               style={{ width: "100%", color: "grey", borderRadius: 0 }}
+  //               onClick={() => handleCategoryClick(category)}
+  //             >
+  //               <p className="text-start px-4 my-auto py-2">{category}</p>
+  //             </button>
+  //             {selectedCategory === category && (
+  //               <button
+  //                 className="btn btn-primary"
+  //                 onClick={() => handleBrandsClick()}
+  //                 style={{ marginLeft: "10px" }}
+  //               >
+  //                 Brands
+  //               </button>
+  //             )}
+  //           </div>
+  //         );
+  //       })}
+  //     </div>
+  //     {!displayedCategories && (
+  //       <div style={{ marginTop: "10px" }}>
+  //         <h2>Brands for {selectedCategory}</h2>
+  //         {displayedBrands && <Brands category={selectedCategory} />}
+  //       </div>
+  //     )}
+  //   </div>
+  // );
 
   return (
     <div>
       <div role="group" aria-label="Vertical button group">
         {getCategories.map((category) => {
           const btnClass =
-            selectedCategory === category
+            selectedCategory && selectedCategory.category === category
               ? "border-top border-bottom btn btn-dark btn-lg fw-bold text text-white fs-6 px-2"
               : "border-top border-bottom btn btn-light btn-lg fw-bold fs-6 px-2";
           return (
             <div key={category} style={{ width: "100%" }}>
-              {showCategory && (
-                <>
-                  <button
-                    className={btnClass}
-                    style={{ width: "100%", color: "grey", borderRadius: 0 }}
-                    onClick={() => toggleBrands()}
-                  >
-                    <p className="text-start px-4 my-auto py-2">{category}</p>
-                  </button>
-                  {selectedCategory === category && (
-                    <button
-                      className="btn btn-primary"
-                      onClick={() => toggleBrands()}
-                      style={{ marginLeft: "10px" }}
-                    >
-                      Brands
-                    </button>
-                  )}
-                </>
+              <button
+                className={btnClass}
+                style={{ width: "100%", color: "grey", borderRadius: 0 }}
+                onClick={() => handleCategoryClick(category)}
+              >
+                <p className="text-start px-4 my-auto py-2">{category}</p>
+              </button>
+              {selectedCategory && selectedCategory.category === category && (
+                <button
+                  className={btnClass}
+                  style={{ width: "100%", color: "grey", borderRadius: 0 }}
+                  onClick={handleBrandsClick}
+                >
+                  Brands
+                </button>
               )}
+              {selectedCategory &&
+                selectedCategory.category === category &&
+                selectedCategory.brandsClicked && (
+                  <div style={{ marginTop: "10px" }}>
+                    <h2>Brands for {selectedCategory.category}</h2>
+                    <Brands category={selectedCategory.category} />
+                  </div>
+                )}
             </div>
           );
         })}
-        {showCategory && (
-          <div style={{ marginTop: "10px" }}>
-            <h2>Here are your results</h2>
-            {brandsVisible && <Brands category={selectedCategory} />}
-
-            <button className="btn btn-secondary" onClick={() => hideBrands()}>
-              Hide results
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );
