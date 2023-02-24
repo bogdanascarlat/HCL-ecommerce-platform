@@ -4,6 +4,7 @@ import {
   getCategories,
   getItemsByBrands,
   getBrands,
+  getProductsByBrands,
 } from "../repo/product.js";
 import { getProductById } from "../repo/product.js";
 import { decodeJWT } from "../utils/utils.js";
@@ -47,16 +48,6 @@ export const getAllProducts = (filter, authHeader) => {
     );
   }
 
-  // if (byCategory && byBrand) {
-  //   products = products.filter(
-  //     (product) =>
-  //       byCategory &&
-  //       product.category.toLowerCase().includes(byCategory.toLowerCase()) &&
-  //       byBrand &&
-  //       product.brand.toLowerCase().includes(byBrand.toLowerCase())
-  //   );
-  // }
-
   if (byTitle || byCategoryKeyword || byDescriptionKeyword || byKeyword) {
     products = products.filter(
       (product) =>
@@ -93,14 +84,14 @@ export const getAllCategories = (authHeader) => {
   return getCategories();
 };
 
-export const getAllProductsByBrands = (brand, authHeader) => {
-  decodeJWT(authHeader);
-  return getItemsByBrands(brand);
-};
-
 export const getAllBrands = (authHeader) => {
   decodeJWT(authHeader);
   return getBrands();
+};
+
+export const getAllProductsByBrands = (brand, authHeader) => {
+  decodeJWT(authHeader);
+  return getProductsByBrands(brand);
 };
 
 export const searchProductByKeyword = (keyword, authHeader) =>

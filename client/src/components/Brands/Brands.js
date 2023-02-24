@@ -1,4 +1,4 @@
-import { GET_ITEMS, BRANDS_QUERY } from "../../graphql/query";
+import { BRANDS_QUERY } from "../../graphql/query";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -43,7 +43,7 @@ const Brands = () => {
           <div key={brand} style={{ width: "100%" }}>
             <button
               className={btnClass}
-              style={{ width: "100%", color: "grey", borderRadius: 0 }}
+              style={{ width: "100%", color: "black", borderRadius: 0 }}
               onClick={() => {
                 brand === selectedBrand
                   ? dispatch(applyFilters({ byBrand: null }))

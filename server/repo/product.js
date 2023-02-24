@@ -43,6 +43,13 @@ export const getBrands = () => {
   return new Set(products.map((product) => product.brand));
 };
 
+export function getProductsByBrands(brand, authHeader) {
+  const filteredProducts = products.filter(
+    (product) => product.brand.toLowerCase() === brand.toLowerCase()
+  );
+  return filteredProducts;
+}
+
 //Read by ID
 export const getProductById = (id) => {
   const product = products.find((product) => product.id === id);

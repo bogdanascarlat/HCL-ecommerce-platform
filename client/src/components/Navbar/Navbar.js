@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { CATEGORIES_QUERY, BRANDS_QUERY } from "../../graphql/query";
+import { CATEGORIES_QUERY } from "../../graphql/query";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { applyFilters } from "../../features/products/productSlice";
@@ -101,31 +101,6 @@ const Categories = ({ classes }) => {
         to=""
       >
         {category}
-      </button>
-    </li>
-  ));
-};
-
-const Brands = ({ classes }) => {
-  const dispatch = useDispatch();
-
-  const { data, loading, error } = useQuery(BRANDS_QUERY);
-
-  if (loading) return "Loading...";
-
-  if (error) return "Error...";
-
-  const { getBrands } = data;
-  console.log(data);
-
-  return getBrands.map((brand) => (
-    <li key={brand} className="nav-item">
-      <button
-        onClick={() => dispatch(applyFilters({ byBrand: brand }))}
-        className={classes}
-        to=""
-      >
-        {brand}
       </button>
     </li>
   ));
