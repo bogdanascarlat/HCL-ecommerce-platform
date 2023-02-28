@@ -22,33 +22,47 @@ export const getProducts = () => {
     return product;
   });
 };
-
-export const getItemsByCategory = (category) => {
-  return products.filter(
-    (getItemsByCategory) => getItemsByCategory.category === category
-  );
-};
-
 export const getCategories = () => {
   return new Set(products.map((product) => product.category));
 };
 
-export const getItemsByBrands = (brand) => {
-  return products.filter(
-    (getItemsByBrands) => getItemsByBrands.brand === brand
-  );
+//only return products that match the selected category and brand respectively
+export const getItemsByCategory = (category) => {
+  const items = products.filter((product) => product.category === category);
+  const brands = [...new Set(items.map((item) => item.brand))];
+  return brands;
 };
+
+export const getItemsByBrands = (brand) => {
+  return products.filter((product) => product.brand === brand);
+};
+
+export const getBrandsByCategory = (category) => {
+  const brands = [];
+  getProducts().forEach((product) => {
+    if (product.category === category) {
+      const brand = product.brand;
+      if (!brands.some((b) => b.name === brand)) {
+        brands.push({ id: brands.length + 1, name: brand });
+      }
+    }
+  });
+  return brands;
+};
+
+/////////////////////
 
 export const getBrands = () => {
   return new Set(products.map((product) => product.brand));
 };
 
-export function getProductsByBrands(brand, authHeader) {
-  const filteredProducts = products.filter(
-    (product) => product.brand.toLowerCase() === brand.toLowerCase()
+export const getProductsByBrands = () => {
+  return new Set(
+    products.filter(
+      (product) => product.brand.toLowerCase() === brand.toLowerCase()
+    )
   );
-  return filteredProducts;
-}
+};
 
 //Read by ID
 export const getProductById = (id) => {

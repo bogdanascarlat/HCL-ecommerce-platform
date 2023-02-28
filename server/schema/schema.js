@@ -1,9 +1,11 @@
 import {
   getAllProductsByCategory,
+  getAllProductsByBrands, // import getAllProductsByBrands function
   getAllProducts,
   getProductWithId,
   getAllCategories,
   getAllBrands,
+  getAllBrandsByCategory,
   searchProductByKeyword,
 } from "../resolvers/product.js";
 import {
@@ -60,6 +62,18 @@ export const typeDefs = /* GraphQL */ `
     thumbnail: String!
     images: [String!]!
   }
+  type Category {
+    category: String!
+    brands: [Brand!]!
+  }
+
+  type Brand {
+    id: ID!
+    name: String!
+    category: String!
+    brand: String!
+  }
+
   type CartType {
     productId: ID!
     quantity: Int
@@ -91,7 +105,9 @@ export const typeDefs = /* GraphQL */ `
     getItemsByCategory(category: String!): [Product]
     getCategories: [String!]
     getItemsByBrands(brand: String!): [Product]
-    getBrands: [String!]
+    getBrands(category: String!): [Brand]
+    getProductsByBrands: [String!]
+    getBrandsByCategory(category: String!): [Brand!]
     searchByKeyword(keyword: String!): [Product]
     getProductsCart: [CartProductType]
     getProductsWishlist: [Product]
@@ -118,6 +134,8 @@ export const resolvers = {
     getItemsByBrands: (_, args, context) =>
       getAllProductsByBrands(args.brand, context.authHeader),
     getBrands: (_, args, context) => getAllBrands(context.authHeader),
+    getBrandsByCategory: (_, args, context) =>
+      getAllBrandsByCategory(args.category, context.authHeader),
     searchByKeyword: (_, args, context) =>
       searchProductByKeyword(args.keyword, context.authHeader),
     getProductsCart: (_, args, context) => getProductsCart(context.authHeader),

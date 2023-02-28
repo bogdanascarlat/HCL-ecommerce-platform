@@ -7,55 +7,33 @@ import {
 } from "../../features/products/productSlice";
 import { useQuery } from "@apollo/client";
 import useProtected from "../../hooks/useProtected";
+import { useParams } from "react-router-dom";
 
-const Brands = () => {
-  useProtected();
-
+const Brands = ({ category }) => {
   const { data, loading, error } = useQuery(BRANDS_QUERY, {
-    fetchPolicy: "no-cache",
+    variables: { category },
   });
 
-  const selectedBrand =
-    useSelector((state) => state.products.filter.byBrand) || "";
+  if (loading) {
+    console.log("Loading...");
+  }
 
-  const dispatch = useDispatch();
+  if (error) {
+    console.log(`Error: ${error.message}`);
+  }
 
-  useEffect(() => {
-    return () => {
-      dispatch(clearFilters());
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  if (!data) {
+    return <p>No data</p>;
+  }
 
-  if (loading || error) return <p>No data</p>;
-
-  const { getBrands } = data;
-  console.log(data);
+  const { getBrandsByCategory } = data;
 
   return (
-    <div role="group" aria-label="Vertical button group">
-      {getBrands.map((brand) => {
-        const btnClass =
-          selectedBrand === brand
-            ? " border-top border-bottom btn btn-dark btn-lg fw-bold text text-white fs-6 px-2"
-            : "border-top border-bottom btn btn-light btn-lg fw-bold fs-6 px-2";
-        return (
-          <div key={brand} style={{ width: "100%" }}>
-            <button
-              className={btnClass}
-              style={{ width: "100%", color: "black", borderRadius: 0 }}
-              onClick={() => {
-                brand === selectedBrand
-                  ? dispatch(applyFilters({ byBrand: null }))
-                  : dispatch(applyFilters({ byBrand: brand }));
-              }}
-            >
-              <p className="text-start px-4 my-auto py-2">{brand}</p>
-            </button>
-          </div>
-        );
-      })}
-    </div>
+    <ul>
+      {getBrandsByCategory.map(({ id, name }) => (
+        <li key={id}>{name}</li>
+      ))}
+    </ul>
   );
 };
 

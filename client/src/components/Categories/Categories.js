@@ -6,9 +6,10 @@ import { useQuery } from "@apollo/client";
 import useProtected from "../../hooks/useProtected";
 import Brands from "../Brands/Brands";
 
-const Categories = () => {
+const Categories = ({ category }) => {
   useProtected();
 
+  // const [selectedCategory, setSelectedCategory] = useState("");
   const { data, loading, error } = useQuery(CATEGORIES_QUERY, {
     fetchPolicy: "no-cache",
   });
@@ -42,6 +43,10 @@ const Categories = () => {
   const handleBrandsClick = () => {
     setSelectedCategory({ ...selectedCategory, brandsClicked: true });
   };
+
+  // const handleCategoryClick = (category) => {
+  //   setSelectedCategory(category);
+  // };
 
   return (
     <div>
@@ -85,7 +90,9 @@ const Categories = () => {
                         Brands for {selectedCategory.category}
                       </h2>
                     </div>
-                    <Brands category={selectedCategory.category} />
+                    {selectedCategory.category && (
+                      <Brands category={selectedCategory.category} />
+                    )}
                   </div>
                 )}
             </div>

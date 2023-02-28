@@ -28,9 +28,18 @@ export const CATEGORIES_QUERY = gql`
   }
 `;
 
+// export const BRANDS_QUERY = gql`
+//   query GetItemsByBrands {
+//     getBrands
+//   }
+// `;
+
 export const BRANDS_QUERY = gql`
-  query GetItemsByBrands {
-    getBrands
+  query GetBrandsByCategory($category: String!) {
+    getBrandsByCategory(category: $category) {
+      id
+      name
+    }
   }
 `;
 
