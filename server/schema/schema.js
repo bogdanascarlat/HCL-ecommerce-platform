@@ -6,6 +6,7 @@ import {
   getAllCategories,
   getAllBrands,
   getAllBrandsByCategory,
+  getAllProductsByBrandsByCategory,
   searchProductByKeyword,
 } from "../resolvers/product.js";
 import {
@@ -108,6 +109,11 @@ export const typeDefs = /* GraphQL */ `
     getBrands(category: String!): [Brand]
     getProductsByBrands: [String!]
     getBrandsByCategory(category: String!): [Brand!]
+    getProductsByBrandsByCategory(category: String!, brand: String!): [Product]
+    getAllProductsByBrandsByCategory(
+      category: String!
+      brand: String!
+    ): [Product]
     searchByKeyword(keyword: String!): [Product]
     getProductsCart: [CartProductType]
     getProductsWishlist: [Product]
@@ -136,6 +142,8 @@ export const resolvers = {
     getBrands: (_, args, context) => getAllBrands(context.authHeader),
     getBrandsByCategory: (_, args, context) =>
       getAllBrandsByCategory(args.category, context.authHeader),
+    getProductsByBrandsByCategory: (_, args, context) =>
+      getAllProductsByBrandsByCategory(context.authHeader),
     searchByKeyword: (_, args, context) =>
       searchProductByKeyword(args.keyword, context.authHeader),
     getProductsCart: (_, args, context) => getProductsCart(context.authHeader),

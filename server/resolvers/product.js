@@ -6,6 +6,7 @@ import {
   getBrands,
   getBrandsByCategory,
   getProductsByBrands,
+  getProductsByBrandsByCategory,
 } from "../repo/product.js";
 import { getProductById } from "../repo/product.js";
 import { decodeJWT } from "../utils/utils.js";
@@ -102,3 +103,8 @@ export const getAllBrandsByCategory = (category, authHeader) => {
 
 export const searchProductByKeyword = (keyword, authHeader) =>
   getProducts().filter((product) => product.title.includes(keyword));
+
+export const getAllProductsByBrandsByCategory = (authHeader) => {
+  decodeJWT(authHeader);
+  return getProductsByBrandsByCategory();
+};

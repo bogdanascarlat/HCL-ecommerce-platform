@@ -1,10 +1,14 @@
-import { CATEGORIES_QUERY } from "../../graphql/query";
+import {
+  CATEGORIES_QUERY,
+  PRODUCTS_BY_BRANDS_BY_CATEGORY_QUERY,
+} from "../../graphql/query";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { clearFilters } from "../../features/products/productSlice";
 import { useQuery } from "@apollo/client";
 import useProtected from "../../hooks/useProtected";
 import Brands from "../Brands/Brands";
+import { Link } from "react-router-dom";
 
 const Categories = ({ category }) => {
   useProtected();
@@ -28,7 +32,6 @@ const Categories = ({ category }) => {
   if (loading || error) return <p>No data</p>;
 
   const { getCategories } = data;
-  console.log(data);
 
   const handleCategoryClick = (category) => {
     if (selectedCategory && selectedCategory.category === category) {

@@ -28,17 +28,23 @@ export const CATEGORIES_QUERY = gql`
   }
 `;
 
-// export const BRANDS_QUERY = gql`
-//   query GetItemsByBrands {
-//     getBrands
-//   }
-// `;
-
 export const BRANDS_QUERY = gql`
   query GetBrandsByCategory($category: String!) {
     getBrandsByCategory(category: $category) {
       id
       name
+    }
+  }
+`;
+
+export const PRODUCTS_BY_BRANDS_BY_CATEGORY_QUERY = gql`
+  query GetAllProductsByBrandsByCategory($category: String!, $brand: String!) {
+    getAllProductsByBrandsByCategory(category: $category, brand: $brand) {
+      id
+      name
+      category
+      brand
+      price
     }
   }
 `;

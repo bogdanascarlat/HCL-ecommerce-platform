@@ -1,6 +1,7 @@
 import { readFileSync } from "fs";
 import { getRatingByProductId } from "./rating.js";
 import { getAverageOfNumbers } from "../utils/utils.js";
+import productsData from "../repo/products.json" assert { type: "json" };
 
 function getScoreByProductId(id) {
   const ratings = getRatingByProductId(id);
@@ -47,6 +48,8 @@ export const getBrandsByCategory = (category) => {
       }
     }
   });
+  console.log("@@@@@@@");
+  console.log(brands);
   return brands;
 };
 
@@ -100,4 +103,32 @@ export const updateProductById = (id, product) => {
 export const deleteProductById = (id) => {
   const remainedProducts = products.filter((product) => product.id !== id);
   products = remainedProducts;
+};
+
+export const getProductsByBrandsByCategory = () => {
+  const brandsByCategory = {};
+
+  for (const product of productsData) {
+    const { category: prodCategory, brand: prodBrand } = product;
+
+    if (category && prodCategory !== category) {
+      continue;
+    }
+
+    if (brand && prodBrand !== brand) {
+      continue;
+    }
+
+    if (!(prodCategory in brandsByCategory)) {
+      brandsByCategory[prodCategory] = {};
+    }
+
+    if (!(prodBrand in brandsByCategory[prodCategory])) {
+      brandsByCategory[prodCategory][prodBrand] = [];
+    }
+
+    brandsByCategory[prodCategory][prodBrand].push(product);
+  }
+
+  return brandsByCategory;
 };
