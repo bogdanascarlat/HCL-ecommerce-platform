@@ -1,28 +1,28 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import AuthPage from './pages/AuthPage/AuthPage';
-import RegisterForm from './components/RegisterForm/RegisterForm';
-import Dashboard from './pages/Dashboard/Dashboard';
-import Profile from './pages/Profile/Profile';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import AuthPage from "./pages/AuthPage/AuthPage";
+import RegisterForm from "./components/RegisterForm/RegisterForm";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Profile from "./pages/Profile/Profile";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Cart from './pages/Cart/Cart';
-import Wishlist from './pages/Wishlist/Wishlist';
-
-
+import Cart from "./pages/Cart/Cart";
+import Wishlist from "./pages/Wishlist/Wishlist";
+import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:  <Dashboard />
+    element: <Dashboard />,
   },
   {
     path: "/login",
-    element: <AuthPage />
+    element: <AuthPage />,
   },
   {
     path: "/register",
-    element: <AuthPage children={<RegisterForm />} />
+    element: <AuthPage children={<RegisterForm />} />,
   },
   {
     path: "/profile",
@@ -30,21 +30,28 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <Cart />
+    element: <Cart />,
   },
   {
     path: "/wishlist",
-    element: <Wishlist />
-  }
-]);
+    element: <Wishlist />,
+  },
+  {
+    path: "/product",
+    element: <SingleProductPage />,
+  },
+], 
+{
+  errorElement: <ErrorPage />,
+}
+);
 
 function App() {
-  
   return (
     <>
-        <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
 export default App;

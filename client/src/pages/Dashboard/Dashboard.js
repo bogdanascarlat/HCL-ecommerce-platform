@@ -13,10 +13,13 @@ import Paginate from "../../components/Paginate/Paginate"
 import { logout } from "../../features/user/authSlice"
 import { addErrorMessage } from "../../features/message/messageSlice"
 import Footer from "../../components/Footer/Footer"
+import { useNavigate } from "react-router-dom";
+import {getProductIDFunction} from '../../features/getProductId/ProductIdSlice'
 
 const Dashboard = () => {
 
-  useProtected()
+  useProtected();
+  const navigate = useNavigate();
 
   const { value, filter } = useSelector(state => state.products)
   const [getAllItemFunction] = useLazyQuery(GET_ITEMS)
@@ -35,11 +38,23 @@ const Dashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter])
 
+  const handleProductClick = (id) => {
+    dispatch(getProductIDFunction(id));
+    navigate('/product');
+  };
+  
+
+
 
   const cards = products.map((product, index) => {
-    return (<ProductCard key={product.title + index} product={product} />)
-  })
-
+    return (
+      <ProductCard 
+        key={product.title + index} 
+        product={product} 
+        onProductClick={() => handleProductClick(product.id)} 
+      />
+    );
+  });
 
 
   const [productsPerPage, setProductsPerPage] = useState(20)
