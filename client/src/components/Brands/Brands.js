@@ -11,7 +11,6 @@ import {
 import { useQuery } from "@apollo/client";
 import useProtected from "../../hooks/useProtected";
 import { useParams } from "react-router-dom";
-import ProductsList from "../ProductsList/ProductsList";
 
 const Brands = ({ category }) => {
   useProtected();
@@ -57,7 +56,7 @@ const Brands = ({ category }) => {
             <button
               className={btnClass}
               style={{ width: "100%", color: "black", borderRadius: 0 }}
-              onClick={() => {
+              onMouseEnter={() => {
                 console.log(
                   `Brand ${brand.name} clicked ${selectedBrand} ${category} ${brand}`
                 );

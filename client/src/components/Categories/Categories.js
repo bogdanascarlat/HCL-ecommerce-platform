@@ -64,7 +64,7 @@ const Categories = ({ category }) => {
               <button
                 className={btnClass}
                 style={{ width: "100%", color: "grey", borderRadius: 0 }}
-                onClick={() => handleCategoryClick(category)}
+                onMouseEnter={() => handleCategoryClick(category)}
               >
                 <p className="text-start px-4 my-auto py-2">{category}</p>
               </button>
@@ -72,7 +72,7 @@ const Categories = ({ category }) => {
                 <button
                   className={btnClass}
                   style={{ width: "100%", color: "grey", borderRadius: 0 }}
-                  onClick={handleBrandsClick}
+                  onMouseEnter={handleBrandsClick}
                 >
                   Brands
                 </button>

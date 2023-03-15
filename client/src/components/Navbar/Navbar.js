@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { CATEGORIES_QUERY } from "../../graphql/query";
+import { CATEGORIES_QUERY, BRANDS_QUERY } from "../../graphql/query";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { applyFilters } from "../../features/products/productSlice";
+import Brands from "../Brands/Brands";
+import { clearFilters } from "../../features/products/productSlice";
 
 //Create debounce helper function
 let clock;
@@ -104,6 +106,117 @@ const Categories = ({ classes }) => {
       </button>
     </li>
   ));
+};
+
+const FilterDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedBrand, setSelectedBrand] = useState(null);
+  const [showCategories, setShowCategories] = useState(false); // new state variable
+
+  const dispatch = useDispatch();
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+    setShowCategories(false); // hide categories when closing dropdown
+  };
+
+  const toggleCategories = () => {
+    setShowCategories(!showCategories);
+  };
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearFilters());
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleCategoryClick = (category) => {
+    if (selectedCategory && selectedCategory.category === category) {
+      // If the clicked category is already selected, deselect it
+      setSelectedCategory(null);
+      setSelectedBrand(null);
+      dispatch(clearFilters());
+    } else {
+      // Otherwise, select the clicked category and set 'brandsClicked' to false
+      setSelectedCategory({ category, brandsClicked: false });
+      setSelectedBrand(null);
+      dispatch(applyFilters({ byCategory: category, byBrand: null }));
+    }
+  };
+
+  const handleBrandClick = (brand) => {
+    if (selectedBrand === brand) {
+      // If the clicked brand is already selected, deselect it
+      setSelectedBrand(null);
+      dispatch(
+        applyFilters({ byCategory: selectedCategory.category, byBrand: null })
+      );
+    } else {
+      // Otherwise, select the clicked brand
+      setSelectedBrand(brand);
+      dispatch(
+        applyFilters({
+          byCategory: selectedCategory.category,
+          byBrand: brand,
+        })
+      );
+    }
+  };
+
+  const { data, loading, error } = useQuery(CATEGORIES_QUERY, {
+    fetchPolicy: "no-cache",
+  });
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+  const { getCategories } = data;
+
+  return (
+    <div className="dropdown">
+      <button
+        className="btn btn-secondary dropdown-toggle"
+        onClick={toggleDropdown}
+      >
+        Filter
+      </button>
+      {isOpen && ( // only show when dropdown is open
+        <button
+          className="btn btn-secondary dropdown-toggle"
+          onClick={toggleCategories}
+        >
+          Filter by Category
+        </button>
+      )}
+      {showCategories && ( // only show when 'Filter by category' is clicked
+        <div className="dropdown-menu show">
+          {getCategories.map((category) => {
+            const btnClass =
+              selectedCategory && selectedCategory.category === category
+                ? "dropdown-item active"
+                : "dropdown-item";
+
+            return (
+              <button
+                key={category}
+                className={btnClass}
+                onClick={() => handleCategoryClick(category)}
+              >
+                {category}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
 };
 
 const OffCanvas = () => {
@@ -216,6 +329,32 @@ const Navbar = () => {
               </ul>
             </li>
           </ul>
+
+          <ul className="navbar-nav collapse navbar-collapse">
+            <FilterDropdown classes={"nav-item dropdown"} />
+          </ul>
+
+          {/* <ul className="navbar-nav collapse navbar-collapse">
+            <li className="nav-item dropdown">
+              <button
+                className="nav-link dropdown-toggle btn btn-light"
+                href="#"
+                id="navbarDarkDropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Filter
+              </button>
+              <ul
+                className="dropdown-menu dropdown-menu-dark text-center"
+                aria-labelledby="navbarDarkDropdownMenuLink"
+              >
+                <FilterDropdown
+                  classes={"dropdown-item fw-bold text-start px-3"}
+                />
+              </ul>
+            </li>
+          </ul> */}
         </div>
 
         <div>
