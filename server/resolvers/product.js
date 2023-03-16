@@ -91,9 +91,9 @@ export const getAllBrands = (authHeader) => {
   return getBrands();
 };
 
-export const getAllProductsByBrands = (authHeader) => {
+export const getAllProductsByBrands = (brand, authHeader) => {
   decodeJWT(authHeader);
-  return getProductsByBrands();
+  return getProductsByBrands(brand);
 };
 
 export const getAllBrandsByCategory = (category, authHeader) => {

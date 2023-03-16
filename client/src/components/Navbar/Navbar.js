@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { CATEGORIES_QUERY, ALL_BRANDS_QUERY } from "../../graphql/query";
+import {
+  CATEGORIES_QUERY,
+  ALL_BRANDS_QUERY,
+  BRANDS_QUERY,
+} from "../../graphql/query";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { applyFilters } from "../../features/products/productSlice";
 import Brands from "../Brands/Brands";
 import { clearFilters } from "../../features/products/productSlice";
+import AllBrands from "../AllBrands/AllBrands";
 
 //Create debounce helper function
 let clock;
@@ -156,13 +161,16 @@ const FilterDropdown = () => {
     if (selectedBrand === brand) {
       setSelectedBrand(null);
       dispatch(
-        applyFilters({ byCategory: selectedCategory.category, byBrand: null })
+        applyFilters({
+          byCategory: selectedCategory?.category || null,
+          byBrand: null,
+        })
       );
     } else {
       setSelectedBrand(brand);
       dispatch(
         applyFilters({
-          byCategory: selectedCategory.category,
+          byCategory: selectedCategory?.category || null,
           byBrand: brand,
         })
       );
@@ -178,8 +186,10 @@ const FilterDropdown = () => {
     loading: loading2,
     error: error2,
   } = useQuery(ALL_BRANDS_QUERY, {
-    variables: { category: "myCategory" },
+    fetchPolicy: "no-cache",
   });
+  console.log("#!#!#!@#@!");
+  console.log(data2);
 
   if (loading || loading2) {
     return <p>Loading...</p>;
@@ -192,8 +202,12 @@ const FilterDropdown = () => {
   }
 
   const { getCategories } = data;
-  const { getBrands } = data2;
+  const getBrands = data2?.getBrands || [];
+  const filteredBrands = getBrands.filter(
+    (brand) => brand.category === selectedCategory?.category
+  );
 
+  const brandsToDisplay = selectedCategory ? filteredBrands : getBrands;
   return (
     <div className="dropdown">
       <button
@@ -227,9 +241,9 @@ const FilterDropdown = () => {
           </button>
           {showBrands && (
             <div className="dropdown-menu show">
-              {getBrands.map((brand) => (
+              {brandsToDisplay.map((brand, index) => (
                 <button
-                  key={brand}
+                  key={`${brand}_${index}`}
                   className={`dropdown-item ${
                     selectedBrand === brand ? "active" : ""
                   }`}
@@ -240,6 +254,10 @@ const FilterDropdown = () => {
               ))}
             </div>
           )}
+
+          <button className="dropdown-item" onClick={toggleBrands}>
+            Filter by price
+          </button>
         </div>
       )}
     </div>
@@ -360,28 +378,6 @@ const Navbar = () => {
           <ul className="navbar-nav collapse navbar-collapse">
             <FilterDropdown classes={"nav-item dropdown"} />
           </ul>
-
-          {/* <ul className="navbar-nav collapse navbar-collapse">
-            <li className="nav-item dropdown">
-              <button
-                className="nav-link dropdown-toggle btn btn-light"
-                href="#"
-                id="navbarDarkDropdownMenuLink"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Filter
-              </button>
-              <ul
-                className="dropdown-menu dropdown-menu-dark text-center"
-                aria-labelledby="navbarDarkDropdownMenuLink"
-              >
-                <FilterDropdown
-                  classes={"dropdown-item fw-bold text-start px-3"}
-                />
-              </ul>
-            </li>
-          </ul> */}
         </div>
 
         <div>

@@ -38,7 +38,6 @@ export const typeDefs = /* GraphQL */ `
     productId: ID
     quantity: Int
   }
-
   input Filter {
     inStock: Boolean
     byBrand: String
@@ -49,7 +48,6 @@ export const typeDefs = /* GraphQL */ `
     byKeyword: String
     priceRange: [Float]
   }
-
   type Product {
     id: ID!
     title: String!
@@ -67,14 +65,10 @@ export const typeDefs = /* GraphQL */ `
     category: String!
     brands: [Brand!]!
   }
-
   type Brand {
     id: ID!
-    name: String!
-    category: String!
-    brand: String!
+    name: String
   }
-
   type CartType {
     productId: ID!
     quantity: Int
@@ -106,8 +100,8 @@ export const typeDefs = /* GraphQL */ `
     getItemsByCategory(category: String!): [Product]
     getCategories: [String!]
     getItemsByBrands(brand: String!): [Product]
-    getBrands(category: String!): [Brand]
-    getProductsByBrands: [String!]
+    getBrands: [String!]
+    getProductsByBrands(brand: String!): [Product]
     getBrandsByCategory(category: String!): [Brand!]
     getProductsByBrandsByCategory(category: String!, brand: String!): [Product]
     getAllProductsByBrandsByCategory(
@@ -142,8 +136,18 @@ export const resolvers = {
     getBrands: (_, args, context) => getAllBrands(context.authHeader),
     getBrandsByCategory: (_, args, context) =>
       getAllBrandsByCategory(args.category, context.authHeader),
+    getProductsByBrands: (_, args, context) =>
+      getAllProductsByBrandsByCategory(
+        null,
+        args.brand, // pass brand parameter to getAllProductsByBrandsByCategory
+        context.authHeader
+      ),
     getProductsByBrandsByCategory: (_, args, context) =>
-      getAllProductsByBrandsByCategory(context.authHeader),
+      getAllProductsByBrandsByCategory(
+        args.category,
+        args.brand,
+        context.authHeader
+      ),
     searchByKeyword: (_, args, context) =>
       searchProductByKeyword(args.keyword, context.authHeader),
     getProductsCart: (_, args, context) => getProductsCart(context.authHeader),

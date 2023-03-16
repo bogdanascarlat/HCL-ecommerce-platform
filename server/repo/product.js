@@ -48,8 +48,6 @@ export const getBrandsByCategory = (category) => {
       }
     }
   });
-  console.log("@@@@@@@");
-  console.log(brands);
   return brands;
 };
 
@@ -59,7 +57,7 @@ export const getBrands = () => {
   return new Set(products.map((product) => product.brand));
 };
 
-export const getProductsByBrands = () => {
+export const getProductsByBrands = (brand) => {
   return new Set(
     products.filter(
       (product) => product.brand.toLowerCase() === brand.toLowerCase()
