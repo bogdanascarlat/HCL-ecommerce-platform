@@ -34,14 +34,6 @@ export const ALL_BRANDS_QUERY = gql`
   }
 `;
 
-// export const ALL_BRANDS_QUERY = gql`
-//   query {
-//     brands {
-//       name
-//     }
-//   }
-// `;
-
 export const BRANDS_QUERY = gql`
   query GetBrandsByCategory($category: String!) {
     getBrandsByCategory(category: $category) {

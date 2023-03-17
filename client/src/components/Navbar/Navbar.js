@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { applyFilters } from "../../features/products/productSlice";
 import Brands from "../Brands/Brands";
 import { clearFilters } from "../../features/products/productSlice";
-import AllBrands from "../AllBrands/AllBrands";
 
 //Create debounce helper function
 let clock;
@@ -294,10 +293,10 @@ const OffCanvas = () => {
 
         <br />
 
-        <h5>Categories</h5>
+        <h5>Filter</h5>
 
         <ul className="navbar-nav flex-grow-1 pe-3 dropdown-menu-dark">
-          {<Categories classes={"nav-link fw-bold dropdown-item px-3"} />}
+          {<FilterDropdown classes={"nav-link fw-bold dropdown-item px-3"} />}
         </ul>
       </div>
     </div>
@@ -355,7 +354,7 @@ const Navbar = () => {
           </button>
           {/* Search bar ends*/}
 
-          <ul className="navbar-nav collapse navbar-collapse">
+          {/* <ul className="navbar-nav collapse navbar-collapse">
             <li className="nav-item dropdown">
               <button
                 className="nav-link dropdown-toggle btn btn-light"
@@ -373,7 +372,7 @@ const Navbar = () => {
                 <Categories classes={"dropdown-item fw-bold text-start px-3"} />
               </ul>
             </li>
-          </ul>
+          </ul> */}
 
           <ul className="navbar-nav collapse navbar-collapse">
             <FilterDropdown classes={"nav-item dropdown"} />
