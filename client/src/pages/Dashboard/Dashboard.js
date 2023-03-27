@@ -14,13 +14,24 @@ import { logout } from "../../features/user/authSlice";
 import { addErrorMessage } from "../../features/message/messageSlice";
 import Footer from "../../components/Footer/Footer";
 
+const MIN_PRICE = 0;
+const MAX_PRICE = 10000;
+
 const Dashboard = () => {
   useProtected();
 
   const { value, filter } = useSelector((state) => state.products);
   const [getAllItemFunction] = useLazyQuery(GET_ITEMS);
   const dispatch = useDispatch();
-  const products = value;
+  let products = value;
+  const [priceRange, setPriceRange] = useState([MIN_PRICE, MAX_PRICE]);
+
+  const handlePriceChange = (newPriceRange) => {
+    setPriceRange(newPriceRange);
+    setCurrentPage(1);
+  };
+
+  console.log(priceRange);
 
   useEffect(() => {
     getAllItemFunction({ variables: { filter } })
@@ -33,6 +44,10 @@ const Dashboard = () => {
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
+
+  products = products.filter(
+    (item) => item.price >= priceRange[0] && item.price <= priceRange[1]
+  );
 
   const cards = products.map((product, index) => {
     return <ProductCard key={product.title + index} product={product} />;
@@ -47,13 +62,19 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
+
       <div className="d-flex mt-5 mx-5">
         <div className="row  w-100">
           <div className="d-none d-lg-block col-auto">
             <Categories />
           </div>
           <div className="col">
-            <SwitchBar setProductsPerPage={setProductsPerPage} />
+            <SwitchBar
+              setProductsPerPage={setProductsPerPage}
+              setCurrentPage={setCurrentPage}
+              priceRange={priceRange}
+              handlePriceChange={handlePriceChange}
+            />
             <div className="row row-cols-auto g-4">{shownCards}</div>
             <div className="d-flex justify-content-center my-4">
               <Paginate

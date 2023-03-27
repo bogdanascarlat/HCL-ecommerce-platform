@@ -187,8 +187,6 @@ const FilterDropdown = () => {
   } = useQuery(ALL_BRANDS_QUERY, {
     fetchPolicy: "no-cache",
   });
-  console.log("#!#!#!@#@!");
-  console.log(data2);
 
   if (loading || loading2) {
     return <p>Loading...</p>;
