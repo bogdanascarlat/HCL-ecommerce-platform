@@ -1,8 +1,11 @@
 import React from "react";
 import { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
+import useProtected from "../../hooks/useProtected";
 
 const PriceSlider = ({ min, max, onPriceChange, value }) => {
+  useProtected();
+
   const handleChange = (newRange) => {
     onPriceChange(newRange);
   };

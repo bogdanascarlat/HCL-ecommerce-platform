@@ -31,8 +31,6 @@ const Dashboard = () => {
     setCurrentPage(1);
   };
 
-  console.log(priceRange);
-
   useEffect(() => {
     getAllItemFunction({ variables: { filter } })
       .then((res) => dispatch(fillWithAllProducts(res.data.getAllProducts)))

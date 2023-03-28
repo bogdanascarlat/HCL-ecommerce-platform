@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import PriceSlider from "../PriceSlider/PriceSlider";
+import useProtected from "../../hooks/useProtected";
 
 const MIN_PRICE = 0;
 const MAX_PRICE = 10000;
-
 const SwitchBar = ({
   setProductsPerPage,
   onPriceChange,
@@ -11,6 +11,8 @@ const SwitchBar = ({
   priceRange,
   handlePriceChange,
 }) => {
+  useProtected();
+
   return (
     <div
       className="navbar navbar-light bg-light mb-3 w-100"
