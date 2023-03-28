@@ -42,7 +42,6 @@ const Brands = ({ category }) => {
   }
 
   const { getBrandsByCategory } = data;
-  console.log(data);
 
   return (
     <div role="group" aria-label="Vertical button group">
