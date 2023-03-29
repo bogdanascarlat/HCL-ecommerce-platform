@@ -13,6 +13,7 @@ import Paginate from "../../components/Paginate/Paginate";
 import { logout } from "../../features/user/authSlice";
 import { addErrorMessage } from "../../features/message/messageSlice";
 import Footer from "../../components/Footer/Footer";
+import SortingContext from "../../components/SortDropdown/SortContext";
 
 const MIN_PRICE = 0;
 const MAX_PRICE = 10000;
@@ -25,6 +26,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   let products = value;
   const [priceRange, setPriceRange] = useState([MIN_PRICE, MAX_PRICE]);
+  const [sortBy, setSortBy] = useState(null);
 
   const handlePriceChange = (newPriceRange) => {
     setPriceRange(newPriceRange);
@@ -43,9 +45,19 @@ const Dashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
 
-  products = products.filter(
-    (item) => item.price >= priceRange[0] && item.price <= priceRange[1]
-  );
+  products = products
+    .filter(
+      (item) => item.price >= priceRange[0] && item.price <= priceRange[1]
+    )
+    .sort((a, b) => {
+      if (sortBy === "lowestPrice") {
+        return a.price - b.price;
+      } else if (sortBy === "highestPrice") {
+        return b.price - a.price;
+      } else {
+        return 0;
+      }
+    });
 
   const cards = products.map((product, index) => {
     return <ProductCard key={product.title + index} product={product} />;
@@ -59,32 +71,33 @@ const Dashboard = () => {
 
   return (
     <>
-      <Navbar />
-
-      <div className="d-flex mt-5 mx-5">
-        <div className="row  w-100">
-          <div className="d-none d-lg-block col-auto">
-            <Categories />
-          </div>
-          <div className="col">
-            <SwitchBar
-              setProductsPerPage={setProductsPerPage}
-              setCurrentPage={setCurrentPage}
-              priceRange={priceRange}
-              handlePriceChange={handlePriceChange}
-            />
-            <div className="row row-cols-auto g-4">{shownCards}</div>
-            <div className="d-flex justify-content-center my-4">
-              <Paginate
-                numberOfPages={numberOfPages}
-                currentPage={currentPage}
+      <SortingContext.Provider value={{ sortBy, setSortBy }}>
+        <Navbar sortBy={sortBy} setSortBy={setSortBy} />
+        <div className="d-flex mt-5 mx-5">
+          <div className="row  w-100">
+            <div className="d-none d-lg-block col-auto">
+              <Categories />
+            </div>
+            <div className="col">
+              <SwitchBar
+                setProductsPerPage={setProductsPerPage}
                 setCurrentPage={setCurrentPage}
+                priceRange={priceRange}
+                handlePriceChange={handlePriceChange}
               />
+              <div className="row row-cols-auto g-4">{shownCards}</div>
+              <div className="d-flex justify-content-center my-4">
+                <Paginate
+                  numberOfPages={numberOfPages}
+                  currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
+        <Footer />
+      </SortingContext.Provider>
     </>
   );
 };

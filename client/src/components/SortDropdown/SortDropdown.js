@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useQuery } from "@apollo/client";
-import { GET_ITEMS } from "../../graphql/query";
-import { useDispatch, useSelector } from "react-redux";
-import { applyFilters } from "../../features/products/productSlice";
-import { clearFilters } from "../../features/products/productSlice";
+import React, { useState } from "react";
+import { useContext } from "react";
+import SortingContext from "./SortContext";
 
 const SortDropdown = () => {
+  const { sortBy, setSortBy } = useContext(SortingContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [sortBy, setSortBy] = useState(null);
-
-  const dispatch = useDispatch();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -19,25 +14,6 @@ const SortDropdown = () => {
     setSortBy(sortBy);
     toggleDropdown();
   };
-
-  const { data, loading, error } = useQuery(GET_ITEMS, {
-    fetchPolicy: "no-cache",
-  });
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-
-  let products = data.getAllProducts;
-  let sortedProducts = [...products];
-  console.log(products);
-
-  if (sortBy === "lowestPrice") {
-    console.log("sorting by lowest price");
-    products = [...products].sort((a, b) => a.price - b.price);
-  } else if (sortBy === "highestPrice") {
-    console.log("sorting by highest price");
-    products = [...products].sort((a, b) => b.price - a.price);
-  }
 
   return (
     <div className="dropdown" style={{ marginLeft: 3 + "em" }}>
