@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import {
-  CATEGORIES_QUERY,
-  ALL_BRANDS_QUERY,
-  BRANDS_QUERY,
-} from "../../graphql/query";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { CATEGORIES_QUERY, ALL_BRANDS_QUERY } from "../../graphql/query";
+import { useDispatch } from "react-redux";
 import { applyFilters } from "../../features/products/productSlice";
-import Brands from "../Brands/Brands";
 import { clearFilters } from "../../features/products/productSlice";
 
 const FilterDropdown = () => {
@@ -107,7 +101,7 @@ const FilterDropdown = () => {
 
   const brandsToDisplay = selectedCategory ? filteredBrands : getBrands;
   return (
-    <div className="dropdown">
+    <div className="dropdown" style={{ marginLeft: 3 + "em" }}>
       <button
         className="btn btn-secondary dropdown-toggle"
         onClick={toggleDropdown}

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { applyFilters } from "../../features/products/productSlice";
 import FilterDropdown from "../FilterDropdown/FilterDropdown";
+import SortDropdown from "../SortDropdown/SortDropdown";
 
 //Create debounce helper function
 let clock;
@@ -118,6 +119,11 @@ const OffCanvas = () => {
         <ul className="navbar-nav flex-grow-1 pe-3 dropdown-menu-dark">
           {<FilterDropdown classes={"nav-link fw-bold dropdown-item px-3"} />}
         </ul>
+
+        <h5>Sort</h5>
+        <ul className="navbar-nav flex-grow-1 pe-3 dropdown-menu-dark">
+          {<SortDropdown classes={"nav-link fw-bold dropdown-item px-3"} />}
+        </ul>
       </div>
     </div>
   );
@@ -174,28 +180,12 @@ const Navbar = () => {
           </button>
           {/* Search bar ends*/}
 
-          {/* <ul className="navbar-nav collapse navbar-collapse">
-            <li className="nav-item dropdown">
-              <button
-                className="nav-link dropdown-toggle btn btn-light"
-                href="#"
-                id="navbarDarkDropdownMenuLink"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categories
-              </button>
-              <ul
-                className="dropdown-menu dropdown-menu-dark text-center"
-                aria-labelledby="navbarDarkDropdownMenuLink"
-              >
-                <Categories classes={"dropdown-item fw-bold text-start px-3"} />
-              </ul>
-            </li>
-          </ul> */}
-
           <ul className="navbar-nav collapse navbar-collapse">
             <FilterDropdown classes={"nav-item dropdown"} />
+          </ul>
+
+          <ul className="navbar-nav collapse navbar-collapse">
+            <SortDropdown classes={"nav-item dropdown"} />
           </ul>
         </div>
 
