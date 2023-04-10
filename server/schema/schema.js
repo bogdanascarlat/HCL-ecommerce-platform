@@ -40,6 +40,7 @@ export const typeDefs = /* GraphQL */`
          rating: Float!
          thumbnail: String!
          images: [String!]!
+         specs: [Specifications]!
     }
     type CartType {
         productId: ID!
@@ -63,6 +64,30 @@ export const typeDefs = /* GraphQL */`
         cart: [CartType]
         isActive: Boolean!
         isAdmin: Boolean!
+    }
+    type Specifications {
+        productId: ID!
+        ScreenSize: Float!
+        ScreenResolution: [Int!]!
+        DisplayType: String!
+        TotalStorageCapacity: Int!
+        OperatingSystem: String!
+        ProcessorModel: String!
+        RAMmemory: Int!
+        WirelessConnectivity: [String!]
+        HeadphoneJack: String!
+        BatteryLife: Int!
+        FrontFacingCamera: Int!
+        RearFacingCamera: Int!
+        BuiltInMicrophone: String!
+        ProductHeight: Float
+        ProductWidth: Float
+        ProductDepth: Float
+        ProductWeight: Float
+        StylusIncluded: String!
+        Warranty: Int!
+        BluetoothVersion: Float!
+        Color: String!
     }
     type Query{
         getAllProducts(filter: Filter): [Product]

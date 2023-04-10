@@ -1,0 +1,11 @@
+.product-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-image {
+    max-height: 120px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  

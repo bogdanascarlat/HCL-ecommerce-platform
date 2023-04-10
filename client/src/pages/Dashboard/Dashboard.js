@@ -18,30 +18,41 @@ import {getProductIDFunction} from '../../features/getProductId/ProductIdSlice'
 
 const Dashboard = () => {
 
-  useProtected();
+  
   const navigate = useNavigate();
+  const isLoggedIn = useSelector((state) => state.auth.isLogedIn);
 
   const { value, filter } = useSelector(state => state.products)
-  const [getAllItemFunction] = useLazyQuery(GET_ITEMS)
+  const [getAllItemFunction, { data, error, loading }] = useLazyQuery(GET_ITEMS);
   const dispatch = useDispatch()
+  useProtected(dispatch);
   const products = value
 
   useEffect(() => {
-    getAllItemFunction({ variables: { filter } })
-      .then(res => dispatch(fillWithAllProducts(res.data.getAllProducts)))
-      .catch(err => {
-        batch(()=>{
-          dispatch(logout())
-          dispatch(addErrorMessage(err.message))
-      },) 
-      })
+    if (data) {
+      dispatch(fillWithAllProducts(data.getAllProducts));
+    }
+    if (error) {
+      batch(() => {
+        dispatch(logout());
+        dispatch(addErrorMessage(error.message));
+      });
+    }
+    console.log('Data:', data);
+console.log('Error:', error);
+  }, [data, error, dispatch]);
+  
+  useEffect(() => {
+    getAllItemFunction({ variables: { filter } });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter])
+  }, [filter]);
+  
 
   const handleProductClick = (id) => {
     dispatch(getProductIDFunction(id));
-    navigate('/product');
+    navigate(`/product/${id}`);
   };
+  
   
 
 
@@ -80,6 +91,13 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <div>
+    {isLoggedIn ? (
+      <h1>Debugging: You are logged in</h1>
+    ) : (
+      <h1>Debugging: You are not logged in</h1>
+    )}
+  </div>
       <Footer />
     </>
   )

@@ -3,16 +3,24 @@ import Footer from "../../components/Footer/Footer";
 import ProductSlider from "../../components/ProductSlider/ProductSlider";
 import { useQuery } from '@apollo/client';
 import { GET_ITEMS } from '../../graphql/query';
-import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const SingleProductPage = () => {
-  const selectedProductId = useSelector(
-    (state) => state.productId.selectedProductId
-  );
+  const { id: selectedProductId } = useParams();
 
   const { loading, error, data } = useQuery(GET_ITEMS, {
-    variables: { id: selectedProductId } ,
+    variables: { id: selectedProductId },
   });
+
+  useEffect(() => {
+    if (data) {
+      const browsingHistory = JSON.parse(localStorage.getItem("browsingHistory")) || [];
+      const product = data.getAllProducts.find((product) => product.id === selectedProductId);
+      const updatedHistory = [...browsingHistory.filter((p) => p.id !== selectedProductId), product];
+      localStorage.setItem("browsingHistory", JSON.stringify(updatedHistory));
+    }
+  }, [data, selectedProductId]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -22,10 +30,18 @@ const SingleProductPage = () => {
     return <div>Error: {error.message}</div>;
   }
 
+  const selectedProduct = data.getAllProducts.find(
+    (product) => product.id === selectedProductId
+  );
+
+  if (!selectedProduct) {
+    return <div>Product not found</div>;
+  }
+
   return (
     <>
       <Navbar />
-      <ProductSlider product={data.getAllProducts[selectedProductId-1]} />
+      <ProductSlider product={selectedProduct} productId={selectedProduct.id} />
       <Footer />
     </>
   );

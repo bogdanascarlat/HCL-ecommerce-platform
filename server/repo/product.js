@@ -1,8 +1,7 @@
 import { readFileSync } from 'fs';
 import {getRatingByProductId} from './rating.js'
 import {getAverageOfNumbers} from '../utils/utils.js'
-
-
+import { specs } from './specs.js';
 
 function getScoreByProductId(id){
   const ratings =  getRatingByProductId(id)
@@ -11,20 +10,25 @@ function getScoreByProductId(id){
 }
 
 
-// let products = []
 let products = JSON.parse(
   readFileSync(
     new URL('./products.json', import.meta.url)
   )
 );
 
+// Get specs by product ID
+const getSpecsByProductId = (id) => {
+  return specs.filter(spec => spec.productId === id);
+}
+
 //CRUD Operations
 
 // Read ALL
 export const getProducts = () => {
   return products.map(product => {
-    product.rating = getScoreByProductId(product.id)
-    return product
+    product.rating = getScoreByProductId(product.id);
+    product.specs = getSpecsByProductId(product.id);
+    return product;
   })
 }
 
@@ -43,6 +47,7 @@ export const getCategories = () => {
 export const getProductById = (id) => {
   const product = products.find((product) => product.id === id)
   product.rating = getScoreByProductId(id)
+  product.specs = getSpecsByProductId(id);
   return product
 }
 

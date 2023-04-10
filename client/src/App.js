@@ -10,6 +10,7 @@ import Cart from "./pages/Cart/Cart";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import BrowsingHistory from "./components/BrowsingHistory/BrowsingHistory";
 
 const router = createBrowserRouter([
   {
@@ -37,9 +38,13 @@ const router = createBrowserRouter([
     element: <Wishlist />,
   },
   {
-    path: "/product",
+    path: "/product/:id",
     element: <SingleProductPage />,
-  },
+  },  
+  {
+    path: "/history",
+    element: <BrowsingHistory />,
+  },  
 ], 
 {
   errorElement: <ErrorPage />,

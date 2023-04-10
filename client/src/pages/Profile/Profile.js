@@ -8,7 +8,7 @@ import useProtected from "../../hooks/useProtected";
 const Profile = () => {
   useProtected();
 
-  const user = useSelector((state) => state.auth.logedInUser)
+  const user = useSelector((state) => state.auth.loggedInUser)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
