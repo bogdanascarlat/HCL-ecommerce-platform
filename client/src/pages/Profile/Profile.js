@@ -12,6 +12,13 @@ const Profile = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  const handleLogout = () => {
+    dispatch(logout());
+    setTimeout(() => {
+      navigate("/login");
+    }, 1000); // Wait for 1 second before navigating
+  };
+
   if (!user) { 
     navigate('/login')
     return (<></>)
@@ -39,7 +46,7 @@ const Profile = () => {
               <p className="mt-0">
                 {user.isAdmin ? "Administrator" : "Customer"}
               </p>
-              <button onClick={()=>dispatch(logout())} className="btn btn-secondary mb-5 w-50 mx-auto">Logout</button>
+              <button onClick={handleLogout} className="btn btn-secondary mb-5 w-50 mx-auto">Logout</button>
             </div>
           </div>
           <div className="col mx-auto mt-auto">

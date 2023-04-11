@@ -4,6 +4,19 @@ import { CATEGORIES_QUERY } from "../../graphql/query";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { applyFilters } from "../../features/products/productSlice";
+import FilterDropdown from "../FilterDropdown/FilterDropdown";
+
+//Create debounce helper function
+let clock;
+
+const debounce = (func) => {
+  if (clock) {
+    clearTimeout(clock);
+  }
+  clock = setTimeout(() => {
+    func();
+  }, 500);
+};
 
 const MenuItems = ({ classes }) => {
   const cart = useSelector((state) => state?.auth?.loggedInUser?.cart);
@@ -11,7 +24,7 @@ const MenuItems = ({ classes }) => {
   return (
     <>
       <li className={classes + " d-flex"}>
-        <Link to="/cart" className="nav-link position-relative">
+        <Link to="/cart" className="nav-link position-relative pe-2">
           <svg
             className="pe-1 "
             xmlns="http://www.w3.org/2000/svg"
@@ -21,13 +34,19 @@ const MenuItems = ({ classes }) => {
             viewBox="0 0 16 16"
           >
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-            
           </svg>
-            {(cart && cart.length > 0) && <span style={{fontSize: ".65em"}} className="position-absolute top-0 mt-1 translate-middle badge rounded-pill bg-danger">
-            {cart.length}
-          </span>}
+          {cart && cart.length > 0 && (
+            <span
+              style={{ fontSize: ".65em" }}
+              className="position-absolute top-0 mt-1 translate-middle badge rounded-pill bg-danger"
+            >
+              {cart.length}
+            </span>
+          )}
         </Link>
-        <Link to="/cart" className="nav-link ms-1">Cart</Link>
+        <Link to="/cart" className="nav-link ms-1">
+          Cart
+        </Link>
       </li>
       <li className={classes}>
         <Link to="/wishlist" className="nav-link">
@@ -62,45 +81,14 @@ const MenuItems = ({ classes }) => {
       </li>
       <li className={classes}>
         <Link to="/history" className="nav-link">
-          <svg
-            className="pe-1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-          >
-            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
-          </svg>
+        <svg fill="#000000" height="24" width="24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+         viewBox="-28.49 -28.49 276.13 276.13"  > 
+         <path d="M109.575,0C49.156,0,0.001,49.155,0.001,109.574c0,60.42,49.154,109.576,109.573,109.576 c60.42,0,109.574-49.156,109.574-109.576C219.149,49.155,169.995,0,109.575,0z M109.575,204.15 c-52.148,0-94.573-42.427-94.573-94.576C15.001,57.426,57.427,15,109.575,15c52.148,0,94.574,42.426,94.574,94.574 C204.149,161.724,161.723,204.15,109.575,204.15z"></path> <path d="M166.112,108.111h-52.051V51.249c0-4.142-3.357-7.5-7.5-7.5c-4.142,0-7.5,3.358-7.5,7.5v64.362c0,4.142,3.358,7.5,7.5,7.5 h59.551c4.143,0,7.5-3.358,7.5-7.5C173.612,111.469,170.254,108.111,166.112,108.111z"></path> </svg> 
           History
         </Link>
       </li>
     </>
   );
-};
-
-const Categories = ({ classes }) => {
-  const dispatch = useDispatch();
-
-  const { data, loading, error } = useQuery(CATEGORIES_QUERY);
-
-  if (loading) return "Loading...";
-
-  if (error) return "Error...";
-
-  const { getCategories } = data;
-
-  return getCategories.map((category) => (
-    <li key={category} className="nav-item">
-      <button
-        onClick={() => dispatch(applyFilters({ byCategory: category }))}
-        className={classes}
-        to=""
-      >
-        {category}
-      </button>
-    </li>
-  ));
 };
 
 const OffCanvas = () => {
@@ -133,10 +121,10 @@ const OffCanvas = () => {
 
         <br />
 
-        <h5>Categories</h5>
+        <h5>Filter</h5>
 
         <ul className="navbar-nav flex-grow-1 pe-3 dropdown-menu-dark">
-          {<Categories classes={"nav-link fw-bold dropdown-item px-3"} />}
+          {<FilterDropdown classes={"nav-link fw-bold dropdown-item px-3"} />}
         </ul>
       </div>
     </div>
@@ -144,6 +132,8 @@ const OffCanvas = () => {
 };
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light py-4 d-flex justify-content-around align-items-center sticky-top">
@@ -157,46 +147,44 @@ const Navbar = () => {
           </Link>
         </div>
 
+       
         <div className="d-flex" tabIndex="-1">
           <input
             className="form-control ms-5 me-2"
             type="search"
             placeholder="Search"
+            onChange={(event) => {
+              debounce(() => {
+                dispatch(
+                  applyFilters({
+                    byTitle: event.target.value || null,
+                    byCategoryKeyword: event.target.value || null,
+                    byDescriptionKeyword: event.target.value || null,
+                    byKeyword: event.target.value || null,
+                  })
+                );
+              });
+            }}
           />
-
-          <ul className="navbar-nav collapse navbar-collapse">
-            <li className="nav-item dropdown">
-              <button
-                className="nav-link dropdown-toggle btn btn-light"
-                href="#"
-                id="navbarDarkDropdownMenuLink"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categories
-              </button>
-              <ul
-                className="dropdown-menu dropdown-menu-dark text-center"
-                aria-labelledby="navbarDarkDropdownMenuLink"
-              >
-                <Categories classes={"dropdown-item fw-bold text-start px-3"} />
-              </ul>
-            </li>
-          </ul>
 
           <button className="btn btn-light">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
               y="0px"
-              width="24"
-              height="24"
+              width="26"
+              height="26"
               viewBox="0 0 24 24"
             >
               <path d="M21.414,18.586c-0.287-0.287-1.942-1.942-2.801-2.801c-0.719,1.142-1.686,2.109-2.828,2.828 c0.859,0.859,2.514,2.514,2.801,2.801c0.781,0.781,2.047,0.781,2.828,0C22.195,20.633,22.195,19.367,21.414,18.586z"></path>
               <circle cx="11" cy="11" r="9" opacity=".35"></circle>
             </svg>
           </button>
+        
+
+          <ul className="navbar-nav collapse navbar-collapse">
+            <FilterDropdown classes={"nav-item dropdown"} />
+          </ul>
         </div>
 
         <div>

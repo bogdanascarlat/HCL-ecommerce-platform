@@ -1,6 +1,24 @@
-import { getAllProductsByCategory, getAllProducts, getProductWithId, getAllCategories, searchProductByKeyword} from '../resolvers/product.js'
-import { login, signup, getProfile, addProductToCart, updateQuantity, getProductsCart, getProductsWishlist } from '../resolvers/user.js'
-import { getAllUsers } from '../repo/user.js'
+import {
+  getAllProductsByCategory,
+  getAllProductsByBrands, // import getAllProductsByBrands function
+  getAllProducts,
+  getProductWithId,
+  getAllCategories,
+  getAllBrands,
+  getAllBrandsByCategory,
+  getAllProductsByBrandsByCategory,
+  searchProductByKeyword,
+} from "../resolvers/product.js";
+import {
+  login,
+  signup,
+  getProfile,
+  addProductToCart,
+  updateQuantity,
+  getProductsCart,
+  getProductsWishlist,
+} from "../resolvers/user.js";
+import { getAllUsers } from "../repo/user.js";
 
 export const typeDefs = /* GraphQL */`
     input LoginData{
@@ -21,11 +39,15 @@ export const typeDefs = /* GraphQL */`
         quantity: Int
     }
 
-    input Filter{
-        inStock: Boolean
-        byBrand: String
-        byCategory: String
-        priceRange: [Float]
+    input Filter {
+      inStock: Boolean
+      byBrand: String
+      byCategory: String
+      byTitle: String
+      byCategoryKeyword: String
+      byDescriptionKeyword: String
+      byKeyword: String
+      priceRange: [Float]
     }
 
     type Product {
@@ -41,6 +63,14 @@ export const typeDefs = /* GraphQL */`
          thumbnail: String!
          images: [String!]!
          specs: [Specifications]!
+    }
+    type Category {
+      category: String!
+      brands: [Brand!]!
+    }
+    type Brand {
+      id: ID!
+      name: String
     }
     type CartType {
         productId: ID!
@@ -89,42 +119,77 @@ export const typeDefs = /* GraphQL */`
         BluetoothVersion: Float!
         Color: String!
     }
-    type Query{
-        getAllProducts(filter: Filter): [Product]
-        getProduct(id: ID!): Product
-        getProfile: User
-        getAllUsers: [User]
-        getItemsByCategory(category: String!): [Product]
-        getCategories: [String!]
-        searchByKeyword(keyword: String!): [Product]
-        getProductsCart: [CartProductType]
-        getProductsWishlist: [Product]
+    type Query {
+      getAllProducts(filter: Filter): [Product]
+      getProduct(id: ID!): Product
+      getProfile: User
+      getAllUsers: [User]
+      getItemsByCategory(category: String!): [Product]
+      getCategories: [String!]
+      getItemsByBrands(brand: String!): [Product]
+      getBrands: [String!]
+      getProductsByBrands(brand: String!): [Product]
+      getBrandsByCategory(category: String!): [Brand!]
+      getProductsByBrandsByCategory(category: String!, brand: String!): [Product]
+      getAllProductsByBrandsByCategory(
+        category: String!
+        brand: String!
+      ): [Product]
+      searchByKeyword(keyword: String!): [Product]
+      getProductsCart: [CartProductType]
+      getProductsWishlist: [Product]
     }
-    type Mutation{
-        login(loginData: LoginData): User
-        signup(signupData: SignupData): User
-        addToCart(cartInput: CartInput): User
-        updateQuantity(cartInput: CartInput): Boolean
+    type Mutation {
+      login(loginData: LoginData): User
+      signup(signupData: SignupData): User
+      addToCart(cartInput: CartInput): User
+      updateQuantity(cartInput: CartInput): Boolean
     }
-`
+  `
 
-export const resolvers  = {
-    Query:{
-        getAllUsers: (_args, context) => getAllUsers(context.authHeader),
-        getAllProducts: (_, args, context) => getAllProducts(args.filter, context.authHeader),
-        getProduct: (_, args, context) => getProductWithId(parseInt(args.id), context.authHeader),
-        getProfile: (_, args, context) => getProfile(context.authHeader),
-        getItemsByCategory: (_, args, context) => getAllProductsByCategory(args.category, context.authHeader),
-        getCategories: (_, args, context) => getAllCategories(context.authHeader),
-        searchByKeyword: (_, args, context) => searchProductByKeyword(args.keyword, context.authHeader),
-        getProductsCart: (_, args, context) => getProductsCart(context.authHeader),
-        getProductsWishlist: (_, args, context) => getProductsWishlist(context.authHeader)
-    },
-    Mutation:{
-        login : (_, args, context) => login(args.loginData, context.res),
-        signup: (_, args, context) => signup(args.signupData),
-        addToCart: (_, args, context) => addProductToCart(args.cartInput, context.authHeader),
-        updateQuantity: (_, args, context) => updateQuantity(args.cartInput, context.authHeader)
-    }
-}
 
+
+
+export const resolvers = {
+  Query: {
+    getAllUsers: (_args, context) => getAllUsers(context.authHeader),
+    getAllProducts: (_, args, context) =>
+      getAllProducts(args.filter, context.authHeader),
+    getProduct: (_, args, context) =>
+      getProductWithId(parseInt(args.id), context.authHeader),
+    getProfile: (_, args, context) => getProfile(context.authHeader),
+    getItemsByCategory: (_, args, context) =>
+      getAllProductsByCategory(args.category, context.authHeader),
+    getCategories: (_, args, context) => getAllCategories(context.authHeader),
+    getItemsByBrands: (_, args, context) =>
+      getAllProductsByBrands(args.brand, context.authHeader),
+    getBrands: (_, args, context) => getAllBrands(context.authHeader),
+    getBrandsByCategory: (_, args, context) =>
+      getAllBrandsByCategory(args.category, context.authHeader),
+    getProductsByBrands: (_, args, context) =>
+      getAllProductsByBrandsByCategory(
+        null,
+        args.brand, // pass brand parameter to getAllProductsByBrandsByCategory
+        context.authHeader
+      ),
+    getProductsByBrandsByCategory: (_, args, context) =>
+      getAllProductsByBrandsByCategory(
+        args.category,
+        args.brand,
+        context.authHeader
+      ),
+    searchByKeyword: (_, args, context) =>
+      searchProductByKeyword(args.keyword, context.authHeader),
+    getProductsCart: (_, args, context) => getProductsCart(context.authHeader),
+    getProductsWishlist: (_, args, context) =>
+      getProductsWishlist(context.authHeader),
+  },
+  Mutation: {
+    login: (_, args, context) => login(args.loginData, context.res),
+    signup: (_, args, context) => signup(args.signupData),
+    addToCart: (_, args, context) =>
+      addProductToCart(args.cartInput, context.authHeader),
+    updateQuantity: (_, args, context) =>
+      updateQuantity(args.cartInput, context.authHeader),
+  },
+};

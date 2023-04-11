@@ -1,13 +1,11 @@
-import { ApolloServer } from '@apollo/server';
-import { expressMiddleware } from '@apollo/server/express4';
-import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
-import express from 'express';
-import http from 'http';
-import cors from 'cors';
-import { typeDefs, resolvers } from './schema/schema.js';
-import 'dotenv/config'
-
-
+import { ApolloServer } from "@apollo/server";
+import { expressMiddleware } from "@apollo/server/express4";
+import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
+import express from "express";
+import http from "http";
+import cors from "cors";
+import { typeDefs, resolvers } from "./schema/schema.js";
+import "dotenv/config";
 
 async function startApolloServer() {
   const app = express();
@@ -19,7 +17,7 @@ async function startApolloServer() {
   });
   await server.start();
   app.use(
-    '/graphql',
+    "/graphql",
     cors({
       origin: "http://localhost:4000",
       credentials: true,
@@ -27,18 +25,15 @@ async function startApolloServer() {
     express.json(),
     expressMiddleware(server, {
       context: async ({ req, res }) => {
-        const authHeader = req.headers.authorization || ""
-        return { res, authHeader }
+        const authHeader = req.headers.authorization || "";
+        return { res, authHeader };
       },
-    }),
+    })
   );
-  app.use(
-    '/debug',
-    express.static("public")
-  );
+  app.use("/debug", express.static("public"));
 
   await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
   console.log(`🚀 Server ready at http://localhost:4000/graphql`);
 }
 
-startApolloServer()
+startApolloServer();
