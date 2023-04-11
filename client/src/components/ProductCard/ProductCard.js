@@ -6,9 +6,10 @@ import useProtected from "../../hooks/useProtected";
 import { useEffect, useState } from "react";
 import { updateUser } from "../../features/user/authSlice";
 import { motion } from "framer-motion";
+import { useContext } from "react";
 
 const ProductCard = ({ product, onProductClick }) => {
-  useProtected()
+  useProtected();
 
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -23,8 +24,10 @@ const ProductCard = ({ product, onProductClick }) => {
     }
   }, [state]);
 
-  const [cart, setCart] = useState(state.auth?.loggedInUser?.cart || [])
-  const [wishlist, setWishlist] = useState(state.auth?.loggedInUser?.wishList || [])
+  const [cart, setCart] = useState(state.auth?.loggedInUser?.cart || []);
+  const [wishlist, setWishlist] = useState(
+    state.auth?.loggedInUser?.wishList || []
+  );
 
   const navigate = useNavigate();
 
@@ -71,11 +74,10 @@ const ProductCard = ({ product, onProductClick }) => {
       style={{ maxWidth: "var(--lg-max-width)" }}
       whileHover={{
         scale: 1.05,
-        
       }}
       transition={{ duration: 0.15 }}
       initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
     >
       <div className="d-flex card" style={{ height: "100%" }}>
         <div className="d-flex card-header mb-2 w-100 justify-content-between align-items-center">
@@ -105,10 +107,11 @@ const ProductCard = ({ product, onProductClick }) => {
             </button>
           </span>
         </div>
-        <motion.div className="d-flex justify-content-center px-2"
-         onClick={onProductClick} 
-         style={{ cursor: "pointer" }}
-         >
+        <motion.div
+          className="d-flex justify-content-center px-2"
+          onClick={onProductClick}
+          style={{ cursor: "pointer" }}
+        >
           <img
             className="img-fluid mt-2"
             alt="img"
