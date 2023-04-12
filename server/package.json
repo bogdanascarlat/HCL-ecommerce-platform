@@ -11,7 +11,7 @@
   "author": "Constantin-Bogdan, Luminita, Mircea, Laurentiu",
   "license": "ISC",
   "dependencies": {
-    "@apollo/server": "^4.1.1",
+    "@apollo/server": "^4.4.0",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

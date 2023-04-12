@@ -1,5 +1,5 @@
 import React from "react";
-import Slider, { Range } from "rc-slider";
+import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import useProtected from "../../hooks/useProtected";
 

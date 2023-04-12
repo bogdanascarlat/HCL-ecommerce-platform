@@ -18,7 +18,7 @@ const debounce = (func) => {
 };
 
 const MenuItems = ({ classes }) => {
-  const cart = useSelector((state) => state?.auth?.logedInUser?.cart);
+  const cart = useSelector((state) => state?.auth?.loggedInUser?.cart);
 
   return (
     <>
@@ -76,6 +76,14 @@ const MenuItems = ({ classes }) => {
             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
           </svg>
           Profile
+        </Link>
+      </li>
+      <li className={classes}>
+        <Link to="/history" className="nav-link">
+        <svg fill="#000000" height="24" width="24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+         viewBox="-28.49 -28.49 276.13 276.13"  > 
+         <path d="M109.575,0C49.156,0,0.001,49.155,0.001,109.574c0,60.42,49.154,109.576,109.573,109.576 c60.42,0,109.574-49.156,109.574-109.576C219.149,49.155,169.995,0,109.575,0z M109.575,204.15 c-52.148,0-94.573-42.427-94.573-94.576C15.001,57.426,57.427,15,109.575,15c52.148,0,94.574,42.426,94.574,94.574 C204.149,161.724,161.723,204.15,109.575,204.15z"></path> <path d="M166.112,108.111h-52.051V51.249c0-4.142-3.357-7.5-7.5-7.5c-4.142,0-7.5,3.358-7.5,7.5v64.362c0,4.142,3.358,7.5,7.5,7.5 h59.551c4.143,0,7.5-3.358,7.5-7.5C173.612,111.469,170.254,108.111,166.112,108.111z"></path> </svg> 
+          History
         </Link>
       </li>
     </>
@@ -143,7 +151,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Search bar starts*/}
+       
         <div className="d-flex" tabIndex="-1">
           <input
             className="form-control ms-5 me-2"
@@ -176,7 +184,11 @@ const Navbar = () => {
               <circle cx="11" cy="11" r="9" opacity=".35"></circle>
             </svg>
           </button>
+<<<<<<< HEAD
           {/* Search bar ends*/}
+=======
+        
+>>>>>>> 5eb42ce47fe5bab60c2c5ffec288ec18a279d4bb
 
           <ul className="navbar-nav collapse navbar-collapse">
             <FilterDropdown classes={"nav-item dropdown"} />

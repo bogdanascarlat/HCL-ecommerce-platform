@@ -8,6 +8,9 @@ import Profile from "./pages/Profile/Profile";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
 import Wishlist from "./pages/Wishlist/Wishlist";
+import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import BrowsingHistory from "./components/BrowsingHistory/BrowsingHistory";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +37,19 @@ const router = createBrowserRouter([
     path: "/wishlist",
     element: <Wishlist />,
   },
-]);
+  {
+    path: "/product/:id",
+    element: <SingleProductPage />,
+  },  
+  {
+    path: "/history",
+    element: <BrowsingHistory />,
+  },  
+], 
+{
+  errorElement: <ErrorPage />,
+}
+);
 
 function App() {
   return (

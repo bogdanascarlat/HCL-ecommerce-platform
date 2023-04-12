@@ -69,6 +69,30 @@ export const GET_ITEMS = gql`
       rating
       thumbnail
       images
+      specs {
+        productId
+        ScreenSize
+        ScreenResolution
+        DisplayType
+        TotalStorageCapacity
+        RAMmemory
+        OperatingSystem
+        ProcessorModel
+        WirelessConnectivity
+        BluetoothVersion
+        FrontFacingCamera
+        RearFacingCamera
+        Color
+        HeadphoneJack
+        BuiltInMicrophone
+        StylusIncluded
+        BatteryLife
+        ProductHeight
+        ProductWidth
+        ProductDepth
+        ProductWeight
+        Warranty
+      }
     }
   }
 `;

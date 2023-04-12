@@ -1,36 +1,39 @@
-import { createSlice } from '@reduxjs/toolkit'
-import Cookie from 'js-cookie'
+import { createSlice } from '@reduxjs/toolkit';
+import Cookie from 'js-cookie';
 
 const initialState = {
-    logedInUser: null,
-    isLogedIn: false
-}
+  loggedInUser: JSON.parse(localStorage.getItem('loggedInUser')) || null,
+  isLogedIn: !!localStorage.getItem('loggedInUser'),
+};
+
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
     login: (state, action) => {
+      localStorage.setItem('loggedInUser', JSON.stringify(action.payload));
       return {
         ...state,
-        logedInUser: action.payload,
-        isLogedIn: true
-      }
-    }, 
+        loggedInUser: action.payload,
+        isLogedIn: true,
+      };
+    },
     logout: () => {
-      Cookie.remove('token')
-      return initialState
+      localStorage.removeItem('loggedInUser');
+      Cookie.remove('token');
+      return initialState;
     },
     updateUser: (state, action) => {
-      return{
+      return {
         ...state,
-        logedInUser: action.payload
-      }
-    }
-  }
-})
+        loggedInUser: action.payload,
+      };
+    },
+  },
+});
 
 // Action creators are generated for each case reducer function
-export const { login , logout, updateUser } = authSlice.actions
+export const { login, logout, updateUser } = authSlice.actions;
 
-export default authSlice.reducer
+export default authSlice.reducer;

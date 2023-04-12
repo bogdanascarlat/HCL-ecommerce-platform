@@ -5,21 +5,28 @@ import { useDispatch, useSelector } from "react-redux";
 import useProtected from "../../hooks/useProtected";
 import { useEffect, useState } from "react";
 import { updateUser } from "../../features/user/authSlice";
+import { motion } from "framer-motion";
+import { useContext } from "react";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onProductClick }) => {
   useProtected();
 
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setCart(state.auth.logedInUser.cart || []);
-    setWishlist(state.auth.logedInUser.wishList || []);
+    if (state.auth.loggedInUser) {
+      setCart(state.auth.loggedInUser.cart || []);
+      setWishlist(state.auth.loggedInUser.wishList || []);
+    } else {
+      setCart([]);
+      setWishlist([]);
+    }
   }, [state]);
 
-  const [cart, setCart] = useState(state.auth?.logedInUser?.cart || []);
+  const [cart, setCart] = useState(state.auth?.loggedInUser?.cart || []);
   const [wishlist, setWishlist] = useState(
-    state.auth?.logedInUser?.wishList || []
+    state.auth?.loggedInUser?.wishList || []
   );
 
   const navigate = useNavigate();
@@ -62,9 +69,15 @@ const ProductCard = ({ product }) => {
       : "card-text fw-bold align-self-end";
 
   return (
-    <div
-      className=" g-col col-12 col-lg-auto"
+    <motion.div
+      className=" g-col col-12 col-lg-auto "
       style={{ maxWidth: "var(--lg-max-width)" }}
+      whileHover={{
+        scale: 1.05,
+      }}
+      transition={{ duration: 0.15 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
     >
       <div className="d-flex card" style={{ height: "100%" }}>
         <div className="d-flex card-header mb-2 w-100 justify-content-between align-items-center">
@@ -94,14 +107,18 @@ const ProductCard = ({ product }) => {
             </button>
           </span>
         </div>
-        <div className="d-flex justify-content-center px-2">
+        <motion.div
+          className="d-flex justify-content-center px-2"
+          onClick={onProductClick}
+          style={{ cursor: "pointer" }}
+        >
           <img
             className="img-fluid mt-2"
             alt="img"
             src={image}
             style={{ maxHeight: 120 }}
           ></img>
-        </div>
+        </motion.div>
         <div className="d-flex row card-body px-4">
           <h5 className="card-title fw-bold align-self-end fs-6 text">
             {title}
@@ -124,7 +141,7 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

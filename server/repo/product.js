@@ -1,12 +1,13 @@
-import { readFileSync } from "fs";
-import { getRatingByProductId } from "./rating.js";
-import { getAverageOfNumbers } from "../utils/utils.js";
+import { readFileSync } from 'fs';
+import {getRatingByProductId} from './rating.js'
+import {getAverageOfNumbers} from '../utils/utils.js'
+import { specs } from './specs.js';
 import productsData from "../repo/products.json" assert { type: "json" };
 
-function getScoreByProductId(id) {
-  const ratings = getRatingByProductId(id);
-  const scores = ratings.map((rating) => rating.score);
-  return getAverageOfNumbers(...scores).toFixed(2);
+function getScoreByProductId(id){
+  const ratings =  getRatingByProductId(id)
+  const scores =  ratings.map(rating => rating.score)
+  return  getAverageOfNumbers(...scores).toFixed(2)
 }
 
 // let products = []
@@ -14,25 +15,34 @@ let products = JSON.parse(
   readFileSync(new URL("./products.json", import.meta.url))
 );
 
+// Get specs by product ID
+const getSpecsByProductId = (id) => {
+  return specs.filter(spec => spec.productId === id);
+}
+
 //CRUD Operations
 
 // Read ALL
 export const getProducts = () => {
-  return products.map((product) => {
+  return products.map(product => {
     product.rating = getScoreByProductId(product.id);
+    product.specs = getSpecsByProductId(product.id);
     return product;
-  });
-};
+  })
+}
+
+export const getItemsByCategory = (category) => {
+  
+    return products.filter(getItemsByCategory => getItemsByCategory.category === category)
+  
+}
+
 export const getCategories = () => {
   return new Set(products.map((product) => product.category));
 };
 
 //only return products that match the selected category and brand respectively
-export const getItemsByCategory = (category) => {
-  const items = products.filter((product) => product.category === category);
-  const brands = [...new Set(items.map((item) => item.brand))];
-  return brands;
-};
+
 
 export const getItemsByBrands = (brand) => {
   return products.filter((product) => product.brand === brand);
@@ -67,10 +77,11 @@ export const getProductsByBrands = (brand) => {
 
 //Read by ID
 export const getProductById = (id) => {
-  const product = products.find((product) => product.id === id);
-  product.rating = getScoreByProductId(id);
-  return product;
-};
+  const product = products.find((product) => product.id === id)
+  product.rating = getScoreByProductId(id)
+  product.specs = getSpecsByProductId(id);
+  return product
+}
 
 // Create new product
 export const createNewProduct = (product) => {
