@@ -1,5 +1,5 @@
 import React from "react";
-import { Range } from "rc-slider";
+import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import useProtected from "../../hooks/useProtected";
 
@@ -12,7 +12,8 @@ const PriceSlider = ({ min, max, onPriceChange, value }) => {
 
   return (
     <div style={{ marginTop: "19px", width: "15rem" }}>
-      <Range
+      <Slider
+        range
         min={min}
         max={max}
         value={value}
