@@ -14,7 +14,7 @@ import { logout } from "../../features/user/authSlice";
 import { addErrorMessage } from "../../features/message/messageSlice";
 import Footer from "../../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
-import {getProductIDFunction} from '../../features/getProductId/ProductIdSlice'
+import { getProductIDFunction } from "../../features/getProductId/ProductIdSlice";
 
 const MIN_PRICE = 0;
 const MAX_PRICE = 10000;
@@ -22,15 +22,15 @@ const MAX_PRICE = 10000;
 const Dashboard = () => {
   useProtected();
 
-  
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.auth.isLogedIn);
 
-  const { value, filter } = useSelector(state => state.products)
-  const [getAllItemFunction, { data, error, loading }] = useLazyQuery(GET_ITEMS);
-  const dispatch = useDispatch()
+  const { value, filter } = useSelector((state) => state.products);
+  const [getAllItemFunction, { data, error, loading }] =
+    useLazyQuery(GET_ITEMS);
+  const dispatch = useDispatch();
   useProtected(dispatch);
-  const products = value
+  const products = value;
 
   useEffect(() => {
     if (data) {
@@ -42,24 +42,20 @@ const Dashboard = () => {
         dispatch(addErrorMessage(error.message));
       });
     }
-    console.log('Data:', data);
-console.log('Error:', error);
+    console.log("Data:", data);
+    console.log("Error:", error);
   }, [data, error, dispatch]);
-  
+
   useEffect(() => {
     getAllItemFunction({ variables: { filter } });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
-  
 
   const handleProductClick = (id) => {
     dispatch(getProductIDFunction(id));
     navigate(`/product/${id}`);
   };
-  
-  
 
-  
   const [priceRange, setPriceRange] = useState([MIN_PRICE, MAX_PRICE]);
 
   const handlePriceChange = (newPriceRange) => {
@@ -85,17 +81,19 @@ console.log('Error:', error);
 
   const cards = filteredProducts.map((product, index) => {
     return (
-      <ProductCard 
-        key={product.title + index} 
-        product={product} 
-        onProductClick={() => handleProductClick(product.id)} 
+      <ProductCard
+        key={product.title + index}
+        product={product}
+        onProductClick={() => handleProductClick(product.id)}
       />
     );
   });
 
-
-  const [productsPerPage, setProductsPerPage] = useState(20)
-  const [shownCards, currentPage, setCurrentPage, numberOfPages] = usePaginate(cards, productsPerPage)
+  const [productsPerPage, setProductsPerPage] = useState(20);
+  const [shownCards, currentPage, setCurrentPage, numberOfPages] = usePaginate(
+    cards,
+    productsPerPage
+  );
 
   return (
     <>
@@ -125,12 +123,12 @@ console.log('Error:', error);
         </div>
       </div>
       <div>
-    {isLoggedIn ? (
+        {/* {isLoggedIn ? (
       <h1>Debugging: You are logged in</h1>
     ) : (
       <h1>Debugging: You are not logged in</h1>
-    )}
-  </div>
+    )} */}
+      </div>
       <Footer />
     </>
   );
