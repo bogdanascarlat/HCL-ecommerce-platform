@@ -13,12 +13,7 @@ import Paginate from "../../components/Paginate/Paginate";
 import { logout } from "../../features/user/authSlice";
 import { addErrorMessage } from "../../features/message/messageSlice";
 import Footer from "../../components/Footer/Footer";
-<<<<<<< HEAD
 import SortingContext from "../../components/SortDropdown/SortContext";
-=======
-import { useNavigate } from "react-router-dom";
-import { getProductIDFunction } from "../../features/getProductId/ProductIdSlice";
->>>>>>> 5eb42ce47fe5bab60c2c5ffec288ec18a279d4bb
 
 const MIN_PRICE = 0;
 const MAX_PRICE = 10000;
@@ -26,40 +21,10 @@ const MAX_PRICE = 10000;
 const Dashboard = () => {
   useProtected();
 
-  const navigate = useNavigate();
-  const isLoggedIn = useSelector((state) => state.auth.isLogedIn);
-
   const { value, filter } = useSelector((state) => state.products);
-  const [getAllItemFunction, { data, error, loading }] =
-    useLazyQuery(GET_ITEMS);
+  const [getAllItemFunction] = useLazyQuery(GET_ITEMS);
   const dispatch = useDispatch();
-  useProtected(dispatch);
-  const products = value;
-
-  useEffect(() => {
-    if (data) {
-      dispatch(fillWithAllProducts(data.getAllProducts));
-    }
-    if (error) {
-      batch(() => {
-        dispatch(logout());
-        dispatch(addErrorMessage(error.message));
-      });
-    }
-    console.log("Data:", data);
-    console.log("Error:", error);
-  }, [data, error, dispatch]);
-
-  useEffect(() => {
-    getAllItemFunction({ variables: { filter } });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter]);
-
-  const handleProductClick = (id) => {
-    dispatch(getProductIDFunction(id));
-    navigate(`/product/${id}`);
-  };
-
+  let products = value;
   const [priceRange, setPriceRange] = useState([MIN_PRICE, MAX_PRICE]);
   const [sortBy, setSortBy] = useState(null);
 
@@ -80,7 +45,6 @@ const Dashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
 
-<<<<<<< HEAD
   products = products
     .filter(
       (item) => item.price >= priceRange[0] && item.price <= priceRange[1]
@@ -94,20 +58,9 @@ const Dashboard = () => {
         return 0;
       }
     });
-=======
-  const filteredProducts = products.filter(
-    (item) => item.price >= priceRange[0] && item.price <= priceRange[1]
-  );
->>>>>>> 5eb42ce47fe5bab60c2c5ffec288ec18a279d4bb
 
-  const cards = filteredProducts.map((product, index) => {
-    return (
-      <ProductCard
-        key={product.title + index}
-        product={product}
-        onProductClick={() => handleProductClick(product.id)}
-      />
-    );
+  const cards = products.map((product, index) => {
+    return <ProductCard key={product.title + index} product={product} />;
   });
 
   const [productsPerPage, setProductsPerPage] = useState(20);
@@ -143,20 +96,8 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
         <Footer />
       </SortingContext.Provider>
-=======
-      </div>
-      <div>
-        {/* {isLoggedIn ? (
-      <h1>Debugging: You are logged in</h1>
-    ) : (
-      <h1>Debugging: You are not logged in</h1>
-    )} */}
-      </div>
-      <Footer />
->>>>>>> 5eb42ce47fe5bab60c2c5ffec288ec18a279d4bb
     </>
   );
 };
