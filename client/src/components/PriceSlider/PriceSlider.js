@@ -11,7 +11,7 @@ const PriceSlider = ({ min, max, onPriceChange, value }) => {
   };
 
   return (
-    <div style={{ marginTop: "19px", width: "15rem" }}>
+    <div style={{ marginTop: "8px", width: "15rem" }}>
       <Slider
         range
         min={min}
@@ -28,27 +28,37 @@ const PriceSlider = ({ min, max, onPriceChange, value }) => {
           {
             backgroundColor: "#007bff",
             borderColor: "#007bff",
-            borderWidth: "1px",
+            borderWidth: "5px",
             borderStyle: "solid",
             width: "20px",
             height: "20px",
-            marginLeft: "-10px",
+            marginLeft: "-8px",
             marginTop: "-9px",
           },
           {
             backgroundColor: "#007bff",
             borderColor: "#007bff",
-            borderWidth: "1px",
+            borderWidth: "5px",
             borderStyle: "solid",
             width: "20px",
             height: "20px",
-            marginLeft: "-10px",
+            marginLeft: "8px",
             marginTop: "-9px",
           },
         ]}
-        railStyle={{ backgroundColor: "#c7c7c7", height: "6px" }}
+        railStyle={{
+          backgroundColor: "#c7c7c7",
+          height: "3px",
+        }}
       />
-      <div className="d-flex justify-content-between">
+      <div
+        className="d-flex justify-content-between"
+        style={{
+          position: "absolute",
+          left: "420px",
+          right: "370px",
+        }}
+      >
         <span>${value[0]}</span>
         <span>${value[1]}</span>
       </div>
