@@ -18,10 +18,10 @@ const SortDropdown = () => {
   return (
     <div className="dropdown" style={{ marginLeft: 3 + "em" }}>
       <button
-        className="btn btn-secondary dropdown-toggle"
+        className="btn dropdown-toggle"
         onClick={toggleDropdown}
       >
-        Sort
+        Sort by price
       </button>
       {isOpen && (
         <div className="dropdown-menu show">

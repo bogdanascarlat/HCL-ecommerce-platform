@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PriceSlider from "../PriceSlider/PriceSlider";
 import useProtected from "../../hooks/useProtected";
+import SortDropdown from "../SortDropdown/SortDropdown";
 
 const MIN_PRICE = 0;
 const MAX_PRICE = 10000;
@@ -48,6 +49,9 @@ const SwitchBar = ({
             onPriceChange={handlePriceChange}
             value={priceRange}
           />
+        </span>
+        <span style={{ marginLeft: "30px" }}>
+            <SortDropdown classes={"nav-item dropdown"} />
         </span>
       </div>
     </div>

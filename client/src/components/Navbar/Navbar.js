@@ -134,7 +134,7 @@ const OffCanvas = () => {
           {<FilterDropdown classes={"nav-link fw-bold dropdown-item px-3"} />}
         </ul>
 
-        <h5>Sort</h5>
+        <h5>Sort by price</h5>
         <ul className="navbar-nav flex-grow-1 pe-3 dropdown-menu-dark">
           {<SortDropdown classes={"nav-link fw-bold dropdown-item px-3"} />}
         </ul>
@@ -194,10 +194,6 @@ const Navbar = () => {
 
           <ul className="navbar-nav collapse navbar-collapse">
             <FilterDropdown classes={"nav-item dropdown"} />
-          </ul>
-
-          <ul className="navbar-nav collapse navbar-collapse">
-            <SortDropdown classes={"nav-item dropdown"} />
           </ul>
         </div>
 
