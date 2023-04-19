@@ -11,7 +11,7 @@ const PriceSlider = ({ min, max, onPriceChange, value }) => {
   };
 
   return (
-    <div style={{ marginTop: "8px", width: "15rem" }}>
+    <div style={{ marginTop: "8px", width: "15rem", position: "relative" }}>
       <Slider
         range
         min={min}
@@ -55,8 +55,11 @@ const PriceSlider = ({ min, max, onPriceChange, value }) => {
         className="d-flex justify-content-between"
         style={{
           position: "absolute",
-          left: "420px",
-          right: "370px",
+          left: 0,
+          right: 0,
+          bottom: "-20px",
+          marginLeft: "auto",
+          marginRight: "auto",
         }}
       >
         <span>${value[0]}</span>
