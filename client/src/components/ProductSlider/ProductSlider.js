@@ -167,7 +167,11 @@ const ProductSlider = ({ product, productId }) => {
       <table className="table table-bordered">
    
       <tbody>
-  {Object.entries(specs[0] || {}).map(([key, value], index, arr) => {
+      {Object.entries(specs[0] || {})
+  .filter(([key, value]) => {
+    return !(key === '__typename' || key === 'productId' || value === 0 || (Array.isArray(value) && value.length === 0));
+  })
+  .map(([key, value], index, arr) => {
     if (key === '__typename' || key === 'productId') {
       return null;
     }
@@ -211,13 +215,14 @@ const ProductSlider = ({ product, productId }) => {
       }
     
       return (
-        <tr key={key} className="offset-right">
+        <tr key={`${key}-${index}`} className="offset-right">
           <th scope="row">{displayName}</th>
           <td>
             {key === 'RAMmemory' ? `${value} GB` : value}
           </td>
         </tr>
       );
+      
     };
     
 

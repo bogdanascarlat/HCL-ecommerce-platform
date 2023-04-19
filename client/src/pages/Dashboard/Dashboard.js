@@ -14,12 +14,15 @@ import { logout } from "../../features/user/authSlice";
 import { addErrorMessage } from "../../features/message/messageSlice";
 import Footer from "../../components/Footer/Footer";
 import SortingContext from "../../components/SortDropdown/SortContext";
+import { useNavigate } from "react-router-dom";
+import { getProductIDFunction } from "../../features/getProductId/ProductIdSlice";
 
 const MIN_PRICE = 0;
 const MAX_PRICE = 10000;
 
 const Dashboard = () => {
-  useProtected();
+  useProtected()
+  const navigate = useNavigate()
 
   const { value, filter } = useSelector((state) => state.products);
   const [getAllItemFunction] = useLazyQuery(GET_ITEMS);
@@ -59,8 +62,17 @@ const Dashboard = () => {
       }
     });
 
+    const handleProductClick = (id) => {
+      dispatch(getProductIDFunction(id))
+      navigate(`/product/${id}`)
+    }
+
   const cards = products.map((product, index) => {
-    return <ProductCard key={product.title + index} product={product} />;
+    return  <ProductCard 
+    key={product.title + index} 
+    product={product} 
+    onProductClick={() => handleProductClick(product.id)}
+    />
   });
 
   const [productsPerPage, setProductsPerPage] = useState(20);
