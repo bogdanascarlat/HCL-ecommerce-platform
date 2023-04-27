@@ -55,10 +55,24 @@ export const addProductToCart = (cartInput, authHeader) => {
   return updateUserById(id, user);
 };
 
+export const addProductToWishList = (productID, authHeader) => {
+  console.log("In user Product ID", productID);
+
+  const { id } = decodeJWT(authHeader);
+  const user = getUserById(id);
+
+  if (!user.wishList.includes(productID)) {
+    user.wishList.push(productID);
+    updateUserById(id, user);
+  }
+  return user;
+};
+
 export const getProductsWishlist = async (authHeader) => {
   const { id } = decodeJWT(authHeader);
   const user = getUserById(id);
   const { wishList } = user;
+
   return wishList.map((id) => getProductById(Number.parseInt(id)));
 };
 

@@ -9,11 +9,7 @@
     "address": "Some address in the wrld no 3",
     "phone": "0777 777 777",
     "birthDate": "03-05-1999",
-    "wishList": [
-      1,
-      22,
-      43
-    ],
+    "wishList": [1, 22, 43],
     "cart": [
       {
         "productId": "1",

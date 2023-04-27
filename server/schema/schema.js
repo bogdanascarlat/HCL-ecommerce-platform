@@ -14,141 +14,140 @@ import {
   signup,
   getProfile,
   addProductToCart,
+  addProductToWishList,
   updateQuantity,
   getProductsCart,
   getProductsWishlist,
 } from "../resolvers/user.js";
 import { getAllUsers } from "../repo/user.js";
 
-export const typeDefs = /* GraphQL */`
-    input LoginData{
-        email: String
-        password: String
-    }
-    input SignupData{
-        email: String!
-        password:String!
-        firstName: String
-        lastName: String
-        address: String
-        phone: String
-        birthDate: String
-    }
-    input CartInput{
-        productId: ID
-        quantity: Int
-    }
+export const typeDefs = /* GraphQL */ `
+  input LoginData {
+    email: String
+    password: String
+  }
+  input SignupData {
+    email: String!
+    password: String!
+    firstName: String
+    lastName: String
+    address: String
+    phone: String
+    birthDate: String
+  }
+  input CartInput {
+    productId: ID
+    quantity: Int
+  }
 
-    input Filter {
-      inStock: Boolean
-      byBrand: String
-      byCategory: String
-      byTitle: String
-      byCategoryKeyword: String
-      byDescriptionKeyword: String
-      byKeyword: String
-      priceRange: [Float]
-    }
+  input Filter {
+    inStock: Boolean
+    byBrand: String
+    byCategory: String
+    byTitle: String
+    byCategoryKeyword: String
+    byDescriptionKeyword: String
+    byKeyword: String
+    priceRange: [Float]
+  }
 
-    type Product {
-         id: ID!
-         title: String!
-         description: String!
-         price: Float!
-         stock: Int!
-         brand: String!
-         category: String!
-         discountPercentage: Float!
-         rating: Float!
-         thumbnail: String!
-         images: [String!]!
-         specs: [Specifications]!
-    }
-    type Category {
+  type Product {
+    id: ID!
+    title: String!
+    description: String!
+    price: Float!
+    stock: Int!
+    brand: String!
+    category: String!
+    discountPercentage: Float!
+    rating: Float!
+    thumbnail: String!
+    images: [String!]!
+    specs: [Specifications]!
+  }
+  type Category {
+    category: String!
+    brands: [Brand!]!
+  }
+  type Brand {
+    id: ID!
+    name: String
+  }
+  type CartType {
+    productId: ID!
+    quantity: Int
+  }
+  type CartProductType {
+    product: Product
+    quantity: Int
+  }
+  type User {
+    id: ID!
+    firstName: String
+    lastName: String
+    email: String!
+    password: String!
+    image: String
+    address: String
+    phone: String
+    birthDate: String
+    wishList: [ID!]
+    cart: [CartType]
+    isActive: Boolean!
+    isAdmin: Boolean!
+  }
+  type Specifications {
+    productId: ID!
+    ScreenSize: Float!
+    ScreenResolution: [Int!]!
+    DisplayType: String!
+    TotalStorageCapacity: Int!
+    OperatingSystem: String!
+    ProcessorModel: String!
+    RAMmemory: Int!
+    WirelessConnectivity: [String!]
+    HeadphoneJack: String!
+    BatteryLife: Int!
+    FrontFacingCamera: Int!
+    RearFacingCamera: Int!
+    BuiltInMicrophone: String!
+    ProductHeight: Float
+    ProductWidth: Float
+    ProductDepth: Float
+    ProductWeight: Float
+    StylusIncluded: String!
+    Warranty: Int!
+    BluetoothVersion: Float!
+    Color: String!
+  }
+  type Query {
+    getAllProducts(filter: Filter): [Product]
+    getProduct(id: ID!): Product
+    getProfile: User
+    getAllUsers: [User]
+    getItemsByCategory(category: String!): [Product]
+    getCategories: [String!]
+    getItemsByBrands(brand: String!): [Product]
+    getBrands: [String!]
+    getProductsByBrands(brand: String!): [Product]
+    getBrandsByCategory(category: String!): [Brand!]
+    getProductsByBrandsByCategory(category: String!, brand: String!): [Product]
+    getAllProductsByBrandsByCategory(
       category: String!
-      brands: [Brand!]!
-    }
-    type Brand {
-      id: ID!
-      name: String
-    }
-    type CartType {
-        productId: ID!
-        quantity: Int
-    }
-    type CartProductType {
-        product: Product
-        quantity: Int
-    }
-    type User{
-        id: ID!
-        firstName: String
-        lastName: String
-        email: String!
-        password: String!
-        image: String
-        address: String
-        phone: String
-        birthDate: String
-        wishList: [ID!]
-        cart: [CartType]
-        isActive: Boolean!
-        isAdmin: Boolean!
-    }
-    type Specifications {
-        productId: ID!
-        ScreenSize: Float!
-        ScreenResolution: [Int!]!
-        DisplayType: String!
-        TotalStorageCapacity: Int!
-        OperatingSystem: String!
-        ProcessorModel: String!
-        RAMmemory: Int!
-        WirelessConnectivity: [String!]
-        HeadphoneJack: String!
-        BatteryLife: Int!
-        FrontFacingCamera: Int!
-        RearFacingCamera: Int!
-        BuiltInMicrophone: String!
-        ProductHeight: Float
-        ProductWidth: Float
-        ProductDepth: Float
-        ProductWeight: Float
-        StylusIncluded: String!
-        Warranty: Int!
-        BluetoothVersion: Float!
-        Color: String!
-    }
-    type Query {
-      getAllProducts(filter: Filter): [Product]
-      getProduct(id: ID!): Product
-      getProfile: User
-      getAllUsers: [User]
-      getItemsByCategory(category: String!): [Product]
-      getCategories: [String!]
-      getItemsByBrands(brand: String!): [Product]
-      getBrands: [String!]
-      getProductsByBrands(brand: String!): [Product]
-      getBrandsByCategory(category: String!): [Brand!]
-      getProductsByBrandsByCategory(category: String!, brand: String!): [Product]
-      getAllProductsByBrandsByCategory(
-        category: String!
-        brand: String!
-      ): [Product]
-      searchByKeyword(keyword: String!): [Product]
-      getProductsCart: [CartProductType]
-      getProductsWishlist: [Product]
-    }
-    type Mutation {
-      login(loginData: LoginData): User
-      signup(signupData: SignupData): User
-      addToCart(cartInput: CartInput): User
-      updateQuantity(cartInput: CartInput): Boolean
-    }
-  `
-
-
-
+      brand: String!
+    ): [Product]
+    searchByKeyword(keyword: String!): [Product]
+    getProductsCart: [CartProductType]
+    getProductsWishlist: [Product]
+  }
+  type Mutation {
+    login(loginData: LoginData): User
+    signup(signupData: SignupData): User
+    addToCart(cartInput: CartInput): User
+    updateQuantity(cartInput: CartInput): Boolean
+    addToWishList(productId: ID): User
+  }
+`;
 
 export const resolvers = {
   Query: {
@@ -191,5 +190,7 @@ export const resolvers = {
       addProductToCart(args.cartInput, context.authHeader),
     updateQuantity: (_, args, context) =>
       updateQuantity(args.cartInput, context.authHeader),
+    addToWishList: (_, args, context) =>
+      addProductToWishList(args.productId, context.authHeader),
   },
 };
