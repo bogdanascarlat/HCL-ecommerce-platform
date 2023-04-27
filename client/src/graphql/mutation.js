@@ -85,6 +85,29 @@ export const ADD_TO_WISHLIST_MUTATION = gql`
   }
 `;
 
+export const REMOVE_FROM_WISHLIST_MUTATION = gql`
+  mutation RemoveFromWishlistMutation($productId: ID!) {
+    removeFromWishList(productId: $productId) {
+      id
+      firstName
+      lastName
+      email
+      password
+      image
+      address
+      phone
+      birthDate
+      wishList
+      isActive
+      isAdmin
+      cart {
+        productId
+        quantity
+      }
+    }
+  }
+`;
+
 export const UPDATE_QUANTITY_MUTATION = gql`
   mutation Mutation($cartInput: CartInput) {
     updateQuantity(cartInput: $cartInput)

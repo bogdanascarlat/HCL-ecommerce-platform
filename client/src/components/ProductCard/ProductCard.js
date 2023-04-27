@@ -2,6 +2,7 @@ import { useMutation } from "@apollo/client";
 import {
   ADD_TO_CART_MUTATION,
   ADD_TO_WISHLIST_MUTATION,
+  REMOVE_FROM_WISHLIST_MUTATION,
 } from "../../graphql/mutation";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,25 +18,25 @@ const ProductCard = ({ product, onProductClick }) => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
+  const [cart, setCart] = useState(state.auth?.loggedInUser?.cart || []);
+  const [key, setKey] = useState(0);
+
   useEffect(() => {
     if (state.auth.loggedInUser) {
       setCart(state.auth.loggedInUser.cart || []);
-      setwishList(state.auth.loggedInUser.wishList || []);
     } else {
       setCart([]);
-      setwishList([]);
     }
   }, [state]);
 
-  const [cart, setCart] = useState(state.auth?.loggedInUser?.cart || []);
-  const [wishList, setwishList] = useState(
-    state.auth?.loggedInUser?.wishList || []
-  );
+  useEffect(() => {
+    setKey((prevKey) => prevKey + 1);
+  }, [state.auth.loggedInUser?.wishList]);
 
   const navigate = useNavigate();
 
   const inCart = cart.find((cartItem) => cartItem.productId === product.id);
-  const inWishList = wishList.find(
+  const inWishList = state.auth.loggedInUser?.wishList.find(
     (wishListItem) => wishListItem === product.id
   );
 
@@ -53,25 +54,34 @@ const ProductCard = ({ product, onProductClick }) => {
     variables: {
       productId: product.id,
     },
-    fetchPolicy: "no-cache",
+    onError: (err) => console.log(err),
   });
+
+  const [removeFromWishList] = useMutation(REMOVE_FROM_WISHLIST_MUTATION, {
+    variables: {
+      productId: product.id,
+    },
+    onError: (err) => console.log(err),
+  });
+
+  const handleAddToWishlist = () => {
+    console.log("handleAddToWishlist");
+    if (!inWishList) {
+      addToWishList().then(({ data }) => {
+        dispatch(updateUser(data.addToWishList));
+      });
+    } else {
+      removeFromWishList().then(({ data }) => {
+        dispatch(updateUser(data.removeFromWishList));
+      });
+    }
+  };
 
   const handleClick = () => {
     addToCart({
       // eslint-disable-next-line no-restricted-globals
       onCompleted: (data) => {
         dispatch(updateUser(data.addToCart));
-      },
-      onError: (err) => console.log(err),
-    });
-  };
-
-  const handleAddToWishList = () => {
-    console.log("In product Card Product ID", product.id);
-    addToWishList({
-      onCompleted: (data) => {
-        console.log("Data", data);
-        dispatch(updateUser(data.addToWishList));
       },
       onError: (err) => console.log(err),
     });
@@ -104,12 +114,7 @@ const ProductCard = ({ product, onProductClick }) => {
         <div className="d-flex card-header mb-2 w-100 justify-content-between align-items-center">
           <span className="badge text-bg-warning">{discountPercentage} %</span>
           <span>
-            <button
-              className="btn"
-              onClick={
-                !inWishList ? handleAddToWishList : () => navigate("/wishlist")
-              }
-            >
+            <button className="btn" onClick={handleAddToWishlist}>
               {" "}
               {inWishList ? (
                 <svg

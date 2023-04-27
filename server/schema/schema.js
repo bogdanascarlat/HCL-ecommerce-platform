@@ -15,6 +15,7 @@ import {
   getProfile,
   addProductToCart,
   addProductToWishList,
+  removeProductFromWishList,
   updateQuantity,
   getProductsCart,
   getProductsWishlist,
@@ -146,6 +147,7 @@ export const typeDefs = /* GraphQL */ `
     addToCart(cartInput: CartInput): User
     updateQuantity(cartInput: CartInput): Boolean
     addToWishList(productId: ID): User
+    removeFromWishList(productId: ID!): User
   }
 `;
 
@@ -192,5 +194,7 @@ export const resolvers = {
       updateQuantity(args.cartInput, context.authHeader),
     addToWishList: (_, args, context) =>
       addProductToWishList(args.productId, context.authHeader),
+    removeFromWishList: (_, args, context) =>
+      removeProductFromWishList(args.productId, context.authHeader),
   },
 };

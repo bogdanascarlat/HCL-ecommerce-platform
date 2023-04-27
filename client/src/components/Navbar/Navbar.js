@@ -19,6 +19,7 @@ const debounce = (func) => {
 
 const MenuItems = ({ classes }) => {
   const cart = useSelector((state) => state?.auth?.loggedInUser?.cart);
+  const wishList = useSelector((state) => state?.auth?.loggedInUser?.wishList);
 
   return (
     <>
@@ -47,8 +48,8 @@ const MenuItems = ({ classes }) => {
           Cart
         </Link>
       </li>
-      <li className={classes}>
-        <Link to="/wishlist" className="nav-link">
+      <li className={classes + " d-flex"}>
+        <Link to="/wishlist" className="nav-link position-relative pe-2">
           <svg
             className="pe-1"
             xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +61,15 @@ const MenuItems = ({ classes }) => {
             {" "}
             <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />{" "}
           </svg>
-          Wish List
+          {wishList && wishList.length > 0 && (
+            <span
+              style={{ fontSize: ".65em" }}
+              className="position-absolute top-0 mt-1 translate-middle translate-middle badge rounded-pill bg-danger"
+            >
+              {wishList.length}
+            </span>
+          )}
+          &nbsp;&nbsp;&nbsp;Wish List
         </Link>
       </li>
       <li className={classes}>

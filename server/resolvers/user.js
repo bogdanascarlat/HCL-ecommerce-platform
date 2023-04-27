@@ -68,6 +68,13 @@ export const addProductToWishList = (productID, authHeader) => {
   return user;
 };
 
+export const removeProductFromWishList = (productId, authHeader) => {
+  const { id } = decodeJWT(authHeader);
+  const user = getUserById(id);
+  user.wishList = user.wishList.filter((itemId) => itemId !== productId);
+  return updateUserById(id, user);
+};
+
 export const getProductsWishlist = async (authHeader) => {
   const { id } = decodeJWT(authHeader);
   const user = getUserById(id);
