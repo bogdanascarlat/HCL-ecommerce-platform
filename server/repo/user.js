@@ -26,6 +26,7 @@ export const createNewUser = async (user) => {
     phone: "Enter your phone number",
     birthDate: "Enter your birth date",
     wishList: [],
+    giftList: [],
     cart: [],
     ratings: [],
     isActive: true,

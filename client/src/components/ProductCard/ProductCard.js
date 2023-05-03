@@ -3,6 +3,8 @@ import {
   ADD_TO_CART_MUTATION,
   ADD_TO_WISHLIST_MUTATION,
   REMOVE_FROM_WISHLIST_MUTATION,
+  ADD_TO_GIFTLIST_MUTATION,
+  REMOVE_FROM_GIFTLIST_MUTATION,
 } from "../../graphql/mutation";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +13,7 @@ import { useEffect, useState } from "react";
 import { updateUser } from "../../features/user/authSlice";
 import { motion } from "framer-motion";
 import { useContext } from "react";
+import { GET_PROFILE_QUERY } from "../../graphql/query";
 
 const ProductCard = ({ product, onProductClick }) => {
   useProtected();
@@ -20,25 +23,29 @@ const ProductCard = ({ product, onProductClick }) => {
 
   const [cart, setCart] = useState(state.auth?.loggedInUser?.cart || []);
   const [key, setKey] = useState(0);
+  const [loggedInUser, setLoggedInUser] = useState(state.auth.loggedInUser);
 
   useEffect(() => {
-    if (state.auth.loggedInUser) {
-      setCart(state.auth.loggedInUser.cart || []);
-    } else {
-      setCart([]);
-    }
-  }, [state]);
+    setLoggedInUser(state.auth.loggedInUser);
+  }, [state.auth.loggedInUser]);
 
   useEffect(() => {
     setKey((prevKey) => prevKey + 1);
   }, [state.auth.loggedInUser?.wishList]);
+  useEffect(() => {
+    setKey((prevKey) => prevKey + 1);
+  }, [state.auth.loggedInUser?.giftList]);
 
   const navigate = useNavigate();
 
   const inCart = cart.find((cartItem) => cartItem.productId === product.id);
-  const inWishList = state.auth.loggedInUser?.wishList.find(
+  const inWishList = loggedInUser?.wishList.find(
     (wishListItem) => wishListItem === product.id
   );
+
+  // const inGiftList = loggedInUser?.giftList.find(
+  //   (giftListItem) => giftListItem === product.id
+  // );
 
   const [addToCart] = useMutation(ADD_TO_CART_MUTATION, {
     variables: {
@@ -54,12 +61,114 @@ const ProductCard = ({ product, onProductClick }) => {
     variables: {
       productId: product.id,
     },
+    fetchPolicy: "no-cache",
+    update: (cache, { data: { addToWishList } }) => {
+      const cachedUser = cache.readQuery({
+        query: GET_PROFILE_QUERY,
+      });
+
+      if (cachedUser) {
+        const newUser = {
+          ...cachedUser.getProfile,
+          wishList: addToWishList.wishList,
+        };
+        cache.writeQuery({
+          query: GET_PROFILE_QUERY,
+          data: { getProfile: newUser },
+        });
+
+        // Dispatch the updateUser action
+        dispatch(updateUser(newUser));
+        // Update the loggedInUser state
+        setLoggedInUser(newUser);
+      }
+    },
     onError: (err) => console.log(err),
   });
 
   const [removeFromWishList] = useMutation(REMOVE_FROM_WISHLIST_MUTATION, {
     variables: {
       productId: product.id,
+    },
+    fetchPolicy: "no-cache",
+    update: (cache, { data: { removeFromWishList } }) => {
+      const cachedUser = cache.readQuery({
+        query: GET_PROFILE_QUERY,
+      });
+
+      if (cachedUser) {
+        const newUser = {
+          ...cachedUser.getProfile,
+          wishList: removeFromWishList.wishList,
+        };
+        cache.writeQuery({
+          query: GET_PROFILE_QUERY,
+          data: { getProfile: newUser },
+        });
+
+        // Dispatch the updateUser action
+        dispatch(updateUser(newUser));
+        // Update the loggedInUser state
+        setLoggedInUser(newUser);
+      }
+    },
+    onError: (err) => console.log(err),
+  });
+
+  const [addToGiftList] = useMutation(ADD_TO_GIFTLIST_MUTATION, {
+    variables: {
+      productId: product.id,
+    },
+    fetchPolicy: "no-cache",
+    update: (cache, { data: { addToGiftList } }) => {
+      const cachedUser = cache.readQuery({
+        query: GET_PROFILE_QUERY,
+      });
+
+      if (cachedUser) {
+        const newUser = {
+          ...cachedUser.getProfile,
+          giftList: addToGiftList.giftList,
+        };
+        cache.writeQuery({
+          query: GET_PROFILE_QUERY,
+          data: { getProfile: newUser },
+        });
+
+        // Dispatch the updateUser action
+        dispatch(updateUser(newUser));
+        // Update the loggedInUser state
+        setLoggedInUser(newUser);
+      }
+    },
+    onError: (err) => console.log(err),
+  });
+
+  const [removeFromGiftList] = useMutation(REMOVE_FROM_GIFTLIST_MUTATION, {
+    variables: {
+      productId: product.id,
+    },
+    fetchPolicy: "no-cache",
+    update: (cache, { data: { removeFromGiftList } }) => {
+      const cachedUser = cache.readQuery({
+        query: GET_PROFILE_QUERY,
+      });
+
+      if (cachedUser) {
+        const newUser = {
+          ...cachedUser.getProfile,
+          giftList: removeFromGiftList.giftList,
+        };
+        cache.writeQuery({
+          query: GET_PROFILE_QUERY,
+          data: { getProfile: newUser },
+        });
+
+        // Dispatch the updateUser action
+        dispatch(updateUser(newUser));
+        // Update the loggedInUser state
+        setLoggedInUser(newUser);
+      }
     },
     onError: (err) => console.log(err),
   });
@@ -68,14 +177,39 @@ const ProductCard = ({ product, onProductClick }) => {
     console.log("handleAddToWishlist");
     if (!inWishList) {
       addToWishList().then(({ data }) => {
+        // Dispatch the updateUser action
         dispatch(updateUser(data.addToWishList));
+        // Update the loggedInUser state
+        setLoggedInUser(data.addToWishList);
       });
     } else {
       removeFromWishList().then(({ data }) => {
+        // Dispatch the updateUser action
         dispatch(updateUser(data.removeFromWishList));
+        // Update the loggedInUser state
+        setLoggedInUser(data.removeFromWishList);
       });
     }
   };
+
+  // const handleAddToGiftlist = () => {
+  //   console.log("handleAddToGiftlist");
+  //   if (!inGiftList) {
+  //     addToGiftList().then(({ data }) => {
+  //       // Dispatch the updateUser action
+  //       dispatch(updateUser(data.addToGiftList));
+  //       // Update the loggedInUser state
+  //       setLoggedInUser(data.addToGiftList);
+  //     });
+  //   } else {
+  //     removeFromGiftList().then(({ data }) => {
+  //       // Dispatch the updateUser action
+  //       dispatch(updateUser(data.removeFromGiftList));
+  //       // Update the loggedInUser state
+  //       setLoggedInUser(data.removeFromGiftList);
+  //     });
+  //   }
+  // };
 
   const handleClick = () => {
     addToCart({
@@ -133,6 +267,36 @@ const ProductCard = ({ product, onProductClick }) => {
                   viewBox="0 0 24 24"
                 >
                   <path d="M15.653 19.415c-1.162 1.141-2.389 2.331-3.653 3.585-6.43-6.381-12-11.147-12-15.808 0-4.005 3.098-6.192 6.281-6.192 2.197 0 4.434 1.042 5.719 3.248 1.279-2.195 3.521-3.238 5.726-3.238 3.177 0 6.274 2.171 6.274 6.182 0 1.269-.424 2.546-1.154 3.861l-1.483-1.484c.403-.836.637-1.631.637-2.377 0-2.873-2.216-4.182-4.274-4.182-3.257 0-4.976 3.475-5.726 5.021-.747-1.54-2.484-5.03-5.72-5.031-2.315-.001-4.28 1.516-4.28 4.192 0 3.442 4.742 7.85 10 13l2.239-2.191 1.414 1.414zm7.347-5.415h-3v-3h-2v3h-3v2h3v3h2v-3h3v-2z" />
+                </svg>
+              )}{" "}
+            </button>
+          </span>
+          <span>
+            <button className="btn" onClick={handleAddToWishlist}>
+              {" "}
+              {inWishList ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  class="bi bi-gift"
+                >
+                  <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zM1 4v2h6V4H1zm8 0v2h6V4H9zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5V7zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5H7z" />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  fill="currentColor"
+                  className="bi bi-gift"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zM1 4v2h6V4H1zm8 0v2h6V4H9zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5V7zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5H7z" />
                 </svg>
               )}{" "}
             </button>

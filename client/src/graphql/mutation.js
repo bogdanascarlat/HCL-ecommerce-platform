@@ -113,3 +113,49 @@ export const UPDATE_QUANTITY_MUTATION = gql`
     updateQuantity(cartInput: $cartInput)
   }
 `;
+
+export const ADD_TO_GIFTLIST_MUTATION = gql`
+  mutation Mutation($productId: ID!) {
+    addToGiftList(productId: $productId) {
+      id
+      firstName
+      lastName
+      email
+      password
+      image
+      address
+      phone
+      birthDate
+      giftList
+      isActive
+      isAdmin
+      cart {
+        productId
+        quantity
+      }
+    }
+  }
+`;
+
+export const REMOVE_FROM_GIFTLIST_MUTATION = gql`
+  mutation RemoveFromGiftlistMutation($productId: ID!) {
+    removeFromGiftList(productId: $productId) {
+      id
+      firstName
+      lastName
+      email
+      password
+      image
+      address
+      phone
+      birthDate
+      giftList
+      isActive
+      isAdmin
+      cart {
+        productId
+        quantity
+      }
+    }
+  }
+`;

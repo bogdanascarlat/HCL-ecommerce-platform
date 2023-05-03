@@ -16,9 +16,12 @@ import {
   addProductToCart,
   addProductToWishList,
   removeProductFromWishList,
+  addProductToGiftList,
+  removeProductFromGiftList,
   updateQuantity,
   getProductsCart,
   getProductsWishlist,
+  getProductsGiftlist,
 } from "../resolvers/user.js";
 import { getAllUsers } from "../repo/user.js";
 
@@ -93,6 +96,7 @@ export const typeDefs = /* GraphQL */ `
     phone: String
     birthDate: String
     wishList: [ID!]
+    giftList: [ID!]
     cart: [CartType]
     isActive: Boolean!
     isAdmin: Boolean!
@@ -140,6 +144,7 @@ export const typeDefs = /* GraphQL */ `
     searchByKeyword(keyword: String!): [Product]
     getProductsCart: [CartProductType]
     getProductsWishlist: [Product]
+    getProductsGiftlist: [Product]
   }
   type Mutation {
     login(loginData: LoginData): User
@@ -147,7 +152,9 @@ export const typeDefs = /* GraphQL */ `
     addToCart(cartInput: CartInput): User
     updateQuantity(cartInput: CartInput): Boolean
     addToWishList(productId: ID): User
+    addToGiftList(productId: ID): User
     removeFromWishList(productId: ID!): User
+    removeFromGiftList(productId: ID!): User
   }
 `;
 
@@ -184,6 +191,8 @@ export const resolvers = {
     getProductsCart: (_, args, context) => getProductsCart(context.authHeader),
     getProductsWishlist: (_, args, context) =>
       getProductsWishlist(context.authHeader),
+    getProductsGiftlist: (_, args, context) =>
+      getProductsGiftlist(context.authHeader),
   },
   Mutation: {
     login: (_, args, context) => login(args.loginData, context.res),
@@ -196,5 +205,9 @@ export const resolvers = {
       addProductToWishList(args.productId, context.authHeader),
     removeFromWishList: (_, args, context) =>
       removeProductFromWishList(args.productId, context.authHeader),
+    addToGiftList: (_, args, context) =>
+      addProductToGiftList(args.productId, context.authHeader),
+    removeFromGiftList: (_, args, context) =>
+      removeProductFromGiftList(args.productId, context.authHeader),
   },
 };

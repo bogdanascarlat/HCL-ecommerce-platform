@@ -8,47 +8,53 @@ import Profile from "./pages/Profile/Profile";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
 import Wishlist from "./pages/Wishlist/Wishlist";
+import GiftList from "./pages/Giftlist/Giftlist";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import BrowsingHistory from "./components/BrowsingHistory/BrowsingHistory";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Dashboard />,
+    },
+    {
+      path: "/login",
+      element: <AuthPage />,
+    },
+    {
+      path: "/register",
+      element: <AuthPage children={<RegisterForm />} />,
+    },
+    {
+      path: "/profile",
+      element: <Profile />,
+    },
+    {
+      path: "/cart",
+      element: <Cart />,
+    },
+    {
+      path: "/wishlist",
+      element: <Wishlist />,
+    },
+    {
+      path: "/giftlist",
+      element: <GiftList />,
+    },
+    {
+      path: "/product/:id",
+      element: <SingleProductPage />,
+    },
+    {
+      path: "/history",
+      element: <BrowsingHistory />,
+    },
+  ],
   {
-    path: "/",
-    element: <Dashboard />,
-  },
-  {
-    path: "/login",
-    element: <AuthPage />,
-  },
-  {
-    path: "/register",
-    element: <AuthPage children={<RegisterForm />} />,
-  },
-  {
-    path: "/profile",
-    element: <Profile />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
-  },
-  {
-    path: "/wishlist",
-    element: <Wishlist />,
-  },
-  {
-    path: "/product/:id",
-    element: <SingleProductPage />,
-  },  
-  {
-    path: "/history",
-    element: <BrowsingHistory />,
-  },  
-], 
-{
-  errorElement: <ErrorPage />,
-}
+    errorElement: <ErrorPage />,
+  }
 );
 
 function App() {

@@ -10,6 +10,7 @@
     "phone": "0777 777 777",
     "birthDate": "03-05-1999",
     "wishList": [],
+    "giftList": [],
     "cart": [
       {
         "productId": "1",

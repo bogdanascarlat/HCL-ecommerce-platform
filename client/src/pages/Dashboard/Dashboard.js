@@ -21,8 +21,8 @@ const MIN_PRICE = 0;
 const MAX_PRICE = 10000;
 
 const Dashboard = () => {
-  useProtected()
-  const navigate = useNavigate()
+  useProtected();
+  const navigate = useNavigate();
 
   const { value, filter } = useSelector((state) => state.products);
   const [getAllItemFunction] = useLazyQuery(GET_ITEMS);
@@ -62,17 +62,19 @@ const Dashboard = () => {
       }
     });
 
-    const handleProductClick = (id) => {
-      dispatch(getProductIDFunction(id))
-      navigate(`/product/${id}`)
-    }
+  const handleProductClick = (id) => {
+    dispatch(getProductIDFunction(id));
+    navigate(`/product/${id}`);
+  };
 
   const cards = products.map((product, index) => {
-    return  <ProductCard 
-    key={product.title + index} 
-    product={product} 
-    onProductClick={() => handleProductClick(product.id)}
-    />
+    return (
+      <ProductCard
+        key={product.title + index}
+        product={product}
+        onProductClick={() => handleProductClick(product.id)}
+      />
+    );
   });
 
   const [productsPerPage, setProductsPerPage] = useState(20);

@@ -83,6 +83,42 @@ export const getProductsWishlist = async (authHeader) => {
   return wishList.map((id) => getProductById(Number.parseInt(id)));
 };
 
+export const addProductToGiftList = (productID, authHeader) => {
+  console.log("In user Product ID", productID);
+
+  const { id } = decodeJWT(authHeader);
+  const user = getUserById(id);
+
+  if (!user.giftList.includes(productID)) {
+    user.giftList.push(productID);
+    updateUserById(id, user);
+  }
+  return user;
+};
+
+export const removeProductFromGiftList = (productId, authHeader) => {
+  const { id } = decodeJWT(authHeader);
+  const user = getUserById(id);
+  user.giftList = user.giftList.filter((itemId) => itemId !== productId);
+  return updateUserById(id, user);
+};
+
+export const getProductsGiftlist = async (authHeader) => {
+  const { id } = decodeJWT(authHeader);
+  const user = getUserById(id);
+  const { giftList } = user;
+
+  return giftList.map((id) => getProductById(Number.parseInt(id)));
+};
+
+export const getSharedWishlist = async () => {
+  const users = getAllUsers(); // retrieve all users
+  const sharedWishlist = users.reduce((acc, user) => {
+    return [...acc, ...user.sharedWishList]; // add all items from all users' shared wishlists to the accumulator
+  }, []);
+  return sharedWishlist.map((id) => getProductById(Number.parseInt(id))); // retrieve the products based on their ids
+};
+
 export const getProductsCart = async (authHeader) => {
   const { id } = decodeJWT(authHeader);
   const user = getUserById(id);
