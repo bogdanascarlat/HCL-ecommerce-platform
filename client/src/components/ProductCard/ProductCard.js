@@ -6,6 +6,8 @@ import {
   ADD_TO_GIFTLIST_MUTATION,
   REMOVE_FROM_GIFTLIST_MUTATION,
 } from "../../graphql/mutation";
+
+import { GET_PRODUCTS_WISHLIST } from "../../graphql/query";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import useProtected from "../../hooks/useProtected";
@@ -84,6 +86,7 @@ const ProductCard = ({ product, onProductClick }) => {
       }
     },
     onError: (err) => console.log(err),
+    refetchQueries: [{ query: GET_PRODUCTS_WISHLIST }],
   });
 
   const [removeFromWishList] = useMutation(REMOVE_FROM_WISHLIST_MUTATION, {
@@ -171,6 +174,7 @@ const ProductCard = ({ product, onProductClick }) => {
       }
     },
     onError: (err) => console.log(err),
+    refetchQueries: [{ query: GET_PRODUCTS_WISHLIST }],
   });
 
   const handleAddToWishlist = () => {
