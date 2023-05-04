@@ -63,28 +63,6 @@ const ProductCard = ({ product, onProductClick }) => {
     variables: {
       productId: product.id,
     },
-    fetchPolicy: "no-cache",
-    update: (cache, { data: { addToWishList } }) => {
-      const cachedUser = cache.readQuery({
-        query: GET_PROFILE_QUERY,
-      });
-
-      if (cachedUser) {
-        const newUser = {
-          ...cachedUser.getProfile,
-          wishList: addToWishList.wishList,
-        };
-        cache.writeQuery({
-          query: GET_PROFILE_QUERY,
-          data: { getProfile: newUser },
-        });
-
-        // Dispatch the updateUser action
-        dispatch(updateUser(newUser));
-        // Update the loggedInUser state
-        setLoggedInUser(newUser);
-      }
-    },
     onError: (err) => console.log(err),
     refetchQueries: [{ query: GET_PRODUCTS_WISHLIST }],
   });
@@ -93,29 +71,8 @@ const ProductCard = ({ product, onProductClick }) => {
     variables: {
       productId: product.id,
     },
-    fetchPolicy: "no-cache",
-    update: (cache, { data: { removeFromWishList } }) => {
-      const cachedUser = cache.readQuery({
-        query: GET_PROFILE_QUERY,
-      });
-
-      if (cachedUser) {
-        const newUser = {
-          ...cachedUser.getProfile,
-          wishList: removeFromWishList.wishList,
-        };
-        cache.writeQuery({
-          query: GET_PROFILE_QUERY,
-          data: { getProfile: newUser },
-        });
-
-        // Dispatch the updateUser action
-        dispatch(updateUser(newUser));
-        // Update the loggedInUser state
-        setLoggedInUser(newUser);
-      }
-    },
     onError: (err) => console.log(err),
+    refetchQueries: [{ query: GET_PRODUCTS_WISHLIST }],
   });
 
   const [addToGiftList] = useMutation(ADD_TO_GIFTLIST_MUTATION, {
