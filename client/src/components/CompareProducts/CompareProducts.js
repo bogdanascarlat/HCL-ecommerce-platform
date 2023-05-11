@@ -140,7 +140,7 @@ const CompareProducts = ({ initialProductId }) => {
 
   return (
     <div className="compare-products">
-      <h3>Compare Products</h3>
+      <h3 style={{fontWeight: "bold"}}>Compare Products</h3>
       <div className="compare-select mb-3">
 
       <div className="d-flex justify-content-end">

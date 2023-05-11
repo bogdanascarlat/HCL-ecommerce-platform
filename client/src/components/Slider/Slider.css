@@ -1,0 +1,51 @@
+.btn-left{
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    border-style: none;
+    width: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    transition: width 0.25s ease-in-out; 
+}
+
+.btn-left:hover{
+    background: rgba(0,0,0,0.8);
+    width: 32px; 
+}
+
+
+.btn-right{
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    border-style: none;
+    width: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    transition: width 0.25s ease-in-out; 
+}
+
+.btn-right:hover{
+    background: rgba(0,0,0,0.8);
+    width: 32px; 
+}
+
+.product-link {
+    text-decoration: none; 
+    color: black; 
+  }
+  
+.product-slider-title{
+    font-weight: bold;
+}
+
+

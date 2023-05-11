@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import './ProductSlider.css';
 import  CompareProducts  from "../../components/CompareProducts/CompareProducts"
-
+import Slider from "../../components/Slider/Slider"
 
 
 const ProductSlider = ({ product, productId }) => {
@@ -17,6 +17,8 @@ const ProductSlider = ({ product, productId }) => {
 
   const state = useSelector((state) => state);
   const dispatch = useDispatch()
+
+  const browsingHistory = JSON.parse(localStorage.getItem("browsingHistory")) || [];
 
   useEffect(()=>{
     setCart(state.auth.loggedInUser.cart || [])
@@ -43,7 +45,6 @@ const ProductSlider = ({ product, productId }) => {
 
   const handleClick = () => {
     addToCart({
-      // eslint-disable-next-line no-restricted-globals
       onCompleted:(data) => {dispatch(updateUser(data.addToCart))},
       onError: (err) => console.log(err)
     })
@@ -375,7 +376,7 @@ const ProductSlider = ({ product, productId }) => {
 
 <div className="accordion-item">
   <h2 className="accordion-header" id="headingThree">
-    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
       Compare Products
     </button>
   </h2>
@@ -385,8 +386,37 @@ const ProductSlider = ({ product, productId }) => {
     </div>
   </div>
 </div>
+<div className='title-scrollable-container'
+        style={{
+          marginTop: "20px",
+          fontWeight: "bold",
+          marginLeft: "20px", 
+          fontSize: "30px"
 
 
+
+        }}  
+
+>
+  Previously viewed items ({browsingHistory.length})
+</div>
+<div
+        className="scrollable-container"
+        style={{
+          marginTop: "20px",
+          display: "flex",
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          position: "relative",
+          width: "60%"
+          
+        }}
+      >
+        
+  <Slider products={browsingHistory.reverse()} />
+</div>
 
 </div>
     </div>

@@ -35,7 +35,6 @@
     object-fit: contain;
     z-index: -1;
     transform: rotateZ(180deg);
-   
   }
   
   .spec-names{

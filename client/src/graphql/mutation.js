@@ -31,7 +31,10 @@ export const SIGNUP_MUTATION = gql`
       phone
       birthDate
       wishList
-      cart
+      cart {
+        productId
+        quantity
+      }
       isActive
       isAdmin
   }

@@ -11,6 +11,7 @@ import Wishlist from "./pages/Wishlist/Wishlist";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import BrowsingHistory from "./components/BrowsingHistory/BrowsingHistory";
+import Slider from "./components/Slider/Slider"
 
 const router = createBrowserRouter([
   {

@@ -31,14 +31,13 @@ export const createNewUser = async (user) => {
     isAdmin: false,
     ...user,
     image: process.env.DEFAULT_IMAGE_ADDRESS,
-    password: hash(user.password, BCRYPT_SALT)
+    password: await hash(user.password, BCRYPT_SALT)
   };
 
   users.push(newUser);
 
 
-  //TODO: Write in files
-  // const data = JSON.stringify(users, null, 2)
+  writeFileSync(new URL("./users.json", import.meta.url), JSON.stringify(users, null, 2));
 
   return newUser
 
