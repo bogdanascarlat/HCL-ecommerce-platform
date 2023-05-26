@@ -6,7 +6,6 @@ import useProtected from "../../hooks/useProtected";
 import { useEffect, useState } from "react";
 import { updateUser } from "../../features/user/authSlice";
 import { motion } from "framer-motion";
-import { useContext } from "react";
 
 const ProductCard = ({ product, onProductClick }) => {
   useProtected();
