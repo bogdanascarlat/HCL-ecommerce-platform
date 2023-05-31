@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "framer-motion": "^10.11.5",
+    "framer-motion": "^10.3.0",
     "rc-slider": "^8.7.1",
     "react-select": "^5.7.2"
   }

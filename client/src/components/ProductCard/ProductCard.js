@@ -6,9 +6,12 @@ import useProtected from "../../hooks/useProtected";
 import { useEffect, useState } from "react";
 import { updateUser } from "../../features/user/authSlice";
 import { motion } from "framer-motion";
+<<<<<<< HEAD
 import { useContext } from "react";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
+=======
+>>>>>>> 60ac05f7063812ff578fed538619a3438c00f71d
 
 const ProductCard = ({ product, onProductClick }) => {
   useProtected();
