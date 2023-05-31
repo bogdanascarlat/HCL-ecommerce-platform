@@ -79,6 +79,11 @@ const Slider = ({ products }) => {
                   marginRight,
                   opacity: isCenter ? 1 : 0.5,
                   zIndex: isCenter ? 1 : 0,
+                  backgroundColor: "white",
+                  borderRadius:"25px",
+                  boxShadow: "0 0 12px white",
+                  marginTop:"15px",
+                  marginBottom:"15px",
                 }}
                 animate={{
                   rotate: 0,
@@ -93,7 +98,7 @@ const Slider = ({ products }) => {
       src={product.images[0]}
       alt={product.title}
       className="d-block mx-auto"
-      style={{ maxHeight: "200px", objectFit: "cover", cursor: "pointer" }}
+      style={{ maxHeight: "200px", objectFit: "cover", cursor: "pointer", marginTop:"8px", marginBottom:"8px" }}
     />
 
 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
@@ -109,7 +114,7 @@ const Slider = ({ products }) => {
       </span>
     ) : null}
   </div>
-  <h5 className="card-title" style={{ fontWeight: 'bold', fontSize: '15px', marginLeft: '10px' }}>
+  <h5 className="card-title" style={{ fontWeight: 'bold', fontSize: '15px', marginLeft: '10px', marginBottom:"5px" }}>
     Now: ${(product.price * (1 - product.discountPercentage / 100)).toFixed(2)}
   </h5>
 </div>

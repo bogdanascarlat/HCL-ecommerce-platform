@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import PriceSlider from "../PriceSlider/PriceSlider";
 import useProtected from "../../hooks/useProtected";
 import SortDropdown from "../SortDropdown/SortDropdown";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { useDispatch, useSelector } from "react-redux";
+import './SwitchBar.css'
 
 const MIN_PRICE = 0;
 const MAX_PRICE = 10000;
+
+
+
 const SwitchBar = ({
   setProductsPerPage,
   onPriceChange,
@@ -14,10 +20,16 @@ const SwitchBar = ({
 }) => {
   useProtected();
 
+
+  const dispatch = useDispatch()
+  const darkMode = useSelector((state) => state.darkMode)
+  const getSwitchBarColor = () => (darkMode ? "#232c31" : "#f8f9fa")
+  const getTextColor = () => (darkMode ? "white" : "black")
+
   return (
     <div
-      className="navbar navbar-light bg-light mb-3 w-100"
-      style={{ maxHeight: "60px", borderRadius: "10px" }}
+      className="navbar mb-1 w-100"
+      style={{ maxHeight: "60px", borderRadius: "10px", backgroundColor: getSwitchBarColor(),  }}
     >
       <div className="d-flex column align-items-center">
         <span className="ms-3">
@@ -28,6 +40,7 @@ const SwitchBar = ({
             id="productsPerPage"
             defaultValue={20}
             className="form-select"
+            style={{backgroundColor:getSwitchBarColor(), color:getTextColor()}}
             aria-label="Default select example"
             onChange={(e) =>
               setProductsPerPage(Number.parseInt(e.target.value))

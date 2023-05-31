@@ -9,9 +9,13 @@ import { useQuery } from "@apollo/client";
 import useProtected from "../../hooks/useProtected";
 import Brands from "../Brands/Brands";
 import { Link } from "react-router-dom";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { useSelector } from "react-redux";
 
 const Categories = ({ category }) => {
   useProtected();
+
+  const darkMode = useSelector((state) => state.darkMode)
 
   // const [selectedCategory, setSelectedCategory] = useState("");
   const { data, loading, error } = useQuery(CATEGORIES_QUERY, {
@@ -54,16 +58,22 @@ const Categories = ({ category }) => {
   return (
     <div>
       <div role="group" aria-label="Vertical button group">
-        {getCategories.map((category) => {
-          const btnClass =
-            selectedCategory && selectedCategory.category === category
-              ? "border-top border-bottom btn btn-dark btn-lg fw-bold text text-white fs-6 px-2"
-              : "border-top border-bottom btn btn-light btn-lg fw-bold fs-6 px-2";
+      {getCategories.map((category) => {
+  const isCategorySelected =
+    selectedCategory && selectedCategory.category === category;
+
+  const btnClass = isCategorySelected
+    ? darkMode
+      ? "border-top border-bottom btn btn-light btn-lg fw-bold text text-dark fs-6 px-2"
+      : "border-top border-bottom btn btn-dark btn-lg fw-bold text text-white fs-6 px-2"
+    : darkMode
+    ? "border-top border-bottom btn btn-dark btn-lg fw-bold text text-white fs-6 px-2"
+    : "border-top border-bottom btn btn-light btn-lg fw-bold text text-dark fs-6 px-2";
           return (
             <div key={category} style={{ width: "100%" }}>
               <button
                 className={btnClass}
-                style={{ width: "100%", color: "grey", borderRadius: 0 }}
+                style={{ width: "100%", color: "grey", borderRadius: 0, transition: "none" }}
                 onMouseEnter={() => handleCategoryClick(category)}
               >
                 <p className="text-start px-4 my-auto py-2">{category}</p>

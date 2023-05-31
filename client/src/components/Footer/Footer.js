@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const Footer = () => {
+
+  const darkMode = useSelector((state) => state.darkMode);
+  const getFooterColor = () => (darkMode ? "#1d252a" : "#f8f9fa");
+
   return (
-    <footer className="py-3 my-4 w-100 bg-light  mt-auto mb-0">
+    <footer className="py-3 my-4 w-100  mt-auto mb-0" style={{background: getFooterColor()}}>
       <ul className="nav justify-content-around border-bottom pb-3 my-3  d-flex flex-column align-items-center flex-lg-row ">
         <img
           alt="logo"

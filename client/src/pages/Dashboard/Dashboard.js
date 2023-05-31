@@ -97,7 +97,7 @@ const Dashboard = () => {
                 priceRange={priceRange}
                 handlePriceChange={handlePriceChange}
               />
-              <div className="row row-cols-auto g-4">{shownCards}</div>
+              <div className="row row-cols-auto g-4 mt-1" >{shownCards}</div>
               <div className="d-flex justify-content-center my-4">
                 <Paginate
                   numberOfPages={numberOfPages}

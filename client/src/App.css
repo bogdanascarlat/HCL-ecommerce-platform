@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  /* Light Mode styles */
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode {
+  /* Dark Mode styles */
+  background-color: #1a1a1a;
+  color: #ffffff;
+}

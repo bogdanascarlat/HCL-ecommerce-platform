@@ -1,0 +1,43 @@
+
+
+.lala{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    margin-left: 10px;
+    
+}
+
+
+
+.search-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5.5px;
+    width: 80px;
+    height: 40px;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+
+}
+
+
+
+.search-button:hover{
+    background-color: rgba(10, 0, 0, 0.3);
+   
+    
+}
+
+.form-control:focus{
+   
+    outline: none;
+    border: 1px solid white;
+    box-shadow: 0 0 20px #719ECE;
+}
+

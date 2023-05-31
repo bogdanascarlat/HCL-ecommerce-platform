@@ -12,6 +12,9 @@ import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import BrowsingHistory from "./components/BrowsingHistory/BrowsingHistory";
 import Slider from "./components/Slider/Slider"
+import { useSelector } from 'react-redux';
+import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle'
+import React from 'react';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +56,21 @@ const router = createBrowserRouter([
 );
 
 function App() {
+
+  const darkMode = useSelector((state) => state.darkMode);
+
+  React.useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
+
+
+
+
+
   return (
     <>
       <RouterProvider router={router} />

@@ -4,6 +4,7 @@ import authReducer from './features/user/authSlice'
 import productReducer from './features/products/productSlice'
 import messageReducer from './features/message/messageSlice'
 import productIdReducer from './features/getProductId/ProductIdSlice'
+import darkModeReducer from './features/darkMode/darkModeSlice'
 
 const store = configureStore({
     reducer:{
@@ -11,6 +12,7 @@ const store = configureStore({
         products: productReducer,
         messages: messageReducer,
         productId: productIdReducer,
+        darkMode: darkModeReducer,
     }
 })
 

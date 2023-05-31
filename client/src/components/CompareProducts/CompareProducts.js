@@ -3,13 +3,14 @@ import { useQuery } from '@apollo/client';
 import { GET_ITEMS } from '../../graphql/query';
 import './CompareProducts.css'
 import { motion } from "framer-motion";
-import ReactSelect from 'react-select';
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const CompareProducts = ({ initialProductId }) => {
 
-
+  const darkMode = useSelector((state) => state.darkMode)
+  const getTextColor = () => (darkMode ? "white" : "black")
 
   const [compareProducts, setCompareProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -140,7 +141,7 @@ const CompareProducts = ({ initialProductId }) => {
 
   return (
     <div className="compare-products">
-      <h3 style={{fontWeight: "bold"}}>Compare Products</h3>
+      <h3 style={{fontWeight: "bold",color:getTextColor(), marginBottom:"15px"}}>Select Products to Compare</h3>
       <div className="compare-select mb-3">
 
       <div className="d-flex justify-content-end">
@@ -205,7 +206,7 @@ const CompareProducts = ({ initialProductId }) => {
                   .title
               }
               className="product-image"
-              style={{ maxHeight: 120,  cursor: "pointer" }}
+              style={{ maxHeight: 120,  cursor: "pointer", backgroundColor:"white", borderRadius:"30px"}}
             />
           )}
         </motion.div>
@@ -220,7 +221,7 @@ const CompareProducts = ({ initialProductId }) => {
       </div>
       {compareProducts.length > 0 && (
   <div className="table-responsive">
-    <table className="table table-fixed" style={{ width: compareProducts.length === 2 ? '75%' : compareProducts.length === 3 ? '100%' : '50%', float: 'left' }}>
+    <table className="table table-fixed" style={{ width: compareProducts.length === 2 ? '75%' : compareProducts.length === 3 ? '100%' : '50%', float: 'left', color:getTextColor() }}>
       <thead>
         <tr>
           <th scope="col">Specifications</th>

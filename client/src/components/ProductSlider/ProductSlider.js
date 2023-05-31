@@ -15,6 +15,14 @@ import Slider from "../../components/Slider/Slider"
 const ProductSlider = ({ product, productId }) => {
   useProtected()
 
+
+  const darkMode = useSelector((state) => state.darkMode)
+  const getCardColor = () => (darkMode ? "#232c31" : "white")
+  const getHeaderColor = () => (darkMode ? "#1d252a" : " ")
+  const getTextColor = () => (darkMode ? "white" : "black")
+  const getBorderColor = () => (darkMode ? "#232c31" : "#dee2e6")
+  const getTableHeaderColor = () => (darkMode ? "#1d252a" : "#f2f2f2")
+
   const state = useSelector((state) => state);
   const dispatch = useDispatch()
 
@@ -74,6 +82,7 @@ const ProductSlider = ({ product, productId }) => {
 
   return (
     <div className="row" style={{ padding: '60px' }}>
+      <div></div>
       <div className="col-md-8">
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
@@ -90,11 +99,11 @@ const ProductSlider = ({ product, productId }) => {
             ))}
           </div>
           <div className="carousel-inner">
-            <div className="carousel-item active">
+            <div className="carousel-item active" style={{backgroundColor:"white",}}>
               <img src={image} className="d-block w-100" alt="..." style={{ objectFit: 'contain', objectPosition: 'center', height: '50vh', overflow: 'hidden' }} />
             </div>
             {images.slice(1).map((image, index) => (
-              <div className="carousel-item" key={index}>
+              <div className="carousel-item" key={index} style={{backgroundColor:"white", }}>
                 <img src={image} className="d-block w-100" alt="..." style={{ objectFit: 'contain', objectPosition: 'center', height: '50vh', overflow: 'hidden' }} />
               </div>
             ))}
@@ -110,11 +119,13 @@ const ProductSlider = ({ product, productId }) => {
         </div>
       </div>
 
+      
+
       <motion.div className='col-md-4'
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}>
-        <div className="card">
-          <div className="card-header" style={{ fontWeight: 'bold', fontSize: '40px' }}>
+        <div className="card" style={{backgroundColor:getCardColor()}}>
+          <div className="card-header" style={{ fontWeight: 'bold', fontSize: '40px', backgroundColor:getHeaderColor() }}>
             {title}
           </div>
           <div className="card-body">
@@ -141,33 +152,33 @@ const ProductSlider = ({ product, productId }) => {
   </p>
 </div>
 
-      <div className="accordion" id="accordionExample">
-  <div className="accordion-item">
-    <h2 className="accordion-header" id="headingOne">
-      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <div className="accordion" id="accordionExample"  >
+  <div className="accordion-item" style={{color:getTextColor(), borderColor:getBorderColor()}}>
+    <h2 className="accordion-header" id="headingOne" >
+      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={{backgroundColor:getCardColor(), transition:"none", color:getTextColor(), }}>
         Overview
       </button>
     </h2>
-    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
+    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style={{backgroundColor:getCardColor(), }}>
+      <div className="accordion-body" >
         <strong>Overview</strong> ... <code></code>
       </div>
     </div>
   </div>
  
 
-  <div className="accordion-item">
+  <div className="accordion-item" style={{borderColor:getBorderColor()}}>
   <h2 className="accordion-header" id="headingTwo">
-    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={{backgroundColor:getCardColor(), transition:"none", color:getTextColor()}}>
       Specifications
     </button>
   </h2>
-  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style={{backgroundColor:getCardColor()}}>
     <div className="accordion-body">
-      <strong>Product Information:</strong>
-      <table className="table table-bordered">
+      <strong style={{color:getTextColor()}}>Product Information:</strong>
+      <table className="table table-bordered" style={{color:getTextColor()}}>
    
-      <tbody>
+      <tbody >
       {Object.entries(specs[0] || {})
   .filter(([key, value]) => {
     return !(key === '__typename' || key === 'productId' || value === 0 || (Array.isArray(value) && value.length === 0));
@@ -194,7 +205,7 @@ const ProductSlider = ({ product, productId }) => {
 
     const newRow = (title, className = '') => (
       <tr className={className}>
-        <th colSpan="2" className="header-row">{title}</th>
+        <th colSpan="2" className="header-row" style={{backgroundColor:getTableHeaderColor()}}>{title}</th>
       </tr>
     );
 
@@ -374,13 +385,13 @@ const ProductSlider = ({ product, productId }) => {
 </div>
 
 
-<div className="accordion-item">
+<div className="accordion-item" style={{borderColor:getBorderColor()}}>
   <h2 className="accordion-header" id="headingThree">
-    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style={{backgroundColor:getCardColor(), transition:"none", color:getTextColor()}}>
       Compare Products
     </button>
   </h2>
-  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style={{backgroundColor:getCardColor()}}>
     <div className="accordion-body">
       <CompareProducts product={product} initialProductId={productId} />
     </div>
