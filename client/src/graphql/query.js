@@ -22,6 +22,29 @@ export const PROFILE_QUERY = gql`
   }
 `;
 
+export const GET_PROFILE_QUERY = gql`
+  query GetProfile {
+    getProfile {
+      id
+      firstName
+      lastName
+      email
+      password
+      image
+      address
+      phone
+      birthDate
+      wishList
+      isActive
+      isAdmin
+      cart {
+        productId
+        quantity
+      }
+    }
+  }
+`;
+
 export const CATEGORIES_QUERY = gql`
   query GetItemsByCategory {
     getCategories
@@ -121,6 +144,24 @@ export const GET_PRODUCTS_CART = gql`
 export const GET_PRODUCTS_WISHLIST = gql`
   query Query {
     getProductsWishlist {
+      id
+      title
+      description
+      price
+      stock
+      brand
+      category
+      discountPercentage
+      rating
+      thumbnail
+      images
+    }
+  }
+`;
+
+export const GET_SHARED_WISHLIST = gql`
+  query GetSharedWishlist($userId: ID!) {
+    getSharedWishlist(userId: $userId) {
       id
       title
       description
