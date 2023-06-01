@@ -6,21 +6,15 @@ import useProtected from "../../hooks/useProtected";
 import { useEffect, useState } from "react";
 import { updateUser } from "../../features/user/authSlice";
 import { motion } from "framer-motion";
-<<<<<<< HEAD
-import { useContext } from "react";
-import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
-
-=======
->>>>>>> 60ac05f7063812ff578fed538619a3438c00f71d
 
 const ProductCard = ({ product, onProductClick }) => {
   useProtected();
 
-  const darkMode = useSelector((state) => state.darkMode)
-  const getCardColor = () => (darkMode ? "#232c31" : "white")
-  const getBorderSpacerColour = () => (darkMode? "black" : " ")
-  const getWishListButtonColour = () => (darkMode ? "white" : "black")
-  const getHeaderColor = () => (darkMode ? "#1d252a" : " ")
+  const darkMode = useSelector((state) => state.darkMode);
+  const getCardColor = () => (darkMode ? "#232c31" : "white");
+  const getBorderSpacerColour = () => (darkMode ? "black" : " ");
+  const getWishListButtonColour = () => (darkMode ? "white" : "black");
+  const getHeaderColor = () => (darkMode ? "#1d252a" : " ");
 
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -82,7 +76,7 @@ const ProductCard = ({ product, onProductClick }) => {
   return (
     <motion.div
       className=" g-col col-12 col-lg-auto "
-      style={{ maxWidth: "var(--lg-max-width)"}}
+      style={{ maxWidth: "var(--lg-max-width)" }}
       whileHover={{
         scale: 1.05,
       }}
@@ -90,8 +84,17 @@ const ProductCard = ({ product, onProductClick }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <div className="d-flex card" style={{ height: "100%", backgroundColor: getCardColor() }}>
-        <div className="d-flex card-header mb-2 w-100 justify-content-between align-items-center" style={{borderBlockColor:getBorderSpacerColour(), backgroundColor: getHeaderColor()}}>
+      <div
+        className="d-flex card"
+        style={{ height: "100%", backgroundColor: getCardColor() }}
+      >
+        <div
+          className="d-flex card-header mb-2 w-100 justify-content-between align-items-center"
+          style={{
+            borderBlockColor: getBorderSpacerColour(),
+            backgroundColor: getHeaderColor(),
+          }}
+        >
           <span className="badge text-bg-warning">{discountPercentage} %</span>
           <span>
             <button className="btn">
@@ -122,7 +125,14 @@ const ProductCard = ({ product, onProductClick }) => {
         <motion.div
           className="poster d-flex justify-content-center px-2 mt-1"
           onClick={onProductClick}
-          style={{ cursor: "pointer", backgroundColor:"white", borderRadius:"10px", width:"90%", marginLeft:"5%", boxShadow: "0 0 2px white", }}
+          style={{
+            cursor: "pointer",
+            backgroundColor: "white",
+            borderRadius: "10px",
+            width: "90%",
+            marginLeft: "5%",
+            boxShadow: "0 0 2px white",
+          }}
         >
           <img
             className="img-fluid mt-2 mb-2"
