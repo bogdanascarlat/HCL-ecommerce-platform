@@ -17,6 +17,7 @@ import { useSelector } from 'react-redux';
 import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle'
 import React from 'react';
 
+
 const router = createBrowserRouter(
   [
     {
@@ -80,6 +81,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      
     </>
   );
 }

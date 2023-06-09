@@ -35,7 +35,10 @@ const Profile = () => {
               <div className="">
                 <img
                   className="rounded-circle"
-                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                 
+                  src ={user.firstName === "John" ? "https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/avatars/1.png"
+                  : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}
+                
                   style={{ maxWidth: 125 }}
                   alt="profile-pic"
                 />

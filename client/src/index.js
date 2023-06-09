@@ -8,6 +8,7 @@ import store from '../src/store'
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Provider} from 'react-redux'
+import { SessionProvider } from 'next-auth/react';
 
 
 const httpLink = createHttpLink({
@@ -35,10 +36,12 @@ const client = new ApolloClient({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <SessionProvider>
     <ApolloProvider client={client}>
       <Provider store={store}>
         <App />
       </Provider>
     </ApolloProvider>
+    </SessionProvider>
   </React.StrictMode>
 );

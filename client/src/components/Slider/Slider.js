@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./Slider.css";
 
+
 const Slider = ({ products }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [adjust, setAdjust] = useState(0);
@@ -108,15 +109,18 @@ const Slider = ({ products }) => {
   <span style={{ textDecoration: 'line-through' }}>${product.price}</span>
 </h6>
 
+
     {product.discountPercentage ? (
       <span class="badge text-bg-danger" style={{ fontWeight: 'bold', fontSize: '12px', marginLeft: '5px' }}>
         SAVE {product.discountPercentage}%
       </span>
     ) : null}
+     
   </div>
   <h5 className="card-title" style={{ fontWeight: 'bold', fontSize: '15px', marginLeft: '10px', marginBottom:"5px" }}>
     Now: ${(product.price * (1 - product.discountPercentage / 100)).toFixed(2)}
   </h5>
+ 
 </div>
 
   </div>
