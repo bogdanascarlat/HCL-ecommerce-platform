@@ -8,7 +8,7 @@ import {
 } from "../../graphql/mutation";
 
 import { GET_PRODUCTS_WISHLIST } from "../../graphql/query";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import useProtected from "../../hooks/useProtected";
 import { useEffect, useState } from "react";
@@ -16,8 +16,10 @@ import { updateUser } from "../../features/user/authSlice";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { GET_PROFILE_QUERY } from "../../graphql/query";
+import { Rating } from "@mui/material";
+import useFetchCollection from "../../customHooks/useFetchCollection";
 
-const ProductCard = ({ product, onProductClick }) => {
+const ProductCard = ({ product, onProductClick , rev }) => {
   useProtected();
 
   const darkMode = useSelector((state) => state.darkMode);
@@ -189,6 +191,9 @@ const ProductCard = ({ product, onProductClick }) => {
     });
   };
 
+  const { data } = useFetchCollection("reviews");
+  const prodId = product.id;
+
   const image = product?.images[0] || "";
   const title = product?.title || "NO TITLE";
   const brand = product?.brand || "NO BRAND";
@@ -293,6 +298,8 @@ const ProductCard = ({ product, onProductClick }) => {
             boxShadow: "0 0 2px white",
           }}
         >
+       
+                
           <img
             className="img-fluid mt-2 mb-2"
             alt="img"
@@ -300,12 +307,27 @@ const ProductCard = ({ product, onProductClick }) => {
             style={{ maxHeight: 120 }}
           ></img>
         </motion.div>
+        
         <div className="d-flex row card-body px-4">
+       
           <h5 className="card-title fw-bold align-self-end fs-6 text">
             {title}
           </h5>
           <p className="card-text align-self-end">{brand}</p>
           <p className={stockClass}>In stock: {stock} units</p>
+          <section>
+          < Rating
+                    name="half-rating-read"
+                    defaultValue={product.rating}
+                    precision={0.5}
+                    readOnly
+                    style={{ color:"#FACF19" , float: "left"}}
+                  />
+            <a role="button" onClick={onProductClick}
+            style={{borderBottom:"1px solid grey"}}
+            >{data.filter((review) => review.productID === prodId).length} reviews
+            </a>     
+           </section>
           <p className="mb-0 align-self-end" style={{ fontSize: ".7em" }}>
             MSRP: ${price}
           </p>
@@ -314,6 +336,9 @@ const ProductCard = ({ product, onProductClick }) => {
               Price: ${(price * (1 - discountPercentage / 100)).toFixed(2)}
             </p>
           }
+         
+              
+                  
           <button
             className="btn btn-primary fw-bold align-self-end"
             onClick={!inCart ? handleClick : () => navigate("/cart")}
