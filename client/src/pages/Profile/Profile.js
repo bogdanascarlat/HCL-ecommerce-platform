@@ -4,6 +4,8 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { logout } from "../../features/user/authSlice";
 import useProtected from "../../hooks/useProtected";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Profile = () => {
   useProtected();
@@ -11,6 +13,31 @@ const Profile = () => {
   const user = useSelector((state) => state.auth.loggedInUser)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSave = () => {
+    // Do something with the saved input value
+    console.log(inputValue);
+
+    // Close the popup
+    setPopupOpen(false);
+  };
+
+
+
+
+
+
+
+
+
 
   const handleLogout = () => {
     dispatch(logout());
@@ -47,6 +74,7 @@ const Profile = () => {
                 {user.isAdmin ? "Administrator" : "Customer"}
               </p>
               <button onClick={handleLogout} className="btn btn-secondary mb-5 w-50 mx-auto">Logout</button>
+              
             </div>
           </div>
           <div className="col mx-auto mt-auto">
@@ -63,7 +91,7 @@ const Profile = () => {
                 </li>
                 <li className="list-group-item d-flex py-3 ">
                   <div className="text fw-bold ps-4">Address:</div>
-                  <div className="mx-auto">{user.address}</div>
+                  <div className="mx-auto">{user.address[0]}</div>
                 </li>
                 <li className="list-group-item d-flex py-3 ">
                   <div className="text fw-bold ps-4">Birth Day:</div>
@@ -73,6 +101,9 @@ const Profile = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+      
       </div>
       <Footer />
     </>

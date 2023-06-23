@@ -153,3 +153,22 @@ export const updateQuantity = (cartInput, authHeader) => {
   updateUserById(id, user);
   return true;
 };
+
+export const updateAddress = (updateAddressInput, authHeader) => {
+  const { id } = decodeJWT(authHeader);
+  const user = getUserById(id);
+  const index = updateAddressInput.index;
+
+  if (updateAddressInput.action === 'add') {
+    user.address[index] = updateAddressInput.address;
+  } else if (updateAddressInput.action === 'remove') {
+    // Replace the address with an empty string
+    user.address[index] = " ";
+  } else {
+    throw new Error('Invalid action');
+  }
+
+  updateUserById(id, user);
+
+  return user;
+};

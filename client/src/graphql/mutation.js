@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const LOGIN_MUTATION = gql`
   mutation Mutation($loginData: LoginData) {
@@ -153,6 +153,53 @@ export const REMOVE_FROM_GIFTLIST_MUTATION = gql`
       phone
       birthDate
       giftList
+      isActive
+      isAdmin
+      cart {
+        productId
+        quantity
+      }
+    }
+  }
+`;
+
+export const UPDATE_PROFILE_IMAGE_MUTATION = gql`
+  mutation UpdateProfileImage($id: ID!, $image: Upload!) {
+    updateProfileImage(id: $id, image: $image) {
+      id
+      firstName
+      lastName
+      email
+      password
+      image
+      address
+      phone
+      birthDate
+      wishList
+      isActive
+      isAdmin
+      cart {
+        productId
+        quantity
+      }
+    }
+  }
+`;
+
+
+export const UPDATE_ADDRESS_MUTATION = gql`
+  mutation UpdateAddress($updateAddressInput: UpdateAddressInput) {
+    updateAddress(updateAddressInput: $updateAddressInput) {
+      id
+      firstName
+      lastName
+      email
+      password
+      image
+      address
+      phone
+      birthDate
+      wishList
       isActive
       isAdmin
       cart {

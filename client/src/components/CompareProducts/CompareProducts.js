@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 const CompareProducts = ({ initialProductId }) => {
 
   const darkMode = useSelector((state) => state.darkMode)
+  const user = useSelector((state) => state.auth.loggedInUser)
   const getTextColor = () => (darkMode ? "white" : "black")
 
   const [compareProducts, setCompareProducts] = useState([]);
@@ -125,7 +126,7 @@ const CompareProducts = ({ initialProductId }) => {
   };
 
 
-  // set initial state for compareProducts
+
   useState(() => {
     if (initialProductId && filteredProducts.length > 0) {
       setCompareProducts([initialProductId, ...compareProducts]);

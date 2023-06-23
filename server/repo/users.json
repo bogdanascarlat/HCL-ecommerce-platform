@@ -5,16 +5,30 @@
     "lastName": "Doe",
     "email": "johnDoe@email.com",
     "password": "$2b$10$jadOROi5OTRlarxdy6o/seiWSA3H1sqipvgYueSF5qafcFyN0okoW",
-    "image": "linkToImage",
-    "address": "Some address in the wrld no 3",
+    "image": "file-1687508453799-956077419.jpeg",
+    "address": [
+      "5th Av, NY, Apt. 4",
+      "Some other address"
+    ],
     "phone": "0777 777 777",
     "birthDate": "03-05-1999",
-    "wishList": [],
+    "wishList": [
+      "2",
+      "4",
+      "5",
+      "3",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "1"
+    ],
     "giftList": [],
     "cart": [
       {
-        "productId": "1",
-        "quantity": 3
+        "productId": "3",
+        "quantity": 1
       }
     ],
     "ratings": [],
@@ -23,17 +37,19 @@
   },
   {
     "id": 2,
-    "firstName": "Mircea",
-    "lastName": "Dumi",
+    "firstName": "juhi",
+    "lastName": "hnbjg",
     "address": "Enter your address",
     "phone": "Enter your phone number",
     "birthDate": "Enter your birth date",
-    "wishlist": [],
+    "wishList": [],
+    "giftList": [],
     "cart": [],
     "ratings": [],
     "isActive": true,
     "isAdmin": false,
-    "email": "mirceadumi@email.com",
-    "password": "$2b$10$8.Lf3TZvfXfxr2eKQVz4he8fuBUko/webxkifZRMBVe0KumImoJOK"
+    "email": "test@email.com",
+    "password": "$2b$10$IdYJKr1o1k.wa/Z/EaBsEuLWSrU4W.G82RH.lf4oDUtYBpdJ.C9C2",
+    "image": "uploads/file-1686671812005-932575703.jpeg"
   }
 ]

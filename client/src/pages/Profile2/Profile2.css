@@ -1,0 +1,270 @@
+:root {
+    --vh: 1vh;
+    --vw: 1vw;
+}
+
+.profile_master_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ 
+    height: 100vh;
+    
+}
+
+.profile_div_left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: inherit;
+    height: calc(100% - 20px);  /* Subtract the top and bottom margin */
+    box-sizing: border-box;
+  
+}
+
+.profile_div_right{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    width: inherit;
+    height: calc(100% - 20px);  /* Subtract the top and bottom margin */
+    box-sizing: border-box;
+    
+   
+}
+
+.profile_circle{
+    border-radius: 50%;
+    background-color:  rgba(255, 255, 255, 0.2);
+    height: calc(60 * var(--vmin));  /* Adjust these values */
+    width: calc(60 * var(--vmin));   /* as needed to suit your design */
+    backdrop-filter: blur(10px); /* This will create the frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile_details_div {
+    display: flex;
+    flex-direction: column;
+    background-color:   rgba(211, 204, 204, 0.2);
+    width: 80%;
+    height: 240px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for the frosted effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+
+
+
+
+.profile_circle:hover{
+    outline: none;
+   cursor: pointer;
+    box-shadow: 0 0 20px #719ECE;
+  
+
+}
+
+
+.profile_name{
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.profile_address{
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    
+}
+
+.profile_div_right_top{
+
+    display: flex;
+    flex-direction: column;
+    background-color:  rgba(211, 204, 204, 0.2); /* Using a semi-transparent background */
+    width: 95%;
+    height: 300px;
+    border-radius: 20px;
+    margin: 10px;
+    margin-top: 20px;
+   
+    
+    backdrop-filter: blur(10px); /* This will create the frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* A border can enhance the effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile_div_right_top_text{
+    margin: 10px;
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile_div_right_top_activities{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px;
+    height: 100%;
+    border-radius: 20px;
+    
+}
+
+.profile_div_right_top_activities_address{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px;
+    height: 100%;
+    border-radius: 20px;
+    
+}
+
+.profile_div_right_top_activities_reviews{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px;
+    height: 100%;
+    border-radius: 20px;
+    
+}
+
+.activity{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    width: 100%;
+    border: black;
+    border-radius: 20px;
+}
+
+.activity_picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    
+    border-radius: 7px;
+}
+
+.activity_picture svg{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.activity_details{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.profile_div_right_top_2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(211, 204, 204, 0.2); /* Using a semi-transparent background */
+    width: 30%;
+    height: 300px;
+    border-radius: 20px;
+   
+    
+   
+    
+    backdrop-filter: blur(10px); /* This will create the frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* A border can enhance the effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper_2{
+    display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 95%;
+    height: 300px;
+    border-radius: 20px;
+    margin: 10px;
+    
+}
+
+.popup-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .popup {
+  display: flex;
+  flex-direction: row;
+  
+    
+  }
+
+  .button_change{
+    margin-left: 5px;
+  }
+
+
+  .input_style{
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 7px;
+  }
+
+
+  .input_style:focus{
+   
+    outline: none;
+    border: 1px solid white;
+    box-shadow: 0 0 15px gray;
+    border-radius: 7px;
+    transition: ease-in 0.15s;
+}
+
+
+@media screen and (min-width: 720px){
+    .profile_master_div{
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .profile_div_left{
+        width: 30%;
+    }
+
+    .profile_div_right{
+        width: 70%;
+        align-items: flex-start;
+    }
+
+   
+}
+
+
+@media screen and (max-width: 720px) {
+    .profile_div_left,
+    .profile_div_right {
+      height: inherit; /* Reset the height to auto to allow content to adjust */
+      overflow: scroll;
+    }
+  }

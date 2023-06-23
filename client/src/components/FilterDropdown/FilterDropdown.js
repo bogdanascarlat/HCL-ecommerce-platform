@@ -82,7 +82,56 @@ const FilterDropdown = () => {
   });
 
   if (loading || loading2) {
-    return <p>Loading...</p>;
+    return (
+      <div className="dropdown" style={{ marginLeft: 3 + "em" }}>
+        <button
+          className="btn btn-secondary dropdown-toggle"
+          onClick={toggleDropdown}
+        >
+          Filter
+        </button>
+        {isOpen && (
+          <div className="dropdown-menu show">
+            <button className="dropdown-item" onClick={toggleCategories}>
+              Filter by category
+            </button>
+            {showCategories && (
+              <div className="dropdown-menu show">
+                {getCategories.map((category) => (
+                  <button
+                    key={category}
+                    className={`dropdown-item ${
+                      selectedCategory === category ? "active" : ""
+                    }`}
+                    onClick={() => handleCategoryClick(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            )}
+            <button className="dropdown-item" onClick={toggleBrands}>
+              Filter by brand
+            </button>
+            {showBrands && (
+              <div className="dropdown-menu show">
+                {brandsToDisplay.map((brand, index) => (
+                  <button
+                    key={`${brand}_${index}`}
+                    className={`dropdown-item ${
+                      selectedBrand === brand ? "active" : ""
+                    }`}
+                    onClick={() => handleBrandClick(brand)}
+                  >
+                    {brand}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    )
   }
 
   if (error || error2) {

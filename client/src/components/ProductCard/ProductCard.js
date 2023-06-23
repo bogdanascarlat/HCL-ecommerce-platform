@@ -16,12 +16,13 @@ import { updateUser } from "../../features/user/authSlice";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { GET_PROFILE_QUERY } from "../../graphql/query";
+import './ProductCard.css'
 
 const ProductCard = ({ product, onProductClick }) => {
   useProtected();
 
   const darkMode = useSelector((state) => state.darkMode);
-  const getCardColor = () => (darkMode ? "#232c31" : "white");
+  const getCardColor = () => (darkMode ? "#232c31" : "rgba(255, 255, 255, 0.2)");
   const getBorderSpacerColour = () => (darkMode ? "black" : " ");
   const getWishListButtonColour = () => (darkMode ? "white" : "black");
   const getGiftListButtonColour = () => (darkMode ? "white" : "black");
@@ -203,7 +204,7 @@ const ProductCard = ({ product, onProductClick }) => {
 
   return (
     <motion.div
-      className=" g-col col-12 col-lg-auto "
+      className=" g-col col-12 col-lg-auto cards "
       style={{ maxWidth: "var(--lg-max-width)" }}
       whileHover={{
         scale: 1.05,
@@ -212,7 +213,10 @@ const ProductCard = ({ product, onProductClick }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <div
+      <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4, type: 'ease-in', stiffness: 50 }}
         className="d-flex card"
         style={{ height: "100%", backgroundColor: getCardColor() }}
       >
@@ -321,7 +325,7 @@ const ProductCard = ({ product, onProductClick }) => {
             {inCart ? "Check cart" : "Add to cart"}
           </button>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

@@ -22,6 +22,7 @@ import {
   getProductsCart,
   getProductsWishlist,
   getProductsGiftlist,
+  updateAddress,
 } from "../resolvers/user.js";
 import { getAllUsers } from "../repo/user.js";
 
@@ -54,6 +55,16 @@ export const typeDefs = /* GraphQL */ `
     byKeyword: String
     priceRange: [Float]
   }
+
+  input UpdateAddressInput {
+    id: ID!
+    action: String!
+    address: String
+    index: Int!
+}
+
+  
+  
 
   type Product {
     id: ID!
@@ -92,7 +103,7 @@ export const typeDefs = /* GraphQL */ `
     email: String!
     password: String!
     image: String
-    address: String
+    address: [String]
     phone: String
     birthDate: String
     wishList: [ID!]
@@ -155,6 +166,8 @@ export const typeDefs = /* GraphQL */ `
     addToGiftList(productId: ID): User
     removeFromWishList(productId: ID!): User
     removeFromGiftList(productId: ID!): User
+    updateProfileImage(id: ID!, image: String!): User
+    updateAddress(updateAddressInput: UpdateAddressInput): User
   }
 `;
 
@@ -209,5 +222,7 @@ export const resolvers = {
       addProductToGiftList(args.productId, context.authHeader),
     removeFromGiftList: (_, args, context) =>
       removeProductFromGiftList(args.productId, context.authHeader),
+    updateProfileImage: (_, args, context) => updateProfileImage(args.id, args.image),
+    updateAddress: (_, { updateAddressInput }, context) => updateAddress(updateAddressInput, context.authHeader),
   },
 };

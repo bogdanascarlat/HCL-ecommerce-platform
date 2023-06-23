@@ -4,15 +4,15 @@ import { BCRYPT_SALT } from "../resolvers/user.js";
 
 let users = JSON.parse(readFileSync(new URL("./users.json", import.meta.url)));
 
-//CRUD Operations
+// CRUD Operations
 
 // Read ALL
 export const getAllUsers = () => users;
 
-//Read by ID
+// Read by ID
 export const getUserById = (id) => users.find((user) => user.id === id);
 
-//Read by email
+// Read by email
 export const getUserByEmail = (email) =>
   users.find((user) => user.email === email);
 
@@ -49,7 +49,7 @@ export const createNewUser = async (user) => {
 // Update user with ID
 export const updateUserById = (id, user) => {
   let userToBeUpdated = users.find((user) => user.id === id);
-  userToBeUpdated = { id, ...user };
+  userToBeUpdated = { id, ...user, image: user.image }; // Add the `image` field
 
   const newUsers = users.map((user) => {
     if (user.id === id) {
@@ -60,6 +60,11 @@ export const updateUserById = (id, user) => {
   });
 
   users = newUsers;
+  writeFileSync(
+    new URL("./users.json", import.meta.url),
+    JSON.stringify(users, null, 2)
+  );
+
   return users.find((user) => user.id === id);
 };
 

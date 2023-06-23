@@ -5,6 +5,7 @@ import AuthPage from "./pages/AuthPage/AuthPage";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Profile from "./pages/Profile/Profile";
+import Profile2 from "./pages/Profile2/Profile2";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
 import Wishlist from "./pages/Wishlist/Wishlist";
@@ -34,6 +35,10 @@ const router = createBrowserRouter(
     {
       path: "/profile",
       element: <Profile />,
+    },
+    {
+      path: "/profile2",
+      element: <Profile2 />,
     },
     {
       path: "/cart",

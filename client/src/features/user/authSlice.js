@@ -24,6 +24,7 @@ export const authSlice = createSlice({
       Cookie.remove('token');
       return initialState;
     },
+    
     updateUser: (state, action) => {
       return {
         ...state,
