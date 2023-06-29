@@ -1,0 +1,10 @@
+.cards_div{
+    display: flex;
+  
+    justify-content: space-around;
+    width: 100%;
+    background-color: red;
+   
+flex-direction: column;
+margin: 10px;
+}

@@ -16,6 +16,7 @@ import Footer from "../../components/Footer/Footer";
 import SortingContext from "../../components/SortDropdown/SortContext";
 import { useNavigate } from "react-router-dom";
 import { getProductIDFunction } from "../../features/getProductId/ProductIdSlice";
+import './Dashboard.css'
 
 const MIN_PRICE = 0;
 const MAX_PRICE = 10000;
@@ -99,7 +100,7 @@ const Dashboard = () => {
                 priceRange={priceRange}
                 handlePriceChange={handlePriceChange}
               />
-              <div className="row row-cols-auto g-4 mt-1" >{shownCards}</div>
+             <div className="row row-cols-auto g-4 mt-1">{shownCards}</div>
               <div className="d-flex justify-content-center my-4">
                 <Paginate
                   numberOfPages={numberOfPages}

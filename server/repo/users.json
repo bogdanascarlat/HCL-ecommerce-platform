@@ -8,26 +8,27 @@
     "image": "file-1687508453799-956077419.jpeg",
     "address": [
       "5th Av, NY, Apt. 4",
-      "Some other address"
+      " "
     ],
     "phone": "0777 777 777",
     "birthDate": "03-05-1999",
-    "wishList": [
-      "2",
-      "4",
-      "5",
-      "3",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "1"
-    ],
+    "wishList": [],
     "giftList": [],
     "cart": [
       {
         "productId": "3",
+        "quantity": 1
+      },
+      {
+        "productId": "5",
+        "quantity": 1
+      },
+      {
+        "productId": "5",
+        "quantity": 1
+      },
+      {
+        "productId": "5",
         "quantity": 1
       }
     ],
