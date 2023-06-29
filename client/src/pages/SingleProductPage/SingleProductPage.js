@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import ProductSlider from "../../components/ProductSlider/ProductSlider";
 import { useQuery } from '@apollo/client';
-import { GET_ITEMS } from '../../graphql/query';
+import { GET_ITEMS, GET_PROFILE_QUERY } from '../../graphql/query';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -11,6 +11,7 @@ const SingleProductPage = () => {
 
   const { loading, error, data } = useQuery(GET_ITEMS, {
     variables: { id: selectedProductId },
+
   });
 
   useEffect(() => {
@@ -34,14 +35,16 @@ const SingleProductPage = () => {
     (product) => product.id === selectedProductId
   );
 
+  
   if (!selectedProduct) {
     return <div>Product not found</div>;
   }
 
+  
   return (
     <>
       <Navbar />
-      <ProductSlider product={selectedProduct} productId={selectedProduct.id} />
+      <ProductSlider product={selectedProduct} productId={selectedProduct.id}  />
       <Footer />
     </>
   );

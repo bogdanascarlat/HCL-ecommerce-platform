@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useMutation } from "@apollo/client";
 import { ADD_TO_CART_MUTATION } from "../../graphql/mutation";
 import { useDispatch, useSelector } from "react-redux";
 import useProtected from "../../hooks/useProtected";
 import { useEffect, useState } from "react";
 import { updateUser } from "../../features/user/authSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import './ProductSlider.css';
 import  CompareProducts  from "../../components/CompareProducts/CompareProducts"
 import Slider from "../../components/Slider/Slider"
+import Reviews from './reviews';
+import { getServerSideProps } from '../..';
+import { Rating } from '@mui/material';
+import useFetchCollection from '../../customHooks/useFetchCollection';
+import { current } from '@reduxjs/toolkit';
+
 
 
 const ProductSlider = ({ product, productId }) => {
   useProtected()
+  const { data } = useFetchCollection("reviews");
+   const { id: selectedProductId } = useParams();
+   const prodId = selectedProductId;
 
-
-  const darkMode = useSelector((state) => state.darkMode)
-  const getCardColor = () => (darkMode ? "#232c31" : "white")
-  const getHeaderColor = () => (darkMode ? "#1d252a" : " ")
-  const getTextColor = () => (darkMode ? "white" : "black")
-  const getBorderColor = () => (darkMode ? "#232c31" : "#dee2e6")
-  const getTableHeaderColor = () => (darkMode ? "#1d252a" : "#f2f2f2")
+   const  filteredReviews = data.filter((review) => review.productID === prodId );
+  
 
   const state = useSelector((state) => state);
   const dispatch = useDispatch()
@@ -77,12 +81,14 @@ const ProductSlider = ({ product, productId }) => {
       ? "card-text fw-bold align-self-end text text-danger"
       : "card-text fw-bold align-self-end";
 
-      
+      const ref = useRef(null);
+      const handleRef = () => {
+           ref.current?.scrollIntoView({behavior: "smooth"});
+      };
 
 
   return (
     <div className="row" style={{ padding: '60px' }}>
-      <div></div>
       <div className="col-md-8">
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
@@ -99,11 +105,11 @@ const ProductSlider = ({ product, productId }) => {
             ))}
           </div>
           <div className="carousel-inner">
-            <div className="carousel-item active" style={{backgroundColor:"white",}}>
+            <div className="carousel-item active">
               <img src={image} className="d-block w-100" alt="..." style={{ objectFit: 'contain', objectPosition: 'center', height: '50vh', overflow: 'hidden' }} />
             </div>
             {images.slice(1).map((image, index) => (
-              <div className="carousel-item" key={index} style={{backgroundColor:"white", }}>
+              <div className="carousel-item" key={index}>
                 <img src={image} className="d-block w-100" alt="..." style={{ objectFit: 'contain', objectPosition: 'center', height: '50vh', overflow: 'hidden' }} />
               </div>
             ))}
@@ -119,13 +125,11 @@ const ProductSlider = ({ product, productId }) => {
         </div>
       </div>
 
-      
-
       <motion.div className='col-md-4'
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}>
-        <div className="card" style={{backgroundColor:getCardColor()}}>
-          <div className="card-header" style={{ fontWeight: 'bold', fontSize: '40px', backgroundColor:getHeaderColor() }}>
+        <div className="card">
+          <div className="card-header" style={{ fontWeight: 'bold', fontSize: '40px' }}>
             {title}
           </div>
           <div className="card-body">
@@ -135,6 +139,17 @@ const ProductSlider = ({ product, productId }) => {
             <p></p>
             <h5 className="card-title" style={{ fontWeight: 'bold', fontSize: '45px' }}>Now: ${(price*(1-discountPercentage/100)).toFixed(2)}</h5>
             <h5 className={stockClass} style={{ fontWeight: 'bold' }}>In stock: {stock}</h5>
+            < Rating
+                    name="half-rating-read"
+                    defaultValue={product.rating}
+                    precision={0.5}
+                    readOnly
+                    style={{ color:"#FACF19" , float: "left"}}
+                  />
+            <a role='button' onClick={()=>handleRef()}
+            style={{borderBottom:"1px solid grey"}}
+            >{filteredReviews.length} reviews
+            </a> 
           </div>
           <div className="card-body">
             <h5 className="card-title" style={{ fontWeight: 'bold' }}>Brief Description</h5>
@@ -146,39 +161,40 @@ const ProductSlider = ({ product, productId }) => {
           </div>
         </div>
       </motion.div>
+     
 <div>
   <p>
 
   </p>
 </div>
 
-      <div className="accordion" id="accordionExample"  >
-  <div className="accordion-item" style={{color:getTextColor(), borderColor:getBorderColor()}}>
-    <h2 className="accordion-header" id="headingOne" >
-      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={{backgroundColor:getCardColor(), transition:"none", color:getTextColor(), }}>
+      <div className="accordion" id="accordionExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="headingOne">
+      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         Overview
       </button>
     </h2>
-    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style={{backgroundColor:getCardColor(), }}>
-      <div className="accordion-body" >
+    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
         <strong>Overview</strong> ... <code></code>
       </div>
     </div>
   </div>
  
 
-  <div className="accordion-item" style={{borderColor:getBorderColor()}}>
+  <div className="accordion-item">
   <h2 className="accordion-header" id="headingTwo">
-    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={{backgroundColor:getCardColor(), transition:"none", color:getTextColor()}}>
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
       Specifications
     </button>
   </h2>
-  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style={{backgroundColor:getCardColor()}}>
+  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
     <div className="accordion-body">
-      <strong style={{color:getTextColor()}}>Product Information:</strong>
-      <table className="table table-bordered" style={{color:getTextColor()}}>
+      <strong>Product Information:</strong>
+      <table className="table table-bordered">
    
-      <tbody >
+      <tbody>
       {Object.entries(specs[0] || {})
   .filter(([key, value]) => {
     return !(key === '__typename' || key === 'productId' || value === 0 || (Array.isArray(value) && value.length === 0));
@@ -205,7 +221,7 @@ const ProductSlider = ({ product, productId }) => {
 
     const newRow = (title, className = '') => (
       <tr className={className}>
-        <th colSpan="2" className="header-row" style={{backgroundColor:getTableHeaderColor()}}>{title}</th>
+        <th colSpan="2" className="header-row">{title}</th>
       </tr>
     );
 
@@ -385,13 +401,13 @@ const ProductSlider = ({ product, productId }) => {
 </div>
 
 
-<div className="accordion-item" style={{borderColor:getBorderColor()}}>
+<div className="accordion-item">
   <h2 className="accordion-header" id="headingThree">
-    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style={{backgroundColor:getCardColor(), transition:"none", color:getTextColor()}}>
+    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
       Compare Products
     </button>
   </h2>
-  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style={{backgroundColor:getCardColor()}}>
+  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
     <div className="accordion-body">
       <CompareProducts product={product} initialProductId={productId} />
     </div>
@@ -430,8 +446,11 @@ const ProductSlider = ({ product, productId }) => {
 </div>
 
 </div>
+<div ref={ref}>
+<Reviews  product={product}  productId={productId} />
+</div>
     </div>
   );
 };
 
-export default ProductSlider;
+export default ProductSlider; 
